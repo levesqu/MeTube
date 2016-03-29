@@ -1,0 +1,47 @@
+/* You can implement your own css code*/
+
+#passwd_result{
+	background:#FF9900;
+	color:#FFFFFF;
+	font-weight:bold;
+	margin-right:60%;
+}
+
+#upload_result{
+	background:#CC3300;
+	color:#FFFFFF;
+	font-weight:bold;
+	margin-right:60%;
+}
+
+
+body{
+	background-color: rgb(245,245,245 );
+	color: rgb(73,84,92);
+}
+
+h1{
+	color: rgb(215,92,55);
+	margin-left: 20%;
+}
+    
+
+/*
+Colors used on the site
+215    92       55      h1: Metube title:redish one
+103    114      122		text color (background)
+105    145      172   	h2:light blue
+195    215      223  	h3: lightgrey
+245    245      245     background color
+*/
+
+
+h2{
+	color: rgb(105,145,172);
+	margin-left: 20%;
+}
+
+h3{
+	color: rgb(195,215,223) ;
+	margin-left: 20%;
+}
