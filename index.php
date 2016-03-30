@@ -18,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./index">METUBE</a>
+      <a class="navbar-brand" href="./index.php">METUBE</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,10 +36,10 @@
 <!-- nav bar ends here -->
  
 <?php
-echo "<h1> Welcome to Metube! </h1>
+echo '<h1> Welcome to Metube! </h1>
 <h2>The place to share all your media.</h2>
-<p class='text-primary'> MeTube is a website created for CPSC 4620. Here we will deminstrator or ability to use HTML, CSS, amd PHP to share media files amongst different users. Here you can upload and download files, see what your friends are uploading and even download their content.
-</p>";
+<p class="text-warning" > MeTube is a website created for CPSC 4620. Here we will deminstrator or ability to use HTML, CSS, amd PHP to share media files amongst different users. Here you can upload and download files, see what your friends are uploading and even download their content.
+</p>';
 ?>
 <div class="container-fluid">
 <form action="login.php" method="post">

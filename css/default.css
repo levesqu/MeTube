@@ -1347,6 +1347,8 @@ h6,
 }
 p {
   margin: 0 0 10.5px;
+  padding-left: 15.5px;
+  padding-right: 15.5px;
 }
 .lead {
   margin-bottom: 21px;
@@ -1418,6 +1420,8 @@ a.text-info:focus {
 }
 .text-warning {
   color: #ffffff;
+  text-align: left;
+
 }
 a.text-warning:hover,
 a.text-warning:focus {
