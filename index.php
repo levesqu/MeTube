@@ -18,55 +18,38 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">METUBE</a>
+      <a class="navbar-brand" href="./index">METUBE</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+        <li class="active"><a href="./index.php">Home page <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Maybe fill with something?</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
 <!-- nav bar ends here -->
  
 <?php
 echo "<h1> Welcome to Metube! </h1>
 <h2>The place to share all your media.</h2>
-<h3>Log in or register below</h3> ";
+<p class='text-primary'> MeTube is a website created for CPSC 4620. Here we will deminstrator or ability to use HTML, CSS, amd PHP to share media files amongst different users. Here you can upload and download files, see what your friends are uploading and even download their content.
+</p>";
 ?>
 <div class="container-fluid">
 <form action="login.php" method="post">
 	
-	<input type="submit" class="button"  VALUE = "Log in" >
+	<input type="submit" class="btn btn-primary"  VALUE = "Log in" >
 </form>
 
 <form action="register.php" method="post">
-	
-	<input type="submit" class="button"  VALUE = "Register" >
+	<br>
+	<input type="submit" class="btn btn-primary"  VALUE = "Register" >
 </form>
 </div>
 
