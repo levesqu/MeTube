@@ -24,8 +24,44 @@ function saveDownload(id)
 </head>
 
 <body>
+
+
+
+
+
+
+
+<!--the nav bar starts here -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="./.php">METUBE</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./index.php">Home page <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Maybe fill with something?</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+<!-- nav bar ends here -->
+
+
 <p>Welcome <?php echo $_SESSION['username'];?></p>
-<a href='media_upload.php'  style="color:#FF9900;">Upload File</a>
+<p class="text-primary">Here you can upload all of your files just click the link below</p>
+<a href='media_upload.php'  style="color:#FF9900;"> &nbsp Upload File</a>
 <div id='upload_result'>
 <?php 
 	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
@@ -44,7 +80,7 @@ function saveDownload(id)
 	}
 ?>
     
-    <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
+    <div style="background:#339900;color:#FFFFFF; width:150px;"> &nbsp Uploaded Media</div>
 	<table width="50%" cellpadding="0" cellspacing="0">
 		<?php
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
