@@ -45,8 +45,7 @@ function saveDownload(id)
         <li><a href="#">Maybe fill with something?</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php">Login</a></li>
-        <li><a href="register.php">Register</a></li>
+        <li><a href="login.php">Logout</a></li>
       </ul>
     </div>
   </div>
@@ -54,7 +53,7 @@ function saveDownload(id)
 <!-- nav bar ends here -->
 
 
-<p>Welcome <?php echo $_SESSION['username'];?></p>
+<p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
 
 
 <h3 class="">Click one of the options below to browse media.</h3>
@@ -65,9 +64,9 @@ function saveDownload(id)
    <a href="#" class="btn btn-default">Playlists</a>
 </div><br>
 
-<p class="text-primary">Here you can upload all of your files just click the link below. Testing changes here!!!!</p>
+<p class="text-primary">Here you can upload all of your files just click the link below.</p><br>
 
-<a href='media_upload.php'  style="color:#FF9900;"> &nbsp Upload File</a>
+<a href='media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; align:left; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
 <div id='upload_result'>
 <?php 
 	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
