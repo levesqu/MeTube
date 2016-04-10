@@ -5,6 +5,8 @@
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
+<title>Browse - MeTube</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Media browse</title>
 <link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -24,11 +26,6 @@ function saveDownload(id)
 </head>
 
 <body>
-
-
-
-
-
 
 
 <!--the nav bar starts here -->
@@ -60,7 +57,19 @@ function saveDownload(id)
 
 
 <p>Welcome <?php echo $_SESSION['username'];?></p>
+
+
+
+<h3 class="">Click one of the options below to browse media.</h3>
+<div class="btn-group btn-group-justified">
+  <a href="#" class="btn btn-default">Categories</a>
+  <a href="#" class="btn btn-default">Favorites</a>
+  <a href="#" class="btn btn-default">Channels</a>
+   <a href="#" class="btn btn-default">Playlists</a>
+</div><br>
+
 <p class="text-primary">Here you can upload all of your files just click the link below.</p>
+
 <a href='media_upload.php'  style="color:#FF9900;"> &nbsp Upload File</a>
 <div id='upload_result'>
 <?php 
@@ -72,16 +81,15 @@ function saveDownload(id)
 </div>
 <br/><br/>
 <?php
-
-	$query = "SELECT * from media"; 
+	$username = $_SESSION['username'];
+	$query = "SELECT * from media WHERE username='$username'"; 
 	$result = mysql_query( $query );
 	if (!$result){
 	   die ("Could not query the media table in the database: <br />". mysql_error());
 	}
 ?>
-    
-    <div style="background:#339900;color:#FFFFFF; width:150px;"> &nbsp Uploaded Media</div>
-	<table width="50%" cellpadding="0" cellspacing="0">
+    <div style="background:#95a5a6;color:#FFFFFF; width:150px; margin:auto; text-align:center; width: 100%; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
+	<table class="table table-striped table-hover >
 		<?php
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
 			{ 
@@ -89,14 +97,14 @@ function saveDownload(id)
 				$filename = $result_row[0];
 				$filenpath = $result_row[4];
 		?>
-        	 <tr valign="top">			
+        	 <tr class="info">			
 			<td>
 					<?php 
 						echo $mediaid;  //mediaid
 					?>
 			</td>
                         <td>
-            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a> 
+            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
                         </td>
                         <td>
             	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
@@ -105,6 +113,9 @@ function saveDownload(id)
         	<?php
 			}
 		?>
+<br>
+
+
 	</table>
    </div>
 </body>
