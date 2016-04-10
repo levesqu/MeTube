@@ -16,7 +16,7 @@ function saveDownload(id)
 {
 	$.post("media_download_process.php",
 	{
-       id: id,
+       id: id
 	},
 	function(message) 
     { }
@@ -26,8 +26,6 @@ function saveDownload(id)
 </head>
 
 <body>
-
-
 <!--the nav bar starts here -->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -38,7 +36,7 @@ function saveDownload(id)
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./.php">METUBE</a>
+      <a class="navbar-brand" href="./index.php">METUBE</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,7 +57,6 @@ function saveDownload(id)
 <p>Welcome <?php echo $_SESSION['username'];?></p>
 
 
-
 <h3 class="">Click one of the options below to browse media.</h3>
 <div class="btn-group btn-group-justified">
   <a href="#" class="btn btn-default">Categories</a>
@@ -68,7 +65,7 @@ function saveDownload(id)
    <a href="#" class="btn btn-default">Playlists</a>
 </div><br>
 
-<p class="text-primary">Here you can upload all of your files just click the link below.</p>
+<p class="text-primary">Here you can upload all of your files just click the link below. Testing changes here!!!!</p>
 
 <a href='media_upload.php'  style="color:#FF9900;"> &nbsp Upload File</a>
 <div id='upload_result'>
@@ -81,8 +78,10 @@ function saveDownload(id)
 </div>
 <br/><br/>
 <?php
+
 	$username = $_SESSION['username'];
 	$query = "SELECT * from media WHERE username='$username'"; 
+
 	$result = mysql_query( $query );
 	if (!$result){
 	   die ("Could not query the media table in the database: <br />". mysql_error());
@@ -117,6 +116,5 @@ function saveDownload(id)
 
 
 	</table>
-   </div>
 </body>
 </html>
