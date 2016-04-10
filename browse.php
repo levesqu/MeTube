@@ -87,7 +87,7 @@ function saveDownload(id)
 	}
 ?>
     <div style="background:#95a5a6;color:#FFFFFF; width:150px; margin:auto; text-align:center; width: 100%; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
-	<table class="table table-striped table-hover >
+	<table class="table table-hover >
 		<?php
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
 			{ 
@@ -95,7 +95,7 @@ function saveDownload(id)
 				$filename = $result_row[0];
 				$filenpath = $result_row[4];
 		?>
-        	 <tr class="info">			
+        	 <tr class="success">			
 			<td>
 					<?php 
 						echo $mediaid;  //mediaid
