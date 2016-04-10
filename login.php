@@ -31,7 +31,6 @@ if(isset($_POST['submit'])) {
 			}		
 		}
 }
-
  
 ?>
 
@@ -47,7 +46,7 @@ if(isset($_POST['submit'])) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./.php">METUBE</a>
+      <a class="navbar-brand" href="./index.php">METUBE</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -69,17 +68,16 @@ if(isset($_POST['submit'])) {
 	<table width="100%">
 		<tr>
 			<td  width="20%"><label for="inputUsername" class="col-lg-2 control-label">Username:</label></td>
-			<td width="80%"><input class="text" type="text" name="username"><br /></td>
+			<td width="80%"><input class="text" title="username" type="text" name="username"><br /></td>
 		</tr>
-		<br>
 		<tr>
 			<td  width="20%"><label for="inputPassword" class="col-lg-2 control-label">Password</label></td>
-			<td width="80%"><input class="text"  type="password" name="password"><br /></td>
+			<td width="80%"><input class="text" title="password" type="password" name="password"><br /></td>
 		</tr>
 		<tr>
         
 			<td>&nbsp<input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp
-			<input name="reset" type="reset" class="btn btn-default"value="Reset"></td>
+			<input name="reset" type="reset" class="btn btn-default" value="Reset"></td>
 		</tr>
 	</table>
 	</form>
