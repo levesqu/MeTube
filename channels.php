@@ -51,7 +51,7 @@ include_once "function.php";
     </div>
 </nav>
 <!-- nav bar ends here -->
-
+<div class="addmargin">
 
 <p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
 
@@ -66,5 +66,6 @@ include_once "function.php";
 
 <br><br>
 <p> Here will have a list of channels.</p>
+</div>
 </body>
 </html>
