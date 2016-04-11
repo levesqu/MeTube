@@ -98,7 +98,7 @@ function saveDownload(id)
         	 <tr class="success">			
 			<td>
 					<?php 
-						echo $mediaid;  //mediaid
+						//echo $mediaid;  //mediaid
 					?>
 			</td>
                         <td>
