@@ -58,10 +58,10 @@ function saveDownload(id)
 
 <h3 class="">Click one of the options below to browse media.</h3>
 <div class="btn-group btn-group-justified">
-  <a href="#" class="btn btn-default">Categories</a>
-  <a href="#" class="btn btn-default">Favorites</a>
-  <a href="#" class="btn btn-default">Channels</a>
-   <a href="#" class="btn btn-default">Playlists</a>
+	<a href="./categories.php" class="btn btn-default">Categories</a>
+	<a href="./favorites.php" class="btn btn-default">Favorites</a>
+	<a href="./channels.php" class="btn btn-default">Channels</a>
+	<a href="./playlists.php" class="btn btn-default">Playlists</a>
 </div><br>
 
 <p class="text-primary">Here you can upload all of your files just click the link below.</p><br>
