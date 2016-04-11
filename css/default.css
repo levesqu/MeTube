@@ -20,6 +20,11 @@ html {
 body {
   margin: 30px;
 }
+
+.content{
+  margin: auto;
+  width: 80%;
+}
 article,
 aside,
 details,
