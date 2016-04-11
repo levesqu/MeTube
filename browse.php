@@ -22,7 +22,8 @@ function saveDownload(id)
     { }
  	);
 } 
-</script><!--the nav bar starts here -->
+</script>
+    <!--the nav bar starts here -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -51,10 +52,11 @@ function saveDownload(id)
 
 <body>
 
-<div class="addmargin">
+
 
 <p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
 
+<div class="addmargin">
 
 <h3 class="">Click one of the options below to browse media.</h3>
 <div class="btn-group btn-group-justified">
