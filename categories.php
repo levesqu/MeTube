@@ -64,18 +64,7 @@ include_once "function.php";
     <a href="./playlists.php" class="btn btn-default">Playlists</a>
 </div><br>
 
-<p class="text-primary">Here you can upload all of your files just click the link below.</p><br>
-
-<a href='media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; align:left; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
-<div id='upload_result'>
-    <?php
-    if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
-    {
-        echo upload_error($_REQUEST['result']);
-    }
-    ?>
-</div>
-<br><br>
+<br>
 
 <p>Here there will be a list of categories, when they select one they will then be presented with a list of everything in that category</p>
 </body>
