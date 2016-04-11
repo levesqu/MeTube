@@ -66,7 +66,7 @@ function saveDownload(id)
 
 <p class="text-primary">Here you can upload all of your files just click the link below.</p><br>
 
-<a href='media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; align:left; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
+<a href='media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
 <div id='upload_result'>
 <?php 
 	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
@@ -86,8 +86,8 @@ function saveDownload(id)
 	   die ("Could not query the media table in the database: <br />". mysql_error());
 	}
 ?>
-    <div style="background:#95a5a6;color:#FFFFFF; width:150px; margin:auto; text-align:center; width: 100%; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
-	<table class="table table-hover >
+    <div style="background:#95a5a6;color:#FFFFFF; width:150px; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
+	<table class="table table-hover">
 		<?php
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
 			{ 
@@ -95,19 +95,25 @@ function saveDownload(id)
 				$filename = $result_row[0];
 				$filenpath = $result_row[4];
 		?>
-        	 <tr class="success">			
-			<td>
+
+		<tr>
+			<td>Filename</td>
+			<td>&nbsp</td>
+		</tr>
+        	 <tr class="success">
+				<td>
+
 					<?php 
 						//echo $mediaid;  //mediaid
 					?>
-			</td>
+				</td>
                         <td>
             	            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
                         </td>
                         <td>
             	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
                         </td>
-		</tr>
+			</tr>
         	<?php
 			}
 		?>
