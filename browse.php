@@ -51,7 +51,7 @@ function saveDownload(id)
   </div>
 </nav> 
 <!-- nav bar ends here -->
-<div class="content">
+<div class="addmargin">
 
 <p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
 
