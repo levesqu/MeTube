@@ -75,45 +75,7 @@ include_once "function.php";
     }
     ?>
 </div>
-<br/><br/>
-<?php
 
-$username = $_SESSION['username'];
-$query = "SELECT * from media WHERE username='$username'";
-
-$result = mysql_query( $query );
-if (!$result){
-    die ("Could not query the media table in the database: <br />". mysql_error());
-}
-?>
-<div style="background:#95a5a6;color:#FFFFFF; width:150px; margin:auto; text-align:center; width: 100%; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
-<table class="table table-hover >
-		<?php
-while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
-{
-$mediaid = $result_row[3];
-$filename = $result_row[0];
-$filenpath = $result_row[4];
-?>
-        	 <tr class="success">
-<td>
-    <?php
-    echo $mediaid;  //mediaid
-    ?>
-</td>
-<td>
-    <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a>
-</td>
-<td>
-    <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
-</td>
-</tr>
-<?php
-}
-?>
-<br>
-
-
-</table>
+<p>Here they will have a table of favorite media, displayed like the my Media section of the browse page</p>
 </body>
 </html>
