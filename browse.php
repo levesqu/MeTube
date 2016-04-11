@@ -86,10 +86,10 @@ function saveDownload(id)
 	   die ("Could not query the media table in the database: <br />". mysql_error());
 	}
 ?>
-    <div style="background:#95a5a6;color:#FFFFFF; width:150px; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
+    <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
 	<table class="table table-hover">
 		<tr>
-			<td>Filename</td>
+			<td style="text-align:center">Filename</td>
 			<td>&nbsp</td>
 		</tr>
 		<?php
