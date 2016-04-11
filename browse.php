@@ -91,7 +91,7 @@ function saveDownload(id)
 		<!--<tr class="success">
 			<td style="text-align:center">Filename</td>
 			<td>&nbsp</td>
-		</tr>-->
+		</tr>--->
 		<?php
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
 			{ 
