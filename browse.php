@@ -88,7 +88,7 @@ function saveDownload(id)
 ?>
     <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
 	<table class="table table-hover">
-		<tr>
+		<tr class="success">
 			<td style="text-align:center">Filename</td>
 			<td>&nbsp</td>
 		</tr>
@@ -99,7 +99,6 @@ function saveDownload(id)
 				$filename = $result_row[0];
 				$filenpath = $result_row[4];
 		?>
-
 
         	 <tr class="success">
 				<td>
