@@ -75,7 +75,7 @@ include_once "function.php";
     }
     ?>
 </div>
-
+<br>
 <p>Here they will have a table of favorite media, displayed like the my Media section of the browse page</p>
 </body>
 </html>

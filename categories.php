@@ -75,6 +75,7 @@ include_once "function.php";
     }
     ?>
 </div>
+<br><br>
 
 <p>Here there will be a list of categories, when they select one they will then be presented with a list of everything in that category</p>
 </body>

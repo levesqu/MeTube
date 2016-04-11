@@ -75,6 +75,7 @@ include_once "function.php";
     }
     ?>
 </div>
+<br><br>
 <p> Here will have a list of channels.</p>
 </body>
 </html>
