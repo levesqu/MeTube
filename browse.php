@@ -42,8 +42,9 @@ function saveDownload(id)
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.php">Logout</a></li>
                     <li><a href="./profile_update.php">Update Profile</a></li>
+                    <li><a href="login.php">Logout</a></li>
+
                 </ul>
             </div>
         </div>
