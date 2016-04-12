@@ -5,6 +5,8 @@
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
+<title>Browse - MeTube</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Media browse</title>
 <link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -14,56 +16,69 @@ function saveDownload(id)
 {
 	$.post("media_download_process.php",
 	{
-       id: id,
+       id: id
 	},
 	function(message) 
     { }
  	);
 } 
 </script>
+    <!--the nav bar starts here -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.php">METUBE</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./index.php">Home page <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Maybe fill with something?</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login.php">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav bar ends here -->
 </head>
 
 <body>
 
 
 
+<p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
 
 
 
+<h3 class="addmargin">Click one of the options below to browse media.</h3>
 
-<!--the nav bar starts here -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="./.php">METUBE</a>
-    </div>
+<div class="btn-group btn-group-justified">
+	<a href="./categories.php" class="btn btn-default">Categories</a>
+	<a href="./favorites.php" class="btn btn-default">Favorites</a>
+	<a href="./channels.php" class="btn btn-default">Channels</a>
+	<a href="./playlists.php" class="btn btn-default">Playlists</a>
+</div><br>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="./index.php">Home page <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Maybe fill with something?</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php">Login</a></li>
-        <li><a href="register.php">Register</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> 
-<!-- nav bar ends here -->
+<p class="text-primary">Here you can upload all of your files just click the link below.</p><br>
 
+<<<<<<< HEAD
 
 <p>Welcome <?php echo $_SESSION['username'];?></p>
 <p class="text-primary">Here you can upload all of your files just click the link below.</p>
 <a href='profile_update.php'  style="color:#FF9900;">Update Profile</a>
 <a href='media_upload.php'  style="color:#FF9900;"> &nbsp Upload File</a>
 
+=======
+<a href='media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
+>>>>>>> 6f177bf214b2bc8790b51ee22abbeb698fedae31
 <div id='upload_result'>
 <?php 
 	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
@@ -75,15 +90,16 @@ function saveDownload(id)
 <br/><br/>
 <?php
 
-	$query = "SELECT * from media"; 
+	$username = $_SESSION['username'];
+	$query = "SELECT * from media WHERE username='$username'"; 
+
 	$result = mysql_query( $query );
 	if (!$result){
 	   die ("Could not query the media table in the database: <br />". mysql_error());
 	}
 ?>
-    
-    <div style="background:#339900;color:#FFFFFF; width:150px;"> &nbsp Uploaded Media</div>
-	<table width="50%" cellpadding="0" cellspacing="0">
+    <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
+	<table class="table table-hover">
 		<?php
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
 			{ 
@@ -91,23 +107,26 @@ function saveDownload(id)
 				$filename = $result_row[0];
 				$filenpath = $result_row[4];
 		?>
-        	 <tr valign="top">			
-			<td>
+
+        	 <tr class="success">
+				<td>
+
 					<?php 
-						echo $mediaid;  //mediaid
+						//echo $mediaid;  //mediaid
 					?>
-			</td>
+				</td>
                         <td>
-            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a> 
+            	            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
                         </td>
                         <td>
             	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
                         </td>
-		</tr>
+			</tr>
         	<?php
 			}
 		?>
+<br>
 	</table>
-   </div>
+
 </body>
 </html>
