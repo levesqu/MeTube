@@ -39,7 +39,7 @@ function saveDownload(id)
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="./index.php">Home page <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Maybe fill with something?</a></li>
+                    <li><a href="./profile_update.php">Update Profile</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="login.php">Logout</a></li>
@@ -69,9 +69,9 @@ function saveDownload(id)
 </div><br>
 
 <p class="text-primary">Here you can upload all of your files just click the link below.</p>
-<a href='profile_update.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;">Update Profile</a><br><br>
+<a href='./profile_update.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;">Update Profile</a><br><br>
 
-<a href='media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
+<a href='./media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
 
 <br>
 <div id='upload_result'>
