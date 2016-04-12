@@ -41,22 +41,32 @@ session_start();
 <body>
 <div class="form-group">
 <form class="form-horizontal" method="post" action="media_upload_process.php" enctype="multipart/form-data" >
- 
-  <p style="margin:0; padding:0">
-  <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-   Update Profile: <label style="color:#663399"></label><br/>
+
+
+    <fieldset>
+        <legend>Update Profile</legend>
+
 
    <form method="post" action="profile_update_process.php">
 	<table width="100%">
         <div class="form-group">
 			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
             <div class="col-lg-10">
-		    	<td width="80%"><input class="form-control" id="inputUsername" type="text" name="username" placeholder="Username""><br /></td>
+		    	<input class="form-control" id="inputUsername" type="text" name="username"><br />
             </div>
         </div>
-		<br>
 
-		<tr>
+
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Update Password:</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputPassword" type="text" name="username" ><br />
+            </div>
+        </div>
+        <br>
+
+
+        <tr>
 			<td  width="20%"><label for="inputPassword" class="col-lg-2 control-label">Update Password:</label></td>
 			<td width="80%"><input class="text"  type="password" name="password"><br /></td>
 		</tr>
@@ -83,7 +93,7 @@ session_start();
 	</form>
   </p>
  
-                
+           </fieldset>
  </form>
 
 </body>
