@@ -42,8 +42,9 @@ include_once "function.php";
                     <li><a href="#">Maybe fill with something?</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./profile_update.php">Update Profile</a></li>
+                    <!-- the farthest right on gores first-->
                     <li><a href="login.php">Logout</a></li>
+                    <li><a href="./profile_update.php">Update Profile</a></li>
                 </ul>
             </div>
         </div>
