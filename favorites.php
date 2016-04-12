@@ -8,7 +8,6 @@ include_once "function.php";
 
     <title>Favorites - MeTube</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Favorites</title>
     <link rel="stylesheet" type="text/css" href="css/default.css" />
     <script type="text/javascript" src="js/jquery-latest.pack.js"></script>
     <script type="text/javascript">
