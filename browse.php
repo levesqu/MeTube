@@ -61,7 +61,9 @@ function saveDownload(id)
 
 <p>Welcome <?php echo $_SESSION['username'];?></p>
 <p class="text-primary">Here you can upload all of your files just click the link below.</p>
+<a href='profile_update.php'  style="color:#FF9900;">Update Profile</a>
 <a href='media_upload.php'  style="color:#FF9900;"> &nbsp Upload File</a>
+
 <div id='upload_result'>
 <?php 
 	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)

@@ -11,7 +11,7 @@ function user_exist_check ($username, $password){
 	else {
 		$row = mysql_fetch_assoc($result);
 		if($row == 0){
-			$query = "insert into account values ('$username','$password')";
+			$query = "insert into account values ('$username','$password' '$age')";
 			echo "insert query:" . $query;
 			$insert = mysql_query( $query );
 			if($insert)
@@ -80,9 +80,18 @@ function upload_error($result)
 	}
 }
 
-function other()
+function update_profile_info($name, $pass, $age, $workplace)
 {
 	//You can write your own functions here.
+
+	$sql = "UPDATE account set username=$name,
+						set password=$pass,
+						set age=$age,
+						set workplace=$workplace";
+
+	$queryresult = mysql_query($sql);
+
+
 }
 	
 ?>

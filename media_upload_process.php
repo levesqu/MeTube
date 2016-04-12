@@ -8,6 +8,7 @@ include_once "function.php";
 *
 *******************************************************/
 
+
 $username=$_SESSION['username'];
 
 
@@ -16,7 +17,7 @@ if(!file_exists('uploads/')){
 	mkdir('uploads/');
 	chmod('uploads', 0755);
 }
-$dirfile = 'uploads/'.$username.'/';
+$dirfile = 'uploads/'.$username.'/'; 
 if(!file_exists($dirfile))
 	mkdir($dirfile);
 	chmod($dirfile, 0755);

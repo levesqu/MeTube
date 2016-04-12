@@ -38,7 +38,7 @@
 <?php
 echo '<h1> Welcome to Metube! </h1>
 <h2>The place to share all your media.</h2>
-<p class="text-warning" > MeTube is a website created for CPSC 4620. Here we will deminstrator or ability to use HTML, CSS, amd PHP to share media files amongst different users. Here you can upload and download files, see what your friends are uploading and even download their content.
+<p class="text-warning" > MeTube is a website created for CPSC 4620. Here we will deminstrator or ability to use HTML, CSS, and PHP to share media files amongst different users. Here you can upload and download files, see what your friends are uploading and even download their content.
 </p>';
 ?>
 <div class="container-fluid">
