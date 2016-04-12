@@ -63,6 +63,19 @@ session_start();
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="inputAge" class="col-lg-2 control-label">Update Age:</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputAge" type="text" name="age" >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputWorkplace" class="col-lg-2 control-label">Update Place of Work:</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputWorkplace" type="text" name="workplace" >
+            </div>
+        </div>
 
 <!--
         <tr>
@@ -72,17 +85,17 @@ session_start();
 		<br>-->
 
 		<!-- label and input values need to be changed   -->
-		<tr>
+		<!--<tr>
 			<td  width="20%"><label for="inputAge" class="col-lg-2 control-label">Update Age:</label></td>
 			<td width="80%"><input class="text"  type="text" name="age"><br /></td>
 		</tr>
-		<br>
+		<br>-->
 
 		<!-- label and input values need to be changed   -->
-		<tr>
+		<!--<tr>
 			<td  width="20%"><label for="input_place_of_work" class="col-lg-2 control-label">Update Place of Work:</label></td>
 			<td width="80%"><input class="text"  type="text" name="workplace"><br /></td>
-		</tr>
+		</tr>-->
 
 		<tr>
 			<td><input name="submit" type="submit" class="btn btn-primary" value="Update">
@@ -90,7 +103,6 @@ session_start();
 		</tr>
 	</table>
 	</form>
-  </p>
  
            </fieldset>
  </form>
