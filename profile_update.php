@@ -6,11 +6,40 @@ session_start();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Profile Update</title>
+
+    <!--the nav bar starts here -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.php">METUBE</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./browse.php">Home page <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Maybe fill with something?</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./profile_update.php">Update Profile</a></li>
+                    <li><a href="./login.php">Logout</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav bar ends here -->
+
 </head>
 
 <body>
-
-<form method="post" action="media_upload_process.php" enctype="multipart/form-data" >
+<div class="form-group">
+<form class="form-horizontal" method="post" action="media_upload_process.php" enctype="multipart/form-data" >
  
   <p style="margin:0; padding:0">
   <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
@@ -19,8 +48,10 @@ session_start();
    <form method="post" action="profile_update_process.php">
 	<table width="100%">
 		<tr>
-			<td  width="20%"><label for="inputUsername" class="col-lg-2 control-label">Update Username:</label></td>
-			<td width="80%"><input class="text" type="text" name="username"><br /></td>
+			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
+            <div class="col-lg-10">
+			<td width="80%"><input class="form-control" id="inputUsername" type="text" name="username" placeholder="Username""><br /></td>
+            </div>
 		</tr>
 		<br>
 
