@@ -58,7 +58,7 @@ function saveDownload(id)
 
 
 
-<h3 class="addmargin">Click one of the options below to browse media.</h3>
+<h3 class="addmargin">Click one of the options below to browse media.</h3><br>
 
 <div class="btn-group btn-group-justified">
 	<a href="./categories.php" class="btn btn-default">Categories</a>
@@ -67,18 +67,13 @@ function saveDownload(id)
 	<a href="./playlists.php" class="btn btn-default">Playlists</a>
 </div><br>
 
-<p class="text-primary">Here you can upload all of your files just click the link below.</p><br>
-
-<<<<<<< HEAD
-
-<p>Welcome <?php echo $_SESSION['username'];?></p>
 <p class="text-primary">Here you can upload all of your files just click the link below.</p>
 <a href='profile_update.php'  style="color:#FF9900;">Update Profile</a>
 <a href='media_upload.php'  style="color:#FF9900;"> &nbsp Upload File</a>
 
-=======
+
 <a href='media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
->>>>>>> 6f177bf214b2bc8790b51ee22abbeb698fedae31
+
 <div id='upload_result'>
 <?php 
 	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
