@@ -52,25 +52,24 @@ session_start();
         <div class="form-group">
 			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
             <div class="col-lg-10">
-		    	<input class="form-control" id="inputUsername" type="text" name="username"><br />
+		    	<input class="form-control" id="inputUsername" type="text" name="username">
             </div>
         </div>
-
 
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Update Password:</label>
             <div class="col-lg-10">
-                <input class="form-control" id="inputPassword" type="text" name="username" ><br />
+                <input class="form-control" id="inputPassword" type="password" name="password" >
             </div>
         </div>
-        <br>
 
 
+<!--
         <tr>
 			<td  width="20%"><label for="inputPassword" class="col-lg-2 control-label">Update Password:</label></td>
 			<td width="80%"><input class="text"  type="password" name="password"><br /></td>
 		</tr>
-		<br>
+		<br>-->
 
 		<!-- label and input values need to be changed   -->
 		<tr>
