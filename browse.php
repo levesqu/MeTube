@@ -39,8 +39,8 @@ function saveDownload(id)
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="./browse.php">Home page <span class="sr-only">(current)</span></a></li>
-
                 </ul>
+				<form class="navbar-form navbar-left" role="search">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./profile_update.php">Update Profile</a></li>
                     <li><a href="login.php">Logout</a></li>
