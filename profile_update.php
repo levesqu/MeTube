@@ -48,12 +48,12 @@ session_start();
 
    <form method="post" action="profile_update_process.php">
 	<table width="100%">
-		<tr>
+        <div class="form-group">
 			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
             <div class="col-lg-10">
-			<td width="80%"><input class="form-control" id="inputUsername" type="text" name="username" placeholder="Username""><br /></td>
+		    	<td width="80%"><input class="form-control" id="inputUsername" type="text" name="username" placeholder="Username""><br /></td>
             </div>
-		</tr>
+        </div>
 		<br>
 
 		<tr>
