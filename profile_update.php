@@ -43,6 +43,7 @@ session_start();
 <form class="form-horizontal" method="post"  action="profile_update_process.php" enctype="multipart/form-data" >
     <fieldset>
         <legend>Update Profile</legend>
+        <!-- in here there was a second <form> tag and the top form tag at media upload procress in it not sure if that's what was meant to be but I changed it-->
 	<table width="100%">
         <div class="form-group">
 			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
