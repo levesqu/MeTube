@@ -2643,6 +2643,7 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+    margin-right: 20px;
 }
 .radio,
 .checkbox {
