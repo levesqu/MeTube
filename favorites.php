@@ -23,34 +23,35 @@ include_once "function.php";
             );
         }
     </script>
+    <!--the nav bar starts here -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.php">METUBE</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./index.php">Home page <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Maybe fill with something?</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login.php">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav bar ends here -->
 </head>
 
 <body>
-<!--the nav bar starts here -->
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="./index.php">METUBE</a>
-        </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="./index.php">Home page <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Maybe fill with something?</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php">Logout</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- nav bar ends here -->
 
 
 <p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
@@ -62,6 +63,7 @@ include_once "function.php";
     <a href="./favorites.php" class="btn btn-default">Favorites</a>
     <a href="./channels.php" class="btn btn-default">Channels</a>
     <a href="./playlists.php" class="btn btn-default">Playlists</a>
+    <a href="./browse.php" class="btn btn-default">My Media</a>
 </div><br>
 
 <br>

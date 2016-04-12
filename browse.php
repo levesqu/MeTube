@@ -65,6 +65,7 @@ function saveDownload(id)
 	<a href="./favorites.php" class="btn btn-default">Favorites</a>
 	<a href="./channels.php" class="btn btn-default">Channels</a>
 	<a href="./playlists.php" class="btn btn-default">Playlists</a>
+    <a href="./browse.php" class="btn btn-default">My Media</a>
 </div><br>
 
 <p class="text-primary">Here you can upload all of your files just click the link below.</p>
