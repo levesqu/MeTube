@@ -40,14 +40,9 @@ session_start();
 
 <body>
 <div class="form-group">
-<form class="form-horizontal" method="post" action="media_upload_process.php" enctype="multipart/form-data" >
-
-
+<form class="form-horizontal" method="post"  action="profile_update_process.php" enctype="multipart/form-data" >
     <fieldset>
         <legend>Update Profile</legend>
-
-
-   <form method="post" action="profile_update_process.php">
 	<table width="100%">
         <div class="form-group">
 			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
@@ -97,14 +92,11 @@ session_start();
 			<td width="80%"><input class="text"  type="text" name="workplace"><br /></td>
 		</tr>-->
 
-		<tr>
-			<td><input name="submit" type="submit" class="btn btn-primary" value="Update">
-			</td>
-		</tr>
-	</table>
-	</form>
+        <div class="col-lg-10 col-lg-offset-2">
+			<input name="submit" type="submit" class="btn btn-primary" value="Update">
+        </div>
  
-           </fieldset>
+    </fieldset>
  </form>
 
 </body>
