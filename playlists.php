@@ -56,7 +56,7 @@ include_once "function.php";
 <p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
 
 
-<h3 class="">Click one of the options below to browse media.</h3>
+<h3 class="addmargin">Click one of the options below to browse media.</h3>
 <div class="btn-group btn-group-justified">
     <a href="./categories.php" class="btn btn-default">Categories</a>
     <a href="./favorites.php" class="btn btn-default">Favorites</a>
