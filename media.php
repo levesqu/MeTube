@@ -59,7 +59,7 @@ if(isset($_GET['id'])) {
 	{
 		echo "Viewing Picture:";
 		echo $result_row[5];
-        echo "<br><br>"
+        echo "<br><br>";
 		echo "<img src='".$filepath."'/>";
 
 	}
