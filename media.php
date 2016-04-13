@@ -132,6 +132,39 @@ if(isset($_GET['id'])) {
               
  <?php
 	}
+	$mediaId = $_GET['id'];
+	$commentquery="select * from comments where mediaid='$mediaId'";
+	$comments = mysql_query($commentquery);
+	if (!$result)
+	{
+		die("Could not query the comment table in the database: <br />".mysql_error());
+	}
+	?>
+	<br><br>
+	<fieldset="form-horizontal">
+		<legend>Comments</legend>
+		<table class="table table-striped">
+			<?php
+				while ($singleComment = mysql_fetch_row($comments))
+				{
+					$commentUser = $singleComment[2];
+					$commentBody = $singleComment[3];
+			?>
+			<tr>
+				<td><?php echo $commentUser;?>:<br><?php echo $commentBody?>
+			</tr>
+			<?php
+				}
+			?>
+			<tr>
+				<td>
+					<form class="form-horizontal" method="post" action=""
+					<label class="col-lg-2 control-label"><?php$_SESSION['username']?>:</label>
+					<br>
+			
+		</table>
+	</fieldset>
+<?php
 }
 else
 {
