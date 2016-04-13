@@ -93,36 +93,39 @@ if(isset($_GET['id'])) {
 
             </script>
         </object>
-    <?php }
-        elseif(substr($type,0,5)=="audio"){?>
+
+
+    <?php
+    }
+        elseif (substr($type,0,5)=="audio")// hear audio
+        {
+        ?>
         <p>Listening To Audio: <?php echo $result_row[5];?></p>
 
-<object id="MediaPlayer" width=560 height=286 classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95" standby="Loading Windows Media Player components…" type="application/x-oleobject" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112">
+        <object id="MediaPlayer" width=560 height=286 classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95" standby="Loading Windows Media Player components…" type="application/x-oleobject" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112">
+        <param name="filename" value="<?php echo $filepath?>">
+        <param name="Showcontrols" value="True">
+        <param name="autoStart" value="True">
+        <div style="text-align:center">
+            <audio controls>
+                <source src="<?php echo $filepath; ?>" type="audio/ogg">
+                <source src="<?php echo $filepath; ?>" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br><br><br>
+        </div>
 
-    <param name="filename" value="<?php echo $filepath?>">
-    <param name="Showcontrols" value="True">
-    <param name="autoStart" value="True">
-    <div style="text-align:center">
-        <audio controls>
-            <source src="<?php echo $filepath; ?>" type="audio/ogg">
-            <source src="<?php echo $filepath; ?>" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br><br><br>
-    </div>
-
-    <script>
-        var myAudio = document.getElementById("audio1");
-        myAudio.onseeking = function(){};
-    </script>
+        <script>
+            var myAudio = document.getElementById("audio1");
+            myAudio.onseeking = function(){};
+        </script>
 
 
-          
           
           <!-- Comments go down here somewhere-->
        
               
-<?php
+ <?php
 	}
 }
 else
