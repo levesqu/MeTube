@@ -39,7 +39,7 @@
 <?php
 echo '<h1> Welcome to Metube! </h1>
 <h2>The place to share all your media.</h2>
-<p class="text-warning" >  FUCK YOU SCHAFER </p>';
+<p class="text-warning" >  Information about the website </p>';
 ?>
 <div class="container-fluid">
 <form action="login.php" method="post">
