@@ -14,12 +14,7 @@ $username=$_SESSION['username'];
 // find his info in the database
 // update it
 
-$u_username = $_POST['username'];
-$u_password = $_POST['password'];
-$u_age = $_POST['age'];
-$u_workplace = $_POST['workplace'];
-
-update_profile_info($u_username, $u_password, $u_age, $u_workplace);
+update_profile_info($_POST['username'], $_POST['password'], $_POST['age'], $_POST['workplace']);
 
 
 	

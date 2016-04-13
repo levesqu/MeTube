@@ -80,18 +80,18 @@ function upload_error($result)
 	}
 }
 
-function update_profile_info($name, $pass, $age, $workplace)
+function update_profile_info($u_name, $u_pass, $u_age, $u_workplace)
 {
 	//You can write your own functions here.
 
-	$sql = "UPDATE account set username=$name,
-						set password=$pass,
-						set age=$age,
-						set workplace=$workplace";
+	$query = "update account set age='$u_age' WHERE username='$u_name'";
+	$queryresult = mysql_query($query);
 
-	$queryresult = mysql_query($sql);
+	$query = "update account set workplace='$u_workplace' WHERE username='$u_name'";
+	$queryresult = mysql_query($query);
 
-
+	$query = "update account set password='$u_pass' WHERE username='$u_name'";
+	$queryresult = mysql_query($query);
 }
 	
 ?>
