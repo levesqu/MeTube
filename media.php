@@ -93,7 +93,7 @@ if(isset($_GET['id'])) {
 
             </script>
         </object>
-    }<?php
+    <?php }
         elseif(substr($type,0,5)=="audio"){?>
         <p>Listening To Audio: <?php echo $result_row[5];?></p>
 
@@ -117,7 +117,6 @@ if(isset($_GET['id'])) {
     </script>
 
 
-        }
           
           
           <!-- Comments go down here somewhere-->
