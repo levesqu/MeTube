@@ -74,46 +74,62 @@ include_once "function.php";
 </div><br>
 
 <br>
-<?php
+
+    <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
+      Category
+    </div>
+    <br>
+		<div class="btn-group btn-group-justified">
+			<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+				<input type="submit" class="btn btn-primary" value="Sports" name="categoryType">
+				<input type="submit" class="btn btn-primary" value="Comedy" name="categoryType">
+				<input type="submit" class="btn btn-primary" value="Children" name="categoryType">
+				<input type="submit" class="btn btn-primary" value="News" name="categoryType">
+				<input type="submit" class="btn btn-primary" value="Pictures" name="categoryType">
+				<input type="submit" class="btn btn-primary" value="Text" name="categoryType">
+			</form>
+		</div>
+		<br>
+		<?php
 
 	$username = $_SESSION['username'];
-	$category = 'Comedy';
-	$query = "SELECT * from media WHERE mediaCategory='$category'"; 
+	if (isset($_POST['categoryType']))
+	{
+		$category = $_POST['categoryType'];
 
-	$result = mysql_query( $query );
-	if (!$result){
-	   die ("Could not query the media table in the database: <br />". mysql_error());
-	}
-?>
-    <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
-      <?php echo $category; ?>
-    </div>
-	<table class="table table-hover">
-		<?php
-		  $result=mysql_query($query);
-			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path, mediaTitle, mediaDescription, mediaTags, mediaCategory
-			{ 
-				$mediaid = $result_row[3];
-				$filename = $result_row[0];
-				$filepath = $result_row[4];
-		?>
+		$query = "SELECT * from media WHERE mediaCategory='$category'"; 
 
-        	 <tr class="success">
-				<td>
+		$result = mysql_query( $query );
+		if (!$result){
+			die ("Could not query the media table in the database: <br />". mysql_error());
+		}
+	?>
+		<table class="table table-hover">
+			<?php
+				while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path, mediaTitle, mediaDescription, mediaTags, mediaCategory
+				{ 
+					$mediaid = $result_row[3];
+					$filename = $result_row[0];
+					$filepath = $result_row[4];
+			?>
 
-					<?php 
-						//echo $mediaid;  //mediaid
-					?>
-				</td>
-          <td>
-            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
-          </td>
-          <td>
-            <a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
-          </td>
-			</tr>
-        	<?php
+		     	 <tr class="success">
+					<td>
+
+						<?php 
+							//echo $mediaid;  //mediaid
+						?>
+					</td>
+		       <td>
+		         <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
+		       </td>
+		       <td>
+		         <a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+		       </td>
+				</tr>
+		     	<?php
 			}
+		}
 		?>
 <br>
 	</table>
