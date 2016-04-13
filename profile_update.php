@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+
+    $query = "test";
+    //$queryresult = mysql_query($query);
+
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -48,28 +54,28 @@ session_start();
         <div class="form-group">
 			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
             <div class="col-lg-10">
-		    	<input class="form-control" id="inputUsername" type="text" name="username">
+		    	<input class="form-control" id="inputUsername" type="text" name="username" value="">
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Update Password:</label>
             <div class="col-lg-10">
-                <input class="form-control" id="inputPassword" type="password" name="password" >
+                <input class="form-control" id="inputPassword" type="password" name="password" value="help")>
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputAge" class="col-lg-2 control-label">Update Age:</label>
             <div class="col-lg-10">
-                <input class="form-control" id="inputAge" type="text" name="age" >
+                <input class="form-control" id="inputAge" type="text" name="age" value="i dont really know">
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputWorkplace" class="col-lg-2 control-label">Update Place of Work:</label>
             <div class="col-lg-10">
-                <input class="form-control" id="inputWorkplace" type="text" name="workplace" >
+                <input class="form-control" id="inputWorkplace" type="text" name="workplace" value="workname i dont really know">
             </div>
         </div>
 

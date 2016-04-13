@@ -84,14 +84,23 @@ function update_profile_info($u_name, $u_pass, $u_age, $u_workplace)
 {
 	//You can write your own functions here.
 
-	$query = "update account set age='$u_age' WHERE username='$u_name'";
-	$queryresult = mysql_query($query);
+	//if(isset($u_age)) {
+	if($u_age != "") {
+		$query = "update account set age='$u_age' WHERE username='$u_name'";
+		$queryresult = mysql_query($query);
+	}
 
-	$query = "update account set workplace='$u_workplace' WHERE username='$u_name'";
-	$queryresult = mysql_query($query);
+	//if(isset($u_workplace)) {
+	if($u_workplace != "") {
+		$query = "update account set workplace='$u_workplace' WHERE username='$u_name'";
+		$queryresult = mysql_query($query);
+	}
 
-	$query = "update account set password='$u_pass' WHERE username='$u_name'";
-	$queryresult = mysql_query($query);
+	//if(isset($u_pass)) {
+	if($u_pass != "") {
+		$query = "update account set password='$u_pass' WHERE username='$u_name'";
+		$queryresult = mysql_query($query);
+	}
 }
 	
 ?>
