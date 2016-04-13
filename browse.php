@@ -33,7 +33,7 @@ function saveDownload(id)
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./index.php">METUBE</a>
+                <a class="navbar-brand" href="./browse.php">METUBE</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
