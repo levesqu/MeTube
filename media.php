@@ -67,8 +67,8 @@ if(isset($_GET['id'])) {
 	else //view movie
 	{	
 ?>
-	<!-- <p>Viewing Video:<?php echo $result_row[2].$result_row[1];?></p> -->
-	<p>Viewing Video:<?php echo $result_row[5];?></p>
+	<!-- <p>Viewing Video:<?php //echo $result_row[2].$result_row[1];?></p> -->
+	<p>Viewing Video: <?php echo $result_row[5];?></p>
 
 
 
@@ -87,14 +87,11 @@ if(isset($_GET['id'])) {
 
 
             <video width="400" controls>
-            <source src="mov_bbb.mp4" type="video/mp4">
-            <source src="mov_bbb.ogg" type="video/ogg">
-            Your browser does not support HTML5 video.
-        </video>
-
-
-
-
+                <source src="<?php echo $filepath; ?> " type="video/mp4">
+                <source src="<?php echo $filepath; ?>" type="video/webm">
+                <source src="<?php echo $filepath; ?> " type="video/ogg">
+                Your browser does not support HTML5 video.
+            </video>
                 <br><br><br>
             </div>
 
