@@ -27,8 +27,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="./browse.php">Home page <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Maybe fill with something?</a></li>
                 </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./profile_update.php">Update Profile</a></li>
                     <li><a href="./logout.php">Logout</a></li>
@@ -127,6 +132,39 @@ if(isset($_GET['id'])) {
               
  <?php
 	}
+	$mediaId = $_GET['id'];
+	$commentquery="select * from comments where mediaid='$mediaId'";
+	$comments = mysql_query($commentquery);
+	if (!$result)
+	{
+		die("Could not query the comment table in the database: <br />".mysql_error());
+	}
+	?>
+	<br><br>
+	<fieldset="form-horizontal">
+		<legend>Comments</legend>
+		<table class="table table-striped">
+			<?php
+				while ($singleComment = mysql_fetch_row($comments))
+				{
+					$commentUser = $singleComment[2];
+					$commentBody = $singleComment[3];
+			?>
+			<tr>
+				<td><?php echo $commentUser;?>:<br><?php echo $commentBody?>
+			</tr>
+			<?php
+				}
+			?>
+			<tr>
+				<td>
+					<form class="form-horizontal" method="post" action=""
+					<label class="col-lg-2 control-label"><?php$_SESSION['username']?>:</label>
+					<br>
+			
+		</table>
+	</fieldset>
+<?php
 }
 else
 {
