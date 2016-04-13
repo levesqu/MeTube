@@ -128,7 +128,6 @@ if(isset($_GET['id'])) {
 
           
           <!-- Comments start-->
-       
               
  <?php
 	}
