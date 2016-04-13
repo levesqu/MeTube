@@ -58,7 +58,7 @@ if(isset($_GET['id'])) {
 	$type=$result_row[2];
 	if(substr($type,0,5)=="image") //view image
 	{
-		echo "Viewing Picture:";
+		echo "Viewing Picture: ";
 		echo $result_row[5];
         echo "<br><br>";
 		echo "<img src='".$filepath."'/>";
@@ -68,7 +68,7 @@ if(isset($_GET['id'])) {
 	{	
 ?>
 	<!-- <p>Viewing Video:<?php echo $result_row[2].$result_row[1];?></p> -->
-	<p>Viewing Video:<?php echo $result_row[4];?></p>
+	<p>Viewing Video:<?php echo $result_row[5];?></p>
 
         <video width="400" controls>
             <source src="mov_bbb.mp4" type="video/mp4">
@@ -89,7 +89,7 @@ if(isset($_GET['id'])) {
 
           
           
-          
+          <!-- Comments go down here somewhere-->
        
               
 <?php
