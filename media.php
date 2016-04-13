@@ -40,6 +40,9 @@
 </head>
 
 <body>
+
+
+
 <?php
 if(isset($_GET['id'])) {
 	$query = "SELECT * FROM media WHERE mediaid='".$_GET['id']."'";
@@ -56,6 +59,7 @@ if(isset($_GET['id'])) {
 	{
 		echo "Viewing Picture:";
 		echo $result_row[5];
+        echo "<br><br>"
 		echo "<img src='".$filepath."'/>";
 
 	}
