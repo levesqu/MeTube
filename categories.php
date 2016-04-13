@@ -81,12 +81,12 @@ include_once "function.php";
     <br>
 		<div class="btn-group btn-group-justified">
 			<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
-				<input type="submit" class="btn btn-primary" value="Sports" name="categoryType">
-				<input type="submit" class="btn btn-primary" value="Comedy" name="categoryType">
-				<input type="submit" class="btn btn-primary" value="Children" name="categoryType">
-				<input type="submit" class="btn btn-primary" value="News" name="categoryType">
-				<input type="submit" class="btn btn-primary" value="Pictures" name="categoryType">
-				<input type="submit" class="btn btn-primary" value="Text" name="categoryType">
+				<input type="submit" class="btn btn-primary" value="Sports" name="categoryType" />
+				<input type="submit" class="btn btn-primary" value="Comedy" name="categoryType" />
+				<input type="submit" class="btn btn-primary" value="Children" name="categoryType" />
+				<input type="submit" class="btn btn-primary" value="News" name="categoryType" />
+				<input type="submit" class="btn btn-primary" value="Pictures" name="categoryType" />
+				<input type="submit" class="btn btn-primary" value="Text" name="categoryType" />
 			</form>
 		</div>
 		<br>
