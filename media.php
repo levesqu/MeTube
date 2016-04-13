@@ -127,7 +127,7 @@ if(isset($_GET['id'])) {
 
 
           
-          <!-- Comments go down here somewhere-->
+          <!-- Comments start-->
        
               
  <?php
@@ -166,6 +166,9 @@ if(isset($_GET['id'])) {
 			</tr>
 		</table>
 	</fieldset>
+
+   <!-- comments end here -->
+
 <?php
 }
 else
