@@ -32,9 +32,15 @@ session_start();
                     <li class="active"><a href="./browse.php">Home page <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">Maybe fill with something?</a></li>
                 </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./profile_update.php">Update Profile</a></li>
-                    <li><a href="./login.php">Logout</a></li>
+                    <li><a href="./logout.php">Logout</a></li>
 
                 </ul>
             </div>

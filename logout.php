@@ -1,28 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php
-session_start();
-include_once "function.php";
-?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 
-    <title>Channels - MeTube</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Browse Channels</title>
-    <link rel="stylesheet" type="text/css" href="css/default.css" />
-    <script type="text/javascript" src="js/jquery-latest.pack.js"></script>
-    <script type="text/javascript">
-        function saveDownload(id)
-        {
-            $.post("media_download_process.php",
-                {
-                    id: id
-                },
-                function(message)
-                { }
-            );
-        }
-    </script>
+        <title>Browse - MeTube</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Media browse</title>
+        <link rel="stylesheet" type="text/css" href="css/default.css" />
+
     <!--the nav bar starts here -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -49,31 +33,28 @@ include_once "function.php";
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./profile_update.php">Update Profile</a></li>
                     <li><a href="./logout.php">Logout</a></li>
+
                 </ul>
             </div>
         </div>
     </nav>
     <!-- nav bar ends here -->
 
-</head>
 
+</head>
 <body>
 
-<p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
 
+<?php
+session_start();
+session_destroy();
+header( "refresh:1; url= index.php" );
+?>
 
-<h3 class="addmargin">Click one of the options below to browse media.</h3><br>
+<p class="text-primary">
+    You have successfully logged out
+</p>
 
-<div class="btn-group btn-group-justified">
-    <a href="./categories.php" class="btn btn-default">Categories</a>
-    <a href="./favorites.php" class="btn btn-default">Favorites</a>
-    <a href="./channels.php" class="btn btn-default">Channels</a>
-    <a href="./playlists.php" class="btn btn-default">Playlists</a>
-    <a href="./browse.php" class="btn btn-default">My Media</a>
-</div><br>
-
-<br><br>
-<p> Here will have a list of channels.</p>
 
 </body>
 </html>
