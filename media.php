@@ -49,7 +49,8 @@ if(isset($_GET['id'])) {
 	//updateMediaTime($_GET['id']);
 	
 	$filename=$result_row[0];   ////0, 4, 2
-	$filepath=$result_row[4]; 
+	$filepath=$result_row[4];
+    $mediatitle=$result_row[5];
 	$type=$result_row[2];
 	if(substr($type,0,5)=="image") //view image
 	{
