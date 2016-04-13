@@ -127,8 +127,7 @@ if(isset($_GET['id'])) {
 
 
           
-          <!-- Comments go down here somewhere-->
-       
+          <!-- Comments start-->
               
  <?php
 	}
@@ -158,12 +157,17 @@ if(isset($_GET['id'])) {
 			?>
 			<tr>
 				<td>
-					<form class="form-horizontal" method="post" action=""
-					<label class="col-lg-2 control-label"><?php$_SESSION['username']?>:</label>
-					<br>
-			
+					<form class="form-horizontal" method="post" action="">
+						<label class="col-lg-2 control-label"><?php echo $_SESSION['username']?>:</label>
+						<input type="textarea" name="userComment" />
+					</form>
+				</td>
+			</tr>
 		</table>
 	</fieldset>
+
+   <!-- comments end here -->
+
 <?php
 }
 else
