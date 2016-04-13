@@ -35,9 +35,9 @@ session_start();
         </div>
       </div>
       <div class="form-group">
-        <label for="mediaCategories" class="col-lg-2 control-label">Select Categories:</label>
+        <label for="mediaCategories" class="col-lg-2 control-label">Select Category:</label>
         <div class="col-lg-10">
-          <select multiple="" class="form-control" id="mediaCategories">
+          <select class="form-control" id="mediaCategory">
             <option>Sports</option>
             <option>Comedy</option>
             <option>Children</option>
@@ -51,7 +51,7 @@ session_start();
         <label class="col-lg-2 control-label">Add a Media: </label><label style="color:#663399"><em> (Each file limit 10M)</em></label><br/>
         <div class="col-lg-10">
           <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-          <input name="file" class="btn btn-default" type="file" size="50" />
+          <input name="file" type="file" size="50" />
           <br>
           <input value="Upload" class="btn btn-primary" name="submit" type="submit" />
         </div>
