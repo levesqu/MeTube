@@ -9,6 +9,34 @@
 <title>Media</title>
 <script src="Scripts/AC_ActiveX.js" type="text/javascript"></script>
 <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+
+    <!--the nav bar starts here -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./browse.php">METUBE</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./browse.php">Home page <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Maybe fill with something?</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./profile_update.php">Update Profile</a></li>
+                    <li><a href="login.php">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav bar ends here -->
+
 </head>
 
 <body>
