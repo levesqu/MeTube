@@ -8,17 +8,19 @@ include_once "function.php";
 *
 *******************************************************/
 
+
 $username=$_SESSION['username'];
 
 
 //Create Directory if doesn't exist
-if(!file_exists('uploads/'))
-	mkdir('uploads/', 0744);
-$dirfile = 'uploads/'.$username.'/';
+if(!file_exists('uploads/')){
+	mkdir('uploads/');
+	chmod('uploads', 0755);
+}
+$dirfile = 'uploads/'.$username.'/'; 
 if(!file_exists($dirfile))
-	//mkdir($dirfile, 0744);
-	mkdir($dirfile,0755);
-
+	mkdir($dirfile);
+	chmod($dirfile, 0755);
 	if($_FILES["file"]["error"] > 0 )
 	{ 	$result=$_FILES["file"]["error"];} //error from 1-4
 	else
@@ -39,7 +41,7 @@ if(!file_exists($dirfile))
 				else /*Successfully upload file*/
 				{
 					//insert into media table
-					$insert = "insert into media(mediaid, filename,username,type, path)".
+					$insert = "insert into media(mediaid, filename,username,type, path,mediaTitle, mediaDescriptino, mediaTags, mediaCategory)".
 							  "values(NULL,'". urlencode($_FILES["file"]["name"])."','$username','".$_FILES["file"]["type"]."', '$upfile')";
 					$queryresult = mysql_query($insert)
 						  or die("Insert into Media error in media_upload_process.php " .mysql_error());

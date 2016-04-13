@@ -19,25 +19,25 @@ session_start();
       <div class="form-group">
         <label for="mediaTitle" class="col-lg-2 control-label">Media Title:</label>
         <div class="col-lg-10">
-          <input type="text" name="mediaTitle" />
+          <input type="text" id="mediaTitle" />
         </div>
       </div>
       <div class="form-group">
         <label for="mediaDescription" class="col-lg-2 control-label">Media Description:</label>
         <div class="col-lg-10">
-          <input type="textarea" name="mediaDescription" />
+          <input type="textarea" id="mediaDescription" />
         </div>
       </div>
       <div class="form-group">
         <label for="mediaTags" class="col-lg-2 control-label">Media Tags:</label>
         <div class="col-lg-10">
-          <input type="textarea" name="mediaTags" />
+          <input type="textarea" id="mediaTags" />
         </div>
       </div>
       <div class="form-group">
         <label for="mediaCategories" class="col-lg-2 control-label">Select Category:</label>
         <div class="col-lg-10">
-          <select class="form-control" name="mediaCategory">
+          <select class="form-control" id="mediaCategory">
             <option>Sports</option>
             <option>Comedy</option>
             <option>Children</option>
