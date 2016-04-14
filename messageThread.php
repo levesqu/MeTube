@@ -96,7 +96,8 @@ $sendmessageto=$_POST['sendMessageTo'];
                     <label for="messageSubject" class="control-label">Subject: &nbsp;</label>
                     <input type="text" class="form-control" name="messageSubject" />
                     <br>
-                    <textarea class="form-control" rows="3" name="userComment"></textarea>
+                    <label for="messageContent" class="control-label">Message:</label>
+                    <textarea class="form-control" rows="3" name="messageContent"></textarea>
                     <br>
                     <input type="submit" class="btn btn-primary" value="Send Message"/>
                     <!--<input type="hidden" name="mediaid" value="<?php?>"/>-->
