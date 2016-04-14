@@ -110,18 +110,13 @@ function saveDownload(id)
 		?>
 
         	 <tr class="success">
-				<td>
-
-					<?php 
-						//echo $mediaid;  //mediaid
-					?>
-				</td>
-          <td>
-            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
-          </td>
-          <td>
-            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
-          </td>
+				<td />
+		       <td>
+		         <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
+		       </td>
+		       <td>
+		         <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+		       </td>
 			</tr>
         	<?php
 			}

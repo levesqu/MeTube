@@ -77,7 +77,7 @@ include_once "function.php";
 <br>
 
     <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
-      Category
+      Categories
     </div>
     <br>
 		<div class="btn-group btn-group-justified">
