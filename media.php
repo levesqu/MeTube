@@ -70,6 +70,8 @@ if(isset($_GET['id'])) {
         <h3> Viewing Picture: <?php echo $result_row[5];?></h3>
         <br><br>
 		<img src="<?php echo $filepath?>"/>";<br>
+        <a href="<?php echo $filenpath; ?>" target="_blank"
+           onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
 <?php
 	}
 	elseif (substr($type,0,5)=="video")//view movie
@@ -101,6 +103,8 @@ if(isset($_GET['id'])) {
             </script>
         </object>
 
+        <a href="<?php echo $filenpath; ?>" target="_blank"
+           onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
 
     <?php
     }
@@ -129,6 +133,9 @@ if(isset($_GET['id'])) {
             myAudio.onseeking = function(){};
         </script>
 </object>
+
+            <a href="<?php echo $filenpath; ?>" target="_blank"
+               onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
               
  <?php
 	}
@@ -184,6 +191,12 @@ if(isset($_GET['id'])) {
          </form>
          <?php
          } ?>
+
+         <form class="form-horizontal" method="post" action="addToPlaylist_process.php" enctype="multipart/form-data">
+             <input type="submit" class="btn btn-default" value="Add to playlist" name="addToPlaylist" />
+             <input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
+         </form>
+
      </div>
 
 
