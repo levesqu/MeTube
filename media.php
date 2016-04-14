@@ -210,20 +210,21 @@ if(isset($_GET['id'])) {
 <!--    </div>-->
 
 <!-- this shit broken -->
-    <div class="btn-group">
 
-        <div class="btn-group">
-            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                Dropdown(Broken for now)
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Dropdown link</a></li>
-                <li><a href="#">Dropdown link</a></li>
-                <li><a href="#">Dropdown link</a></li>
-            </ul>
+    <div class="form-group">
+        <label for="playlistTitle" class="col-lg-2 control-label">Select playlist to add to:</label>
+        <div class="col-lg-10">
+          <select class="form-control" name="playlistTitle">
+            <option>Sports</option>
+            <option>Comedy</option>
+            <option>Children</option>
+            <option>News</option>
+            <option>Pictures</option>
+            <option>Text</option>
+          </select>
         </div>
-    </div>
+        <input type="submit" class="btn btn-link " value="Add to playlist">
+      </div>
 
 <!-- comments thread -->
 
