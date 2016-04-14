@@ -78,7 +78,7 @@ include_once "function.php";
 
 <br>
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
-	My Favorites
+	My Playlists
 </div>
 <br>
 <?php
@@ -95,27 +95,36 @@ include_once "function.php";
 	while ($result_row = mysql_fetch_row($result))
 	{ 
 		$playlisttitle = $result_row[1];
+		$playlistid=$result_row[0];
 ?>
 
 		<tr class="success">
-			<td />
 			<td>
-				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $playlisttitle;?></a> 
+				<a href="playlist.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $playlisttitle;?></a> 
 			</td>
 			<td>
-				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
-			</td>
-			<td>
-					<form class="form-horizontal" method="post" action="unfavorite_process.php" enctype="multipart/form-data">
-						<input type="submit" class="btn btn-danger btn-xs" value="Remove Favorite" name="unfavoriteMediaFromList" />
-						<input type="hidden" name="mediaid" value="<?php echo $mediaid?>">
-					</form>
+				<form class="form-horizontal" method="post" action="delete_playlist_process.php" enctype="multipart/form-data">
+					<input type="submit" class="btn btn-danger btn-xs" value="Delete Playlist" name="delete" />
+					<input type="hidden" name="playlistid" value="<?php echo $playlistid?>">
+				</form>
 			</td>
 		</tr>
 <?php
 	}
 ?>
+		<tr>
+			<form class="form-horizontal" method="post" action="add_to_playlist_process.php" enctype="multipart/form-data">
+				<td>
+					<label for="playlistTitle" class="col-lg-2 control-label">Create New Playlist:</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" name="playlistTitle" />
+					</div>
+				</td>
+				<td>
+					<input type="submit" class="btn btn-primary" value="Create Playlist" name="createPlaylist" />
+				</td>
+			</form>
+		</tr>
 	</table>
-
 </body>
 </html>
