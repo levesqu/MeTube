@@ -54,36 +54,40 @@ include_once "function.php";
 
 <?php
 $sendmessageto=$_POST['sendMessageTo'];
+$messagesender=$_SESSION['username'];
 
-?>
-<!--    --><?php
-//    echo "<h4>Message to: &nbsp;</h4> ";
-//    echo "<p>$sendUser</p>";
-//    // Comments start-->
-//    $commentquery="select * from comments where mediaid='$mediaId'";
-//    $comments = mysql_query($commentquery);
-//    if (!$comments)
-//    {
-//        die("Could not query the comment table in the database: <br />".mysql_error());
-//    }
-//    ?>
-<!--    <br><br>-->
-<!--    <fieldset="form-horizontal">-->
-<!--    <table class="table table-striped">-->
-<!--        --><?php
-//        while ($singleComment = mysql_fetch_row($comments))
-//        {
-//            $commentUser = $singleComment[2];
-//            $commentBody = $singleComment[3];
-//            ?>
-<!--            <tr>-->
-<!--                <td><label class="control-label">--><?php //echo $fromUser;?><!--:</label>-->
-<!--                    <br><p>--><?php //echo $commentContent?><!--</p>-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--            --><?php
-//        }
-//        ?>  <!-- message thread end here -->
+
+
+    echo "<h4>Message to: &nbsp;</h4> ";
+    echo "<p>$sendUser</p>";
+
+    // Comments start-->
+    $messagequery="select * from messages where messagereceiver=($messagesender OR $sendmessageto) and messagesender=($messagesender OR $sendmessageto) ";
+
+
+    $messages = mysql_query($messagequery);
+    if (!$messages)
+    {
+        die("Could not query the comment table in the database: <br />".mysql_error());
+    }
+    ?>
+    <br><br>
+    <fieldset class="form-horizontal">
+        <table class="table table-striped">
+            <?php
+            while ($singleMessage = mysql_fetch_row($messages))
+            {
+                $messagebody = $singleMessage[2]; // body of message
+                $sender = $singleMessage[3]; // person that sent this message
+                ?>
+                <tr>
+                    <td><label class="control-label"><?php echo $sender;?>:</label>
+                        <br><p><?php echo $messagebody?></p>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>  <!-- message thread end here -->
 
 
 <fieldset class ="form-horizontal">
@@ -100,7 +104,8 @@ $sendmessageto=$_POST['sendMessageTo'];
                     <textarea class="form-control" rows="3" name="messageContent"></textarea>
                     <br>
                     <input type="submit" class="btn btn-primary" value="Send Message"/>
-                    <!--<input type="hidden" name="mediaid" value="<?php?>"/>-->
+                    <input type="hidden" name="messageSender" value="<?php echo $messagesender?>"/>
+                    <input type="hidden" name="sendMessageTo" value="<?php echo $sendmessageto?>"/>
                 </form>
             </td>
         </tr>
