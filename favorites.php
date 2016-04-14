@@ -70,10 +70,10 @@ include_once "function.php";
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
 	My Favorites
 </div>
+<br>
 <?php
 	$username=$_SESSION['username'];
-	$query = "select * from media where mediaid=(select mediaid from favorites where ".
-			"username='$username')";
+	$query = "select * from media join favorites on media.mediaid=favorites.mediaid where favorites.username='$username';";
 
 	$result = mysql_query( $query );
 	if (!$result) {
@@ -101,5 +101,6 @@ include_once "function.php";
 <?php
 	}
 ?>
+	</table>
 </body>
 </html>
