@@ -89,6 +89,10 @@ if (!$messages)
 </table>
 </fieldset>
 
+    <div class="btn-group btn-group-justified">
+        <a href="./#" class="btn btn-default">New Message</a>
+    </div><br>
+
 
 </div>
 </body>
