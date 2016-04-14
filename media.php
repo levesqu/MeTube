@@ -259,6 +259,7 @@ if(isset($_GET['id'])) {
                         }
                         ?>
                     </label>
+
 				<br><p><?php echo $commentBody?></p>
 				</td>
 			</tr>
