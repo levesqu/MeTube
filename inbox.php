@@ -52,12 +52,14 @@ include_once "function.php";
 $username = $_SESSION['username'];;
 $messagequery="select * from messages where messagereceiver='$username'";
 $messages = mysql_query($messagequery);
-if (!$result)
+if (!$messages)
 {
-    die("Could not query the comment table in the database: <br />".mysql_error());
+    die("Could not query the messages table in the database: <br />".mysql_error());
 }
 ?>
 <br><br>
+
+<div class="addmargin">
 <fieldset="form-horizontal">
 <legend>Messages</legend>
 <table class="table table-striped">
@@ -68,22 +70,51 @@ if (!$result)
         $messageSubject = $singleMessage[1];
         ?>
         <tr>
-            <td><?php echo $messageSender?>:<br><?php echo $messageSubject?>
+            <td><?php echo $messageSender?>: &#09; <a href="#"><?php echo $messageSubject?> </a>
         </tr>
         <?php
     }
     ?>
-    <tr>
-        <td>
-            <form class="form-horizontal" method="post" action="">
-                <label class="col-lg-2 control-label"><?php echo $_SESSION['username']?>:</label>
-                <input type="textarea" name="userComment" />
-            </form>
-        </td>
-    </tr>
+
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <form class="form-horizontal" method="post" action="">-->
+<!--                <label class="col-lg-2 control-label">--><?php //echo $_SESSION['username']?><!--:</label>-->
+<!--                <textarea class="form-control" rows="3" name="userComment"></textarea>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--    </tr>-->
+
+
 </table>
 </fieldset>
 
+    <div>
+        <a href="#" class="btn btn-primary">New Message</a>
+        <br>
+    </div>
 
+
+
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">blah blah&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body…</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
 </body>
 </html>
