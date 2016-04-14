@@ -132,6 +132,27 @@ if(isset($_GET['id'])) {
               
  <?php
 	}
+ else{
+     //other media
+    ?>
+                <tr class="success">
+                    <td>
+
+                        <?php
+                        //echo $mediaid;  //mediaid
+                        ?>
+                    </td>
+                    <td>
+                        <?php echo $filename;?></a>
+                    </td>
+                    <td>
+                        <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+                    </td>
+                </tr>
+
+<?php
+ }
+
 	$mediaId = $_GET['id'];
 	$commentquery="select * from comments where mediaid='$mediaId'";
 	$comments = mysql_query($commentquery);
