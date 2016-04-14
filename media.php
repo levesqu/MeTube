@@ -179,21 +179,21 @@ if(isset($_GET['id'])) {
 			if ($is_favorite)
 			{ ?>
 			<form class="form-horizontal" method="post" action="unfavorite_process.php" enctype="multipart/form-data">
-				<button type="submit" class="btn btn-danger" value="Remove Favorite" name="unfavoriteMedia" />
+				<input type="submit" class="btn btn-danger" value="Remove Favorite" name="unfavoriteMedia" />
 				<input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
 			</form>
 			<?php
 			} else {
 			?>
          <form class="form-horizontal" method="post" action="favorite_process.php" enctype="multipart/form-data">
-             <button type="submit" class="btn btn-default" value="Favorite" name="favoriteMedia" />
+             <input type="submit" class="btn btn-default" value="Favorite" name="favoriteMedia" />
              <input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
          </form>
          <?php
          } ?>
 
          <form class="form-horizontal" method="post" action="addToPlaylist_process.php" enctype="multipart/form-data">
-             <button type="submit" class="btn btn-default" value="Add to playlist" name="addToPlaylist" />
+             <input type="submit" class="btn btn-default" value="Add to playlist" name="addToPlaylist" />
              <input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
          </form>
 
