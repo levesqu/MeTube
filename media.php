@@ -160,14 +160,30 @@ if(isset($_GET['id'])) {
  }
 
 	$mediaId = $_GET['id'];
+	$username = $_SESSION['username'];
      ?>
 <!-- favorite button -->
 
      <div class="btn-group btn-group-justified">
+			<?php
+			$favoritequery="select * from favorites where mediaid=$mediaId and username='$username'";
+			$numrows=mysql_query($favoritequery);
+			$is_favorite=mysql_num_rows($numrows);
+			if ($is_favorite)
+			{ ?>
+			<form class="form-horizontal" method="post" action="unfavorite_process.php" enctype="multipart/form-data">
+				<input type="submit" class="btn btn-danger" value="Remove Favorite" name="unfavoriteMedia" />
+				<input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
+			</form>
+			<?php
+			} else {
+			?>
          <form class="form-horizontal" method="post" action="favorite_process.php" enctype="multipart/form-data">
              <input type="submit" class="btn btn-default" value="Favorite" name="favoriteMedia" />
              <input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
          </form>
+         <?php
+         } ?>
      </div>
 
 
