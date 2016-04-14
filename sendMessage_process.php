@@ -24,3 +24,7 @@ or die("Insert into Messages error in sendMessage_process.php " .mysql_error());
 ?>
 
 <meta http-equiv="refresh" content="0;url=messageThread.php">
+
+<form class="form-horizontal" method="post" action="sendMessage_process.php">
+    <input type="hidden" name="sendMessageTo" value="<?php echo $sendTo?>"/>
+</form>
