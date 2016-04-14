@@ -7,7 +7,7 @@ include_once "function.php";
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/default.css" />
-    <title>Media</title>
+    <title>Messages</title>
     <script src="Scripts/AC_ActiveX.js" type="text/javascript"></script>
     <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
 
@@ -49,10 +49,9 @@ include_once "function.php";
 
 
 <?php
-}
-$mediaId = $_GET['id'];
-$commentquery="select * from comments where mediaid='$mediaId'";
-$comments = mysql_query($commentquery);
+$username = $_SESSION['username'];;
+$messagequery="select * from messages where messagereceiver='$username'";
+$messages = mysql_query($messagequery);
 if (!$result)
 {
     die("Could not query the comment table in the database: <br />".mysql_error());
@@ -60,16 +59,16 @@ if (!$result)
 ?>
 <br><br>
 <fieldset="form-horizontal">
-<legend>Comments</legend>
+<legend>Messages</legend>
 <table class="table table-striped">
     <?php
-    while ($singleComment = mysql_fetch_row($comments))
+    while ($singleMessage = mysql_fetch_row($messages))
     {
-        $commentUser = $singleComment[2];
-        $commentBody = $singleComment[3];
+        $messageSender = $singleMessage[3];
+        $messageSubject = $singleMessage[1];
         ?>
         <tr>
-            <td><?php echo $commentUser;?>:<br><?php echo $commentBody?>
+            <td><?php echo $messageSender?>:<br><?php echo $messageSubject?>
         </tr>
         <?php
     }

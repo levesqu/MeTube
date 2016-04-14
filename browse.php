@@ -47,6 +47,7 @@ function saveDownload(id)
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
+					<li><a href="./inbox.php">Messages</a></li>
                     <li><a href="./profile_update.php">Update Profile</a></li>
 					<li><a href="./logout.php">Logout</a></li>
 
@@ -75,7 +76,7 @@ function saveDownload(id)
     <a href="./browse.php" class="btn btn-default">My Media</a>
 </div><br>
 
-<p class="text-primary">Here you can upload all of your files just click the link below.</p>
+<p class="text-primary">HI SCHAFER!!!!Here you can upload all of your files just click the link below.</p>
 <a href='./media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
 
 <br>
