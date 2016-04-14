@@ -150,16 +150,19 @@ if(isset($_GET['id'])) {
 					$commentBody = $singleComment[3];
 			?>
 			<tr>
-				<td><?php echo $commentUser;?>:<br><?php echo $commentBody?>
+				<td><label class="control-label"><?php echo $commentUser;?>:</label>
+				<br><p><?php echo $commentBody?></p>
+				</td>
 			</tr>
 			<?php
 				}
 			?>
 			<tr>
 				<td>
-					<form class="form-horizontal" method="post" action="">
-						<label class="col-lg-2 control-label"><?php echo $_SESSION['username']?>:</label>
-						<input type="textarea" name="userComment" />
+					<form class="form-horizontal form-group" method="post" action="">
+						<label class="control-label"><?php echo $_SESSION['username']?>:</label>
+						<br>
+						<textarea class="form-control" rows="3" name="userComment"></textarea>
 					</form>
 				</td>
 			</tr>
