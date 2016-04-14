@@ -70,7 +70,11 @@ if (!$messages)
         $messageSubject = $singleMessage[1];
         ?>
         <tr>
-            <td><?php echo $messageSender?>: &#09; <a href=""><?php echo $messageSubject?> </a>
+            <td><?php echo $messageSender?>: &#09;
+
+                <form method="post" action="messageThread.php">
+                <input type="submit" class="btn btn-link " value="<?php echo $messageSender ?>" name="sendMessageTo" />
+                </form>
         </tr>
         <?php
     }
@@ -79,6 +83,9 @@ if (!$messages)
 </table>
 </fieldset>
 
+
+
+<!--    text field and a button-->
     <a href="" class="btn btn-primary" >New Message</a>
 
 
