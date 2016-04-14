@@ -93,7 +93,7 @@ if(isset($_GET['id'])) {
                 <source src="<?php echo $filepath; ?> " type="video/ogg">
                 Your browser does not support HTML5 video.
             </video>
-                <br><br><br>
+                <br>
             </div>
 
             <script>
