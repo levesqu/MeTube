@@ -126,9 +126,6 @@ if(isset($_GET['id'])) {
             myAudio.onseeking = function(){};
         </script>
 
-
-          
-
               
  <?php
 	}
