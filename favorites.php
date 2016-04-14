@@ -70,6 +70,39 @@ include_once "function.php";
 </div><br>
 
 <br>
-<p>Here they will have a table of favorite media, displayed like the my Media section of the browse page</p>
+<div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
+	My Favorites
+</div>
+<?php
+	$username=$_SESSION['username'];
+	$query = "select * from media where mediaid=(select mediaid from favorites where ".
+			"username='$username')";
+
+	$result = mysql_query( $query );
+	if (!$result) {
+		die ("Could not query the media table in the database: <br />". mysql_error());
+	}
+?>
+	<table class="table table-hover">
+<?php
+	while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path, mediaTitle, mediaDescription, mediaTags, mediaCategory
+	{ 
+		$mediaid = $result_row[3];
+		$filename = $result_row[0];
+		$filepath = $result_row[4];
+?>
+
+		<tr class="success">
+			<td />
+			<td>
+				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
+			</td>
+			<td>
+				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+			</td>
+		</tr>
+<?php
+	}
+?>
 </body>
 </html>
