@@ -53,8 +53,7 @@ include_once "function.php";
 <!-- message thread starts here -->
 
 <?php
-
-$sendmessageto = $_POST['sendMessageTo'];
+$sendmessageto=$_POST['sendMessageTo'];
 
 ?>
 <!--    --><?php
