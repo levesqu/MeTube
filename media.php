@@ -149,7 +149,7 @@ if(isset($_GET['id'])) {
              ?>
          </td>
          <td>
-             <?php echo $filename; ?></a>
+             <?php echo $filename; ?>
          </td>
          <td>
              <a href="<?php echo $filenpath; ?>" target="_blank"
@@ -163,7 +163,7 @@ if(isset($_GET['id'])) {
      <?php
  }
     echo "<h4>Description: &nbsp;</h4> ";
-    echo "<p> $mediadescription </p>";
+    echo "<p>here is some description $mediadescription </p>";
     echo "<br><br>";
 
 
