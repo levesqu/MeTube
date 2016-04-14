@@ -58,8 +58,8 @@ $messagesender=$_SESSION['username'];
 
 
 
-    echo "<h4>Messages with: &nbsp;</h4> ";
-    echo "<p>$sendMessageTo</p>";
+    echo "<h4>Messages with: &nbsp; $sendMessageTo </h4> ";
+  //  echo "<p>$sendMessageTo</p>";
 
     // Comments start-->
     $messagequery="select * from messages where messagereceiver=('$messagesender' OR '$sendMessageTo') and messagesender=('$messagesender' OR '$sendMessageTo'); ";
@@ -79,9 +79,11 @@ $messagesender=$_SESSION['username'];
             {
                 $messagebody = $singleMessage[2]; // body of message
                 $sender = $singleMessage[3]; // person that sent this message
+                $messagesubject = $singleMessage[1];
                 ?>
                 <tr>
-                    <td><label class="control-label"><?php echo $sender;?>:</label>
+                    <td><label class="control-label"><?php echo $sender;?>:</label>&nbsp;
+                        <label class="control-label"><?php echo $messagesubject;?></label>
                         <br><p><?php echo $messagebody?></p>
                     </td>
                 </tr>
