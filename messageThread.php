@@ -91,7 +91,10 @@ $sendmessageto = $_POST['sendMessageTo'];
     <table class="table table-striped">
         <tr>
             <td>
-                <form class="form-horizontal form-group" method="post" action="sendMessage_process.php">
+                <form class="form-horizontal" method="post" action="sendMessage_process.php">
+
+                    <label for="messageSubject" class="col-lg-2 control-label">Subject: &nbsp;</label>
+                    <input type="text" class="form-control" name="messageSubject" />
                     <label class="control-label">Send message to <?php echo $sendmessageto?>:</label>
                     <br><br>
                     <textarea class="form-control" rows="3" name="userComment"></textarea>
