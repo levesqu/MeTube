@@ -50,7 +50,7 @@ include_once "function.php";
 
 <?php
 $username = $_SESSION['username'];;
-$messagequery="select * from messages where messagereceiver='$username' group by messagesender";
+$messagequery="select * from (select * from messages where messagereceiver='$username' order by messageid DESC)t group by messagesender";
 $messages = mysql_query($messagequery);
 if (!$messages)
 {
