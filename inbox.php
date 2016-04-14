@@ -89,7 +89,7 @@ if (!$messages)
 
     <a href="" class="btn btn-primary "
        data-toggle="modal"
-       data-target="modal">Click to open New Message</a>
+       data-target="#modal">Click to open New Message</a>
 
     <div class="modal">
         <div class="modal-dialog">
