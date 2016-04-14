@@ -74,7 +74,7 @@ if (!$messages)
 
                 <form method="post" action="messageThread.php">
                 <input type="submit" class="btn btn-link " value="<?php echo $messageSubject ?>" name="readMessageSubject" />
-                    <input type="hidden" name="sendMessageTo" value="<?php echo $messagesender?>"/>
+                    <input type="hidden" name="sendMessageTo" value="<?php echo $messageSender?>"/>
                 </form>
         </tr>
         <?php
