@@ -73,7 +73,7 @@ if(isset($_GET['id'])) {
 	elseif (substr($type,0,5)=="video")//view movie
 	{	
 ?>
-	<p>Viewing Video: <?php echo $result_row[5];?></p>
+	<h3>Viewing Video: <?php echo $result_row[5];?></h3>
 
         <object id="MediaPlayer" width=560 height=286 classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95" standby="Loading Windows Media Player components…" type="application/x-oleobject" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112">
 
@@ -106,7 +106,7 @@ if(isset($_GET['id'])) {
         elseif (substr($type,0,5)=="audio")// hear audio
         {
         ?>
-        <p>Listening To Audio: <?php echo $result_row[5];?></p>
+        <h3>Listening To Audio: <?php echo $result_row[5];?></h3>
 
         <object id="MediaPlayer" width=560 height=286 classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95" standby="Loading Windows Media Player components…" type="application/x-oleobject" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112">
         <param name="filename" value="<?php echo $filepath?>">
@@ -137,7 +137,7 @@ if(isset($_GET['id'])) {
     ?>
 
 
-     <p>Other File: <?php echo $result_row[5];?></p>
+     <h3>Other File: <?php echo $result_row[5];?></h3>
      <br>
                 <tr class="success">
                     <td>
