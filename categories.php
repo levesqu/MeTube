@@ -61,10 +61,10 @@ include_once "function.php";
 <body>
 
 
-<p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
+<h2><?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
 
-<h3 class="addmargin">Click one of the options below to browse media.</h3><br>
+<h4 class="addmargin">Click one of the options below to browse media.</h4><br>
 
 <div class="btn-group btn-group-justified">
     <a href="./categories.php" class="btn btn-default">Categories</a>
@@ -80,7 +80,7 @@ include_once "function.php";
       Categories
     </div>
     <br>
-		<div class="btn-group btn-group-justified">
+		<div class="btn-group-vertical">
 			<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
 				<input type="submit" class="btn btn-primary" value="Sports" name="categoryType" />
 				<input type="submit" class="btn btn-primary" value="Comedy" name="categoryType" />
