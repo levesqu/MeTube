@@ -89,9 +89,9 @@ if (!$messages)
 </table>
 </fieldset>
 
-    <div class="btn btn-primary">
-        <a href="./#" class="btn btn-default">New Message</a>
-    </div><br>
+    <div>
+        <a href="./#" class="btn btn-primary">New Message</a>
+   <br>
 
 
 </div>
