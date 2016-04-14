@@ -118,7 +118,7 @@ if(isset($_GET['id'])) {
         <param name="filename" value="<?php echo $filepath?>">
         <param name="Showcontrols" value="True">
         <param name="autoStart" value="True">
-        <div style="text-align:center">
+        <div style="text-align:left">
             <audio controls>
                 <source src="<?php echo $filepath; ?>" type="audio/ogg">
                 <source src="<?php echo $filepath; ?>" type="audio/mpeg">
