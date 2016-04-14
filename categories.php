@@ -80,7 +80,7 @@ include_once "function.php";
       Categories
     </div>
     <br>
-		<div class="btn-group btn-group-justified">
+		<div class="btn-group-vertical">
 			<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
 				<input type="submit" class="btn btn-primary" value="Sports" name="categoryType" />
 				<input type="submit" class="btn btn-primary" value="Comedy" name="categoryType" />

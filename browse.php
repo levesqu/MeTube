@@ -66,7 +66,7 @@ function saveDownload(id)
 
 
 
-<h3 class="addmargin">Click one of the options below to browse media.</h3><br>
+<h4 class="addmargin">Click one of the options below to browse media.</h4><br>
 
 <div class="btn-group btn-group-justified">
 	<a href="./categories.php" class="btn btn-default">Categories</a>
