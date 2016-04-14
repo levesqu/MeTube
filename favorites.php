@@ -56,10 +56,10 @@ include_once "function.php";
 
 
 
-<p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
+<h2><?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
 
-<h3 class="addmargin">Click one of the options below to browse media.</h3><br>
+<h4 class="addmargin">Click one of the options below to browse media.</h4><br>
 
 <div class="btn-group btn-group-justified">
     <a href="./categories.php" class="btn btn-default">Categories</a>
