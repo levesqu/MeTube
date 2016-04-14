@@ -96,7 +96,7 @@ $messagesender=$_SESSION['username'];
     <table class="table table-striped">
         <tr>
             <td>
-                <form class="form-horizontal" method="post" action="">
+                <form class="form-horizontal" method="post" action="sendMessage_process.php">
                     <label class="control-label">Send message to <?php echo $sendMessageTo?>:</label>
                     <br>
                     <label for="messageSubject" class="control-label">Subject: &nbsp;</label>
