@@ -133,7 +133,7 @@ if(isset($_GET['id'])) {
         </script>
 </object>
 
-            <a href="<?php echo $filenpath; ?>" target="_blank"
+            <a href="<?php echo $filepath; ?>" target="_blank"
                onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
               
  <?php
@@ -156,7 +156,7 @@ if(isset($_GET['id'])) {
              <?php echo $filename; ?>
          </td>
          <td>
-             <a href="<?php echo $filenpath; ?>" target="_blank"
+             <a href="<?php echo $filepath; ?>" target="_blank"
                 onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
          </td>
      </tr>
