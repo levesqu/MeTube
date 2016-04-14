@@ -100,6 +100,12 @@ include_once "function.php";
 			<td>
 				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
 			</td>
+			<td>
+					<form class="form-horizontal" method="post" action="unfavorite_process.php" enctype="multipart/form-data">
+						<input type="submit" class="btn btn-danger btn-xs" value="Remove Favorite" name="unfavoriteMediaFromList" />
+						<input type="hidden" name="mediaid" value="<?php echo $mediaid?>">
+					</form>
+			</td>
 		</tr>
 <?php
 	}
