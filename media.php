@@ -196,18 +196,35 @@ if(isset($_GET['id'])) {
 <!--             </ul>-->
 <!--         </div>-->
 
+<!--    <div class="btn-group">-->
+<!--        <div class="btn-group">-->
+<!--            <a href="" class="btn btn-default dropdown-toggle" data-toggle="dropdown">-->
+<!--                Add To playlist <span class="caret"></span>-->
+<!--            </a>-->
+<!--            <ul class="dropdown-menu">-->
+<!--                <li><a href="#">Playlist 1</a></li>-->
+<!--                <li><a href="#">Playlist 2</a></li>-->
+<!--                <li><a href="#">Playlist 2</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
     <div class="btn-group">
+        <a href="#" class="btn btn-default">8</a>
         <div class="btn-group">
-            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Add To playlist <span class="caret"></span>
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Dropdown
+                <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="#">Playlist 1</a></li>
-                <li><a href="#">Playlist 2</a></li>
-                <li><a href="#">Playlist 2</a></li>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
             </ul>
         </div>
     </div>
+</div>
 
 
 
