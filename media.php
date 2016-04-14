@@ -134,35 +134,41 @@ if(isset($_GET['id'])) {
               
  <?php
 	}
- else{
+ else {
      //other media
-    ?>
+     ?>
 
 
-     <h3>Other File: <?php echo $result_row[5];?></h3>
+     <h3>Other File: <?php echo $result_row[5]; ?></h3>
      <br><br>
-                <tr class="success">
-                    <td>
+     <tr class="success">
+         <td>
 
-                        <?php
-                        //echo $mediaid;  //mediaid
-                        ?>
-                    </td>
-                    <td>
-                        <?php echo $filename;?></a>
-                    </td>
-                    <td>
-                        <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
-                    </td>
-                </tr>
+             <?php
+             //echo $mediaid;  //mediaid
+             ?>
+         </td>
+         <td>
+             <?php echo $filename; ?></a>
+         </td>
+         <td>
+             <a href="<?php echo $filenpath; ?>" target="_blank"
+                onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
+         </td>
+     </tr>
      <br><br>
 
-<h4>Description</h4>
-     <p> <?php $mediadescription; ?> </p>
-     <br>
-<?php
 
+
+     <?php
  }
+    echo "<h4>Description: &nbsp;</h4> ";
+    echo "<p> $mediadescription </p>";
+    echo "<br><br>";
+
+
+
+
  // Comments start-->
 	$mediaId = $_GET['id'];
 	$commentquery="select * from comments where mediaid='$mediaId'";
