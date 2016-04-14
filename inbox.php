@@ -68,19 +68,20 @@ if (!$messages)
         $messageSubject = $singleMessage[1];
         ?>
         <tr>
-            <td><?php echo $messageSender?>: &#09; <?php echo $messageSubject?>
+            <td><?php echo $messageSender?>: &#09; <a href="#"><?php echo $messageSubject?> </a>
         </tr>
         <?php
     }
     ?>
-    <tr>
-        <td>
-            <form class="form-horizontal" method="post" action="">
-                <label class="col-lg-2 control-label"><?php echo $_SESSION['username']?>:</label>
-                <textarea class="form-control" rows="3" name="userComment"></textarea>
-            </form>
-        </td>
-    </tr>
+
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <form class="form-horizontal" method="post" action="">-->
+<!--                <label class="col-lg-2 control-label">--><?php //echo $_SESSION['username']?><!--:</label>-->
+<!--                <textarea class="form-control" rows="3" name="userComment"></textarea>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--    </tr>-->
 </table>
 </fieldset>
 
