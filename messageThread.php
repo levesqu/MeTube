@@ -53,16 +53,16 @@ include_once "function.php";
 <!-- message thread starts here -->
 
 <?php
-$sendmessageto=$_POST['sendMessageTo'];
+$sendMessageTo=$_POST['sendMessageTo'];
 $messagesender=$_SESSION['username'];
 
 
 
-    echo "<h4>Message to: &nbsp;</h4> ";
-    echo "<p>$sendUser</p>";
+    echo "<h4>Messages with: &nbsp;</h4> ";
+    echo "<p>$sendMessageTo</p>";
 
     // Comments start-->
-    $messagequery="select * from messages where messagereceiver=($messagesender OR $sendmessageto) and messagesender=($messagesender OR $sendmessageto) ";
+    $messagequery="select * from messages where messagereceiver=($messagesender OR $sendMessageTo) and messagesender=($messagesender OR $sendMessageTo) ";
 
 
     $messages = mysql_query($messagequery);
@@ -95,7 +95,7 @@ $messagesender=$_SESSION['username'];
         <tr>
             <td>
                 <form class="form-horizontal" method="post" action="sendMessage_process.php">
-                    <label class="control-label">Send message to <?php echo $sendmessageto?>:</label>
+                    <label class="control-label">Send message to <?php echo $sendMessageTo?>:</label>
                     <br>
                     <label for="messageSubject" class="control-label">Subject: &nbsp;</label>
                     <input type="text" class="form-control" name="messageSubject" />
@@ -105,7 +105,7 @@ $messagesender=$_SESSION['username'];
                     <br>
                     <input type="submit" class="btn btn-primary" value="Send Message"/>
                     <input type="hidden" name="messageSender" value="<?php echo $messagesender?>"/>
-                    <input type="hidden" name="sendMessageTo" value="<?php echo $sendmessageto?>"/>
+                    <input type="hidden" name="sendMessageTo" value="<?php echo $sendMessageTo?>"/>
                 </form>
             </td>
         </tr>
