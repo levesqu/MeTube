@@ -273,7 +273,7 @@ if(isset($_GET['id'])) {
 			?>
 			<tr>
 				<td>
-					<form class="form-horizontal form-group" method="post" action="comment_process.php">
+					<form class="form-horizontal" method="post" action="comment_process.php">
 						<label class="control-label"><?php echo $_SESSION['username']?>:</label>
 						<br>
 						<textarea class="form-control" rows="3" name="userComment"></textarea>
