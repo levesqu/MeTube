@@ -157,7 +157,7 @@ if(isset($_GET['id'])) {
                 </tr>
      <br><br>
 
-
+<h4>Description</h4>
      <p> <?php $mediadescription; ?> </p>
      <br>
 <?php
