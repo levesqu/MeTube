@@ -62,7 +62,7 @@ function saveDownload(id)
 
 
 
-<h2<?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
+<h2> <?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
 
 
