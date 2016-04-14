@@ -158,7 +158,10 @@ if(isset($_GET['id'])) {
          </td>
      </tr>
      <br><br>
+     <?php
 
+ }
+     ?>
 <!-- favorite button -->
 
      <div class="btn-group btn-group-justified">
@@ -169,8 +172,7 @@ if(isset($_GET['id'])) {
 
 
 
-     <?php
- }
+    <?php
     echo "<h4>Description: &nbsp;</h4> ";
     echo "<p>$mediadescription</p>";
 
