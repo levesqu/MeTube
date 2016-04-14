@@ -48,7 +48,7 @@
 
 <body>
 
-
+<div class="addmargin">
 
 <?php
 if(isset($_GET['id'])) {
@@ -128,13 +128,17 @@ if(isset($_GET['id'])) {
 
 
           
-          <!-- Comments start-->
+
               
  <?php
 	}
  else{
      //other media
     ?>
+
+
+     <p>Other File: <?php echo $result_row[5];?></p>
+     <br>
                 <tr class="success">
                     <td>
 
@@ -152,7 +156,7 @@ if(isset($_GET['id'])) {
 
 <?php
  }
-
+ // Comments start-->
 	$mediaId = $_GET['id'];
 	$commentquery="select * from comments where mediaid='$mediaId'";
 	$comments = mysql_query($commentquery);
@@ -194,7 +198,7 @@ if(isset($_GET['id'])) {
 	</fieldset>
 
    <!-- comments end here -->
-
+</div>
 <?php
 }
 else
