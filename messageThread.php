@@ -48,11 +48,11 @@ include_once "function.php";
 
 
 <body>
+<div class="addmargin">
 
 <!-- message thread starts here
-<!--<div class="addmargin">-->
-<!--    -->
-<!---->
+
+
 <!--    --><?php
 //    echo "<h4>Message to: &nbsp;</h4> ";
 //    echo "<p>$sendUser</p>";
@@ -88,8 +88,8 @@ include_once "function.php";
         <tr>
             <td>
                 <form class="form-horizontal form-group" method="post" action="sendMessage_process.php">
-                    <label class="control-label">Send Message to<?php echo $_SESSION['username']?>:</label>
-                    <br>
+                    <label class="control-label">Send message to <?php echo $_SESSION['username']?>:</label>
+                    <br><br>
                     <textarea class="form-control" rows="3" name="userComment"></textarea>
                     <input type="submit" class="btn btn-primary" value="Send Message"/>
                     <!--<input type="hidden" name="mediaid" value="<?php?>"/>-->

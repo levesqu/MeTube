@@ -253,7 +253,7 @@ if(isset($_GET['id'])) {
 				<td><label class="control-label">
                         <?php
                         if($_SESSION['username'] != $commentUser){?>
-                            <a href="./messageThread.php"> <?php echo $commentUser;?> </a>":
+                            <a href="./messageThread.php"> <?php echo $commentUser;?> </a>:
                             <?php
                         }else{
                             echo $commentUser;
