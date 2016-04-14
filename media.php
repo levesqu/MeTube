@@ -135,7 +135,7 @@ if(isset($_GET['id'])) {
 	$mediaId = $_GET['id'];
 	$commentquery="select * from comments where mediaid='$mediaId'";
 	$comments = mysql_query($commentquery);
-	if (!$result)
+	if (!$comments)
 	{
 		die("Could not query the comment table in the database: <br />".mysql_error());
 	}
@@ -160,10 +160,12 @@ if(isset($_GET['id'])) {
 			?>
 			<tr>
 				<td>
-					<form class="form-horizontal form-group" method="post" action="">
+					<form class="form-horizontal form-group" method="post" action="comment_process.php">
 						<label class="control-label"><?php echo $_SESSION['username']?>:</label>
 						<br>
 						<textarea class="form-control" rows="3" name="userComment"></textarea>
+						<input type="submit" class="btn btn-primary" value="Submit Comment"/>
+						<input type="hidden" name="mediaid" value="<?php echo $mediaId?>"/>
 					</form>
 				</td>
 			</tr>
