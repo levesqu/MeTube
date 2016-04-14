@@ -160,12 +160,11 @@ if(isset($_GET['id'])) {
      <br><br>
 
 
-
      <?php
  }
     echo "<h4>Description: &nbsp;</h4> ";
     echo "<p>$mediadescription</p>";
-    echo "<br><br>";
+    echo "<br>";
 
 
 
