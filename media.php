@@ -70,8 +70,7 @@ if(isset($_GET['id'])) {
         <h3> Viewing Picture: <?php echo $result_row[5];?></h3>
         <br><br>
 		<img src="<?php echo $filepath?>"/>";<br>
-        <a href="<?php echo $filenpath; ?>" target="_blank"
-           onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
+        <a href="<?php echo $filepath; ?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
 <?php
 	}
 	elseif (substr($type,0,5)=="video")//view movie
@@ -103,7 +102,7 @@ if(isset($_GET['id'])) {
             </script>
         </object>
 
-        <a href="<?php echo $filenpath; ?>" target="_blank"
+        <a href="<?php echo $filepath; ?>" target="_blank"
            onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
 
     <?php
@@ -134,7 +133,7 @@ if(isset($_GET['id'])) {
         </script>
 </object>
 
-            <a href="<?php echo $filenpath; ?>" target="_blank"
+            <a href="<?php echo $filepath; ?>" target="_blank"
                onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
               
  <?php
@@ -157,7 +156,7 @@ if(isset($_GET['id'])) {
              <?php echo $filename; ?>
          </td>
          <td>
-             <a href="<?php echo $filenpath; ?>" target="_blank"
+             <a href="<?php echo $filepath; ?>" target="_blank"
                 onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
          </td>
      </tr>
