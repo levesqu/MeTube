@@ -81,8 +81,10 @@ include_once "function.php";
 </div>
 <br>
 <?php
+	$playlistid=$_GET['id'];
 	$username=$_SESSION['username'];
-	$query = "select * from playlists where username='$username';";
+	$query = "select * from playlistmedia join playlists where playlist.playlistid = playlistmedia.playlistid" .
+	"and playlist.playlistid=$playlistid and username='$username';";
 
 	$result = mysql_query( $query );
 	if (!$result) {
