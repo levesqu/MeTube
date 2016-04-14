@@ -199,7 +199,7 @@ if(isset($_GET['id'])) {
     <div class="btn-group">
         <div class="btn-group">
             <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <span class="caret">Add To playlist</span>
+                Add To playlist <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
                 <li><a href="#">Playlist 1</a></li>
