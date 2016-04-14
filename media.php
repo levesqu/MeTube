@@ -191,9 +191,9 @@ if(isset($_GET['id'])) {
          </form>
          <?php
          } ?>
-<br>
+         </div>
+<br><br>
          <div class="btn-group">
-
              <a href="#" class="btn btn-default">Default</a>
              <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
              <ul class="dropdown-menu">
