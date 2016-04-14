@@ -77,11 +77,16 @@ include_once "function.php";
 
 <br>
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
-	My Playlists
+<?php
+	$playlistid=$_GET['id'];
+  $playlistquery = "select playlisttitle from playlists where playlistid='$playlistid';";
+  $playlist_result = mysql_query($playlistquery);
+  $playlist_result_row=mysql_fetch_row($playlist_result);
+  echo $playlist_result_row[0];
+?>
 </div>
 <br>
 <?php
-	$playlistid=$_GET['id'];
 	$username=$_SESSION['username'];
 	$query = "select * from playlistmedia join playlists where playlists.playlistid = playlistmedia.playlistid and playlists.playlistid=$playlistid and username='$username';";
 
@@ -92,39 +97,27 @@ include_once "function.php";
 ?>
 	<table class="table table-hover">
 <?php
-	while ($result_row = mysql_fetch_row($result))
+	while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path, mediaTitle, mediaDescription, mediaTags, mediaCategory
 	{ 
-		$playlisttitle = $result_row[1];
-		$playlistid=$result_row[0];
+	  $mediaid=$result_row[2];
+	  $media_query="select * from media where mediaid=$mediaid;";
+    $media_result = mysql_query($media_query);
+    $media_result_row = mysql_fetch_row($result);
+		$filename = $media_result_row[0];
+		$filepath = $media_result_row[4];
 ?>
 
 		<tr class="success">
 			<td>
-				<a href="playlist.php?id=<?php echo $playlistid;?>" target="_blank">&nbsp;<?php echo $playlisttitle;?></a> 
+				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a> 
 			</td>
 			<td>
-				<form class="form-horizontal" method="post" action="delete_playlist_process.php" enctype="multipart/form-data">
-					<input type="submit" class="btn btn-danger btn-xs" value="Delete Playlist" name="delete" />
-					<input type="hidden" name="playlistid" value="<?php echo $playlistid?>">
-				</form>
+				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
 			</td>
 		</tr>
 <?php
 	}
 ?>
-		<tr>
-			<form class="form-horizontal" method="post" action="add_to_playlist_process.php" enctype="multipart/form-data">
-				<td>
-					<label for="playlistTitle" class="col-lg-2 control-label">Create New Playlist:</label>
-					<div class="col-lg-10">
-						<input type="text" class="form-control" name="playlistTitle" />
-					</div>
-				</td>
-				<td>
-					<input type="submit" class="btn btn-primary" value="Create Playlist" name="createPlaylist" />
-				</td>
-			</form>
-		</tr>
 	</table>
 </body>
 </html>
