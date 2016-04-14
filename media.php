@@ -86,8 +86,7 @@ if(isset($_GET['id'])) {
             <param name="autoStart" value="True">
             <div style="text-align:center">
 
-
-            <video width="200" controls>
+            <video width="400" controls>
                 <source src="<?php echo $filepath; ?> " type="video/mp4">
                 <source src="<?php echo $filepath; ?>" type="video/webm">
                 <source src="<?php echo $filepath; ?> " type="video/ogg">
@@ -98,9 +97,7 @@ if(isset($_GET['id'])) {
 
             <script>
                 var myVideo = document.getElementById("video1");
-
                 myVideo.onseeking = function(){};
-
             </script>
         </object>
 
