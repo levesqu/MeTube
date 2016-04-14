@@ -58,6 +58,8 @@ if (!$messages)
 }
 ?>
 <br><br>
+
+<div class="addmargin">
 <fieldset="form-horizontal">
 <legend>Messages</legend>
 <table class="table table-striped">
@@ -82,9 +84,12 @@ if (!$messages)
 <!--            </form>-->
 <!--        </td>-->
 <!--    </tr>-->
+
+
 </table>
 </fieldset>
 
 
+</div>
 </body>
 </html>
