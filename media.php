@@ -61,6 +61,7 @@ if(isset($_GET['id'])) {
 	$filename=$result_row[0];   ////0, 4, 2
 	$filepath=$result_row[4];
     $mediatitle=$result_row[5];
+    $mediadescription=$result[6];
 	$type=$result_row[2];
 	if(substr($type,0,5)=="image") //view image
 	{
@@ -129,7 +130,7 @@ if(isset($_GET['id'])) {
             var myAudio = document.getElementById("audio1");
             myAudio.onseeking = function(){};
         </script>
-
+</object>
               
  <?php
 	}
@@ -155,7 +156,14 @@ if(isset($_GET['id'])) {
                     </td>
                 </tr>
 
+     <br><br>
 <?php
+
+     echo "<p> $mediadescription </p>";
+     echo "<br><br>";
+
+
+
  }
  // Comments start-->
 	$mediaId = $_GET['id'];
