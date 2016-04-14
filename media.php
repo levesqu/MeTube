@@ -164,7 +164,7 @@ if(isset($_GET['id'])) {
      <?php
  }
     echo "<h4>Description: &nbsp;</h4> ";
-    echo "<p>here is some description $mediadescription</p>";
+    echo "<p>$mediadescription</p>";
     echo "<br><br>";
 
 
