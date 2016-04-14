@@ -60,11 +60,7 @@ function saveDownload(id)
 
 <body>
 
-
-
 <h2> <?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
-
-
 
 <h4 class="addmargin">Click one of the options below to browse media.</h4><br>
 
