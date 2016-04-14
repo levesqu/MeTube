@@ -79,19 +79,10 @@ if (!$messages)
 </table>
 </fieldset>
 
-    <div>
-        <a href="" class="btn btn-primary">New Message</a>
-        <br>
-    </div>
 
+    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal">Click to open New Message</a>
 
-
-
-    <a href="" class="btn btn-primary "
-       data-toggle="modal"
-       data-target="#modal">Click to open New Message</a>
-
-    <div class="modal">
+    <div class="modal fade" id="modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
