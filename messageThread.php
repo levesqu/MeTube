@@ -91,6 +91,7 @@ include_once "function.php";
                     <label class="control-label">Send message to <?php echo $_SESSION['username']?>:</label>
                     <br><br>
                     <textarea class="form-control" rows="3" name="userComment"></textarea>
+                    <br>
                     <input type="submit" class="btn btn-primary" value="Send Message"/>
                     <!--<input type="hidden" name="mediaid" value="<?php?>"/>-->
                 </form>
