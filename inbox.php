@@ -49,8 +49,6 @@ include_once "function.php";
 
 
 <?php
-
-}
 $username = $_SESSION['username'];;
 $messagequery="select * from messages where messagereceiver='$username'";
 $messages = mysql_query($messagequery);
