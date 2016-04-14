@@ -23,4 +23,4 @@ or die("Insert into Messages error in sendMessage_process.php " .mysql_error());
 
 ?>
 
-<meta http-equiv="refresh" content="0;url=messageThread.php>">
+<meta http-equiv="refresh" content="0;url=messageThread.php">
