@@ -83,11 +83,11 @@ include_once "function.php";
 <br>
 <?php
 	$username=$_SESSION['username'];
-	$query = "select * from media join favorites on media.mediaid=favorites.mediaid where favorites.username='$username';";
+	$query = "select * from playlists where username='$username';";
 
 	$result = mysql_query( $query );
 	if (!$result) {
-		die ("Could not query the media table in the database: <br />". mysql_error());
+		die ("Could not query the playlists table in the database: <br />". mysql_error());
 	}
 ?>
 	<table class="table table-hover">
