@@ -39,6 +39,7 @@ session_start();
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./inbox.php">Messages</a></li>
                     <li><a href="./profile_update.php">Update Profile</a></li>
                     <li><a href="./logout.php">Logout</a></li>
 

@@ -41,6 +41,7 @@ include_once "function.php";
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./inbox.php">Messages</a></li>
                     <li><a href="./profile_update.php">Update Profile</a></li>
                     <li><a href="login.php">Logout</a></li>
 
