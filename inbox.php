@@ -54,7 +54,7 @@ $messagequery="select * from messages where messagereceiver='$username'";
 $messages = mysql_query($messagequery);
 if (!$result)
 {
-    die("Could not query the comment table in the database: <br />".mysql_error());
+    die("Could not query the messages table in the database: <br />".mysql_error());
 }
 ?>
 <br><br>
