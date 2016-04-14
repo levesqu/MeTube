@@ -194,21 +194,17 @@ if(isset($_GET['id'])) {
          </div>
 
          <div class="btn-group">
-             <a href="#" class="btn btn-default">Default</a>
-             <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+             <a href="" class="btn btn-default">Default</a>
+             <a href="" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
              <ul class="dropdown-menu">
-                 <li><a href="#">Action</a></li>
-                 <li><a href="#">Another action</a></li>
-                 <li><a href="#">Something else here</a></li>
+                 <li><a href="">Action</a></li>
+                 <li><a href="">Another action</a></li>
+                 <li><a href="">Something else here</a></li>
              </ul>
          </div>
 
-     </div>
-
-
 
     <?php
-    
     echo "<h4>Description: &nbsp;</h4> ";
     echo "<p>$mediadescription</p>";
   // Comments start-->
