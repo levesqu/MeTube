@@ -77,7 +77,45 @@ include_once "function.php";
 
 
 <br>
-<p>Here they will be able to select a playlist</p>
+<div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
+	My Favorites
+</div>
+<br>
+<?php
+	$username=$_SESSION['username'];
+	$query = "select * from media join favorites on media.mediaid=favorites.mediaid where favorites.username='$username';";
+
+	$result = mysql_query( $query );
+	if (!$result) {
+		die ("Could not query the media table in the database: <br />". mysql_error());
+	}
+?>
+	<table class="table table-hover">
+<?php
+	while ($result_row = mysql_fetch_row($result))
+	{ 
+		$playlisttitle = $result_row[1];
+?>
+
+		<tr class="success">
+			<td />
+			<td>
+				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $playlisttitle;?></a> 
+			</td>
+			<td>
+				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+			</td>
+			<td>
+					<form class="form-horizontal" method="post" action="unfavorite_process.php" enctype="multipart/form-data">
+						<input type="submit" class="btn btn-danger btn-xs" value="Remove Favorite" name="unfavoriteMediaFromList" />
+						<input type="hidden" name="mediaid" value="<?php echo $mediaid?>">
+					</form>
+			</td>
+		</tr>
+<?php
+	}
+?>
+	</table>
 
 </body>
 </html>
