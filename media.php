@@ -253,7 +253,7 @@ if(isset($_GET['id'])) {
                         <?php
                         if($_SESSION['username'] != $commentUser){?>
 
-                            <form class="form-control" method="post" action="messageThread.php">
+                            <form method="post" action="messageThread.php">
                                 <input type="submit" class="btn btn-link" value="<?php echo $commentUser ?>" name="categoryType" />
                             </form>
 <!--                            <a href="./messageThread.php"> --><?php //echo $commentUser;?><!-- </a>:-->
