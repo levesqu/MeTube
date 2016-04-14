@@ -73,7 +73,8 @@ if (!$messages)
             <td><?php echo $messageSender?>: &#09;
 
                 <form method="post" action="messageThread.php">
-                <input type="submit" class="btn btn-link " value="<?php echo $messageSubject ?>" name="sendMessageTo" />
+                <input type="submit" class="btn btn-link " value="<?php echo $messageSubject ?>" name="readMessageSubject" />
+                    <input type="hidden" name="sendMessageTo" value="<?php echo $messagesender?>"/>
                 </form>
         </tr>
         <?php
