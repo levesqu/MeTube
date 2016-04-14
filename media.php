@@ -159,15 +159,12 @@ if(isset($_GET['id'])) {
      </tr>
      <br><br>
 
+<!-- favorite button -->
 
      <?php
  }
     echo "<h4>Description: &nbsp;</h4> ";
     echo "<p>$mediadescription</p>";
-    echo "<br>";
-
-
-
 
  // Comments start-->
 	$mediaId = $_GET['id'];
