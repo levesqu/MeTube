@@ -52,7 +52,7 @@ include_once "function.php";
 $username = $_SESSION['username'];;
 $messagequery="select * from messages where messagereceiver='$username'";
 $messages = mysql_query($messagequery);
-if (!$result)
+if (!$messages)
 {
     die("Could not query the messages table in the database: <br />".mysql_error());
 }
