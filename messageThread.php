@@ -83,7 +83,7 @@ include_once "function.php";
 //        ?>  <!-- message thread end here -->
 
 
-<fieldset="form-horizontal">
+<fieldset class ="form-horizontal">
     <table class="table table-striped">
         <tr>
             <td>
@@ -92,7 +92,7 @@ include_once "function.php";
                     <br>
                     <textarea class="form-control" rows="3" name="userComment"></textarea>
                     <input type="submit" class="btn btn-primary" value="Send Message"/>
-                    <!--<input type="hidden" name="mediaid" value="<?php echo m?>"/>-->
+                    <!--<input type="hidden" name="mediaid" value="<?php?>"/>-->
                 </form>
             </td>
         </tr>

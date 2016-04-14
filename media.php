@@ -250,7 +250,15 @@ if(isset($_GET['id'])) {
 					$commentBody = $singleComment[3];
 			?>
 			<tr>
-				<td><label class="control-label"><?php echo $commentUser;?>:</label>
+				<td><label class="control-label">
+                        <?php
+                        if($_SESSION['username'] != $commentUser){
+                            echo '<a href="./messageThread.php"> '$commentUser':</a>';
+                        }else{
+                            echo "''$commentUser;?>:";
+                        }
+                        ?>
+                    </label>
 				<br><p><?php echo $commentBody?></p>
 				</td>
 			</tr>
