@@ -58,10 +58,12 @@ if(isset($_GET['id'])) {
 	
 	//updateMediaTime($_GET['id']);
 	
-	$filename=$result_row[0];   ////0, 4, 2
+	$filename=$result_row[0];
 	$filepath=$result_row[4];
     $mediatitle=$result_row[5];
+    $mediadescription=$result_row[6];
 	$type=$result_row[2];
+
 	if(substr($type,0,5)=="image") //view image
 	{
 	?>
@@ -91,7 +93,7 @@ if(isset($_GET['id'])) {
                 <source src="<?php echo $filepath; ?> " type="video/ogg">
                 Your browser does not support HTML5 video.
             </video>
-                <br><br><br>
+                <br>
             </div>
 
             <script>
@@ -116,7 +118,7 @@ if(isset($_GET['id'])) {
         <param name="filename" value="<?php echo $filepath?>">
         <param name="Showcontrols" value="True">
         <param name="autoStart" value="True">
-        <div style="text-align:center">
+        <div style="text-align:left">
             <audio controls>
                 <source src="<?php echo $filepath; ?>" type="audio/ogg">
                 <source src="<?php echo $filepath; ?>" type="audio/mpeg">
@@ -129,34 +131,51 @@ if(isset($_GET['id'])) {
             var myAudio = document.getElementById("audio1");
             myAudio.onseeking = function(){};
         </script>
-
+</object>
               
  <?php
 	}
- else{
+ else {
      //other media
-    ?>
+     ?>
 
 
-     <h3>Other File: <?php echo $result_row[5];?></h3>
+     <h3>Other File: <?php echo $result_row[5]; ?></h3>
      <br><br>
-                <tr class="success">
-                    <td>
+     <tr class="success">
+         <td>
 
-                        <?php
-                        //echo $mediaid;  //mediaid
-                        ?>
-                    </td>
-                    <td>
-                        <?php echo $filename;?></a>
-                    </td>
-                    <td>
-                        <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
-                    </td>
-                </tr>
+             <?php
+             //echo $mediaid;  //mediaid
+             ?>
+         </td>
+         <td>
+             <?php echo $filename; ?>
+         </td>
+         <td>
+             <a href="<?php echo $filenpath; ?>" target="_blank"
+                onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
+         </td>
+     </tr>
+     <br><br>
+     <?php
 
-<?php
  }
+     ?>
+<!-- favorite button -->
+
+     <div class="btn-group btn-group-justified">
+         <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+             <input type="submit" class="btn btn-default" value="Favorite" name="favoriteMedia" />
+         </form>
+     </div>
+
+
+
+    <?php
+    echo "<h4>Description: &nbsp;</h4> ";
+    echo "<p>$mediadescription</p>";
+
  // Comments start-->
 	$mediaId = $_GET['id'];
 	$commentquery="select * from comments where mediaid='$mediaId'";

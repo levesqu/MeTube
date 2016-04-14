@@ -60,7 +60,7 @@ if (!$messages)
 <br><br>
 
 <div class="addmargin">
-<fieldset="form-horizontal">
+<fieldset class="form-horizontal">
 <legend>Messages</legend>
 <table class="table table-striped">
     <?php
@@ -76,24 +76,13 @@ if (!$messages)
     }
     ?>
 
-<!--    <tr>-->
-<!--        <td>-->
-<!--            <form class="form-horizontal" method="post" action="">-->
-<!--                <label class="col-lg-2 control-label">--><?php //echo $_SESSION['username']?><!--:</label>-->
-<!--                <textarea class="form-control" rows="3" name="userComment"></textarea>-->
-<!--            </form>-->
-<!--        </td>-->
-<!--    </tr>-->
-
-
 </table>
 </fieldset>
 
     <div>
-        <a href="#" class="btn btn-primary">New Message</a>
+        <a href="" class="btn btn-primary">New Message</a>
         <br>
     </div>
-
 
     <div class="modal">
         <div class="modal-dialog">
