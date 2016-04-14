@@ -99,7 +99,7 @@ include_once "function.php";
 
 		<tr class="success">
 			<td>
-				<a href="playlist.php?id=<?php echo $playlistid;?>" target="_blank">&nbsp;<?php echo $playlisttitle;?></a> 
+				<a href="playlist.php?id=<?php echo $playlistid;?>" target="_blank"><?php echo $playlisttitle;?></a> 
 			</td>
 			<td>
 				<form class="form-horizontal" method="post" action="delete_playlist_process.php" enctype="multipart/form-data">

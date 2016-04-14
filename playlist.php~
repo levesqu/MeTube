@@ -112,6 +112,19 @@ include_once "function.php";
 <?php
 	}
 ?>
+		<tr>
+			<form class="form-horizontal" method="post" action="add_to_playlist_process.php" enctype="multipart/form-data">
+				<td>
+					<label for="playlistTitle" class="col-lg-2 control-label">Create New Playlist:</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" name="playlistTitle" />
+					</div>
+				</td>
+				<td>
+					<input type="submit" class="btn btn-primary" value="Create Playlist" name="createPlaylist" />
+				</td>
+			</form>
+		</tr>
 	</table>
 </body>
 </html>
