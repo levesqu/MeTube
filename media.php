@@ -158,23 +158,25 @@ if(isset($_GET['id'])) {
      <?php
 
  }
+
+	$mediaId = $_GET['id'];
      ?>
 <!-- favorite button -->
 
      <div class="btn-group btn-group-justified">
-         <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+         <form class="form-horizontal" method="post" action="favorite_process.php" enctype="multipart/form-data">
              <input type="submit" class="btn btn-default" value="Favorite" name="favoriteMedia" />
+             <input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
          </form>
      </div>
 
 
 
     <?php
+    
     echo "<h4>Description: &nbsp;</h4> ";
     echo "<p>$mediadescription</p>";
-
- // Comments start-->
-	$mediaId = $_GET['id'];
+  // Comments start-->
 	$commentquery="select * from comments where mediaid='$mediaId'";
 	$comments = mysql_query($commentquery);
 	if (!$comments)

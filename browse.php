@@ -106,7 +106,7 @@ function saveDownload(id)
 			{ 
 				$mediaid = $result_row[3];
 				$filename = $result_row[0];
-				$filenpath = $result_row[4];
+				$filepath = $result_row[4];
 		?>
 
         	 <tr class="success">
@@ -115,7 +115,7 @@ function saveDownload(id)
 		         <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
 		       </td>
 		       <td>
-		         <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+		         <a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
 		       </td>
 			</tr>
         	<?php
