@@ -92,7 +92,7 @@ $sendmessageto=$_POST['sendMessageTo'];
             <td>
                 <form class="form-horizontal" method="post" action="sendMessage_process.php">
 
-                    <label for="messageSubject" class="col-lg-2 control-label">Subject: &nbsp;</label>
+                    <label for="messageSubject" class="control-label">Subject: &nbsp;</label>
                     <input type="text" class="form-control" name="messageSubject" />
                     <label class="control-label">Send message to <?php echo $sendmessageto?>:</label>
                     <br><br>
