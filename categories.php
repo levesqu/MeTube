@@ -31,7 +31,7 @@ include_once "function.php";
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span clpngass="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="./browse.php">METUBE</a>
             </div>

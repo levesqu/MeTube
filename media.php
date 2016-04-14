@@ -224,9 +224,8 @@ if(isset($_GET['id'])) {
             </ul>
         </div>
     </div>
-</div>
 
-
+<!-- comments thread -->
 
     <?php
     echo "<h4>Description: &nbsp;</h4> ";
@@ -240,7 +239,7 @@ if(isset($_GET['id'])) {
 	}
 	?>
 	<br><br>
-	<fieldset="form-horizontal">
+	<fieldset class="form-horizontal">
 		<legend>Comments</legend>
 		<table class="table table-striped">
 			<?php
@@ -253,7 +252,11 @@ if(isset($_GET['id'])) {
 				<td><label class="control-label">
                         <?php
                         if($_SESSION['username'] != $commentUser){?>
-                            <a href="./messageThread.php"> <?php echo $commentUser;?> </a>:
+
+                            <form method="post" action="messageThread.php">
+                                <input type="submit" class="btn btn-link" value="<?php echo $commentUser ?>" name="categoryType" />
+                            </form>
+<!--                            <a href="./messageThread.php"> --><?php //echo $commentUser;?><!-- </a>:-->
                             <?php
                         }else{
                             echo $commentUser;
