@@ -211,7 +211,7 @@ if(isset($_GET['id'])) {
 
 
     <div class="btn-group">
-        <a href="#" class="btn btn-default">8</a>
+
         <div class="btn-group">
             <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 Dropdown
