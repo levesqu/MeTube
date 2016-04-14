@@ -192,7 +192,7 @@ if(isset($_GET['id'])) {
          <?php
          } ?>
          </div>
-<br><br>
+
          <div class="btn-group">
              <a href="#" class="btn btn-default">Default</a>
              <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
@@ -200,8 +200,6 @@ if(isset($_GET['id'])) {
                  <li><a href="#">Action</a></li>
                  <li><a href="#">Another action</a></li>
                  <li><a href="#">Something else here</a></li>
-                 <li class="divider"></li>
-                 <li><a href="#">Separated link</a></li>
              </ul>
          </div>
 
