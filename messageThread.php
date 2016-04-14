@@ -62,7 +62,7 @@ $messagesender=$_SESSION['username'];
     echo "<p>$sendMessageTo</p>";
 
     // Comments start-->
-    $messagequery="select * from messages where messagereceiver=($messagesender OR $sendMessageTo) and messagesender=($messagesender OR $sendMessageTo) ";
+    $messagequery="select * from messages where messagereceiver=('$messagesender' OR '$sendMessageTo') and messagesender=('$messagesender' OR '$sendMessageTo'); ";
 
 
     $messages = mysql_query($messagequery);
