@@ -223,7 +223,7 @@ if(isset($_GET['id'])) {
             <option>Text</option>
           </select>
         </div>
-        <input type="submit" class="btn btn-link " value="<?php echo $commentUser ?>">
+        <input type="submit" class="btn btn-link " value="Add to playlist">
       </div>
 
 <!-- comments thread -->

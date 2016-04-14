@@ -212,6 +212,7 @@ if(isset($_GET['id'])) {
 <!-- this shit broken -->
 
     <div class="form-group">
+      <form class="form-horizontal" method="post" action="add_to_playlist_process.php" enctype="multipart/form-data">
         <label for="playlistTitle" class="col-lg-2 control-label">Select playlist to add to:</label>
         <div class="col-lg-10">
           <select class="form-control" name="playlistTitle">
@@ -223,7 +224,7 @@ if(isset($_GET['id'])) {
             <option>Text</option>
           </select>
         </div>
-        <input type="submit" class="btn btn-link " value="Add to playlist">
+        <input type="submit" class="btn btn-primary" value="Add to playlist" name="addToPlaylist />
       </div>
 
 <!-- comments thread -->
@@ -251,20 +252,20 @@ if(isset($_GET['id'])) {
 			?>
 			<tr>
 				<td><label class="control-label">
-                        <?php
-                        if($_SESSION['username'] != $commentUser){?>
+              <?php
+              if($_SESSION['username'] != $commentUser){?>
 
-                            <form method="post" action="messageThread.php">
-                                <input type="submit" class="btn btn-link " value="<?php echo $commentUser ?>" name="sendMessageTo" />
-                            </form>
-<!--                            <a href="./messageThread.php"> --><?php //echo $commentUser;?><!-- </a>:-->
-                            <?php
-                        }else{
-                            echo $commentUser;
-                            echo ':';
-                        }
-                        ?>
-                    </label>
+                  <form method="post" action="messageThread.php">
+                      <input type="submit" class="btn btn-link " value="<?php echo $commentUser ?>" name="sendMessageTo" />
+                  </form>
+        <!--  <a href="./messageThread.php"> --><?php //echo $commentUser;?><!-- </a>:-->
+                  <?php
+              }else{
+                  echo $commentUser;
+                  echo ':';
+              }
+              ?>
+          </label>
 
 				<br><p><?php echo $commentBody?></p>
 				</td>
