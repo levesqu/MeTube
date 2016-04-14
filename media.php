@@ -209,12 +209,12 @@ if(isset($_GET['id'])) {
 <!--        </div>-->
 <!--    </div>-->
 
-
+<!-- this shit broken -->
     <div class="btn-group">
 
         <div class="btn-group">
-            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                Dropdown
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Dropdown(Broken for now)
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
