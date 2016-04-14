@@ -155,14 +155,12 @@ if(isset($_GET['id'])) {
                         <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
                     </td>
                 </tr>
-
      <br><br>
+
+
+     <p> <?php $mediadescription; ?> </p>
+     <br>
 <?php
-
-     echo "<p> $mediadescription </p>";
-     echo "<br><br>";
-
-
 
  }
  // Comments start-->
