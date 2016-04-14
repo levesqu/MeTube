@@ -61,7 +61,7 @@ if(isset($_GET['id'])) {
 	$filename=$result_row[0];
 	$filepath=$result_row[4];
     $mediatitle=$result_row[5];
-    $mediadescription=$result[6];
+    $mediadescription=$result_row[6];
 	$type=$result_row[2];
 
 	if(substr($type,0,5)=="image") //view image
@@ -164,7 +164,7 @@ if(isset($_GET['id'])) {
      <?php
  }
     echo "<h4>Description: &nbsp;</h4> ";
-    echo "<p>here is some description '$mediadescription' </p>";
+    echo "<p>here is some description $mediadescription</p>";
     echo "<br><br>";
 
 
