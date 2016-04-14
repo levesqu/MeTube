@@ -65,9 +65,9 @@ if(isset($_GET['id'])) {
 	if(substr($type,0,5)=="image") //view image
 	{
 	?>
-        <h3> "Viewing Picture: <?php echo $result_row[5];?>"</h3>
+        <h3> Viewing Picture: <?php echo $result_row[5];?></h3>
         <br><br>
-		<img src='".$filepath."'/>";
+		<img src="<?php echo $filepath?>"/>";
 <?php
 	}
 	elseif (substr($type,0,5)=="video")//view movie
