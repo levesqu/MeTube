@@ -161,6 +161,14 @@ if(isset($_GET['id'])) {
 
 <!-- favorite button -->
 
+     <div class="btn-group btn-group-justified">
+         <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+             <input type="submit" class="btn btn-default" value="Favorite" name="favoriteMedia" />
+         </form>
+     </div>
+
+
+
      <?php
  }
     echo "<h4>Description: &nbsp;</h4> ";
