@@ -84,6 +84,13 @@ if (!$messages)
         <br>
     </div>
 
+
+
+
+    <a href="" class="btn btn-primary btn-lg"
+       data-toggle="modal"
+       data-target="Modal">Click to open Modal</a>
+
     <div class="modal">
         <div class="modal-dialog">
             <div class="modal-content">
