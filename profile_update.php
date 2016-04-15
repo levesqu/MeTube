@@ -6,12 +6,15 @@ session_start();
     $username=$_SESSION['username'];
 
     //instead of blah i need to give it real username
+    $queryPassword = "select workplace from account where username='$username'";
     $queryAge = "select age from account where username='$username'";
     $queryWorkPlace = "select workplace from account where username='$username'";
 
+    $password = mysql_query($queryPassword);
     $age = mysql_query($queryAge);
     $workplace = mysql_query($queryWorkPlace);
 
+    $passwordrow = mysql_fetch_array($password);
     $agerow = mysql_fetch_array($age);
     $workplacerow = mysql_fetch_array($workplace);
     //$queryresult = mysql_query($query);
@@ -79,14 +82,14 @@ session_start();
         <div class="form-group">
 			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
             <div class="col-lg-10">
-		    	<input class="form-control" id="inputUsername" type="text" name="username" value="">
+		    	<input class="form-control" id="inputUsername" type="text" name="username" value="<?php echo $username;?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Update Password:</label>
             <div class="col-lg-10">
-                <input class="form-control" id="inputPassword" type="password" name="password" value="")>
+                <input class="form-control" id="inputPassword" type="password" name="password" value="<?php echo $passwordrow[0];?>")>
             </div>
         </div>
 
