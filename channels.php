@@ -74,6 +74,10 @@ include_once "function.php";
 </div><br>
 
 <br><br>
+<!--<button type="submit" class="btn btn-default">Add Channel</button> -->
+<p> Chris can you move this to the right and make it dark blue like create playlist...</p>
+<a href='./add_channel.php' style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Add Channel</a>
+<p></p>
 <p> Here will have a list of channels.</p>
 
 </body>
