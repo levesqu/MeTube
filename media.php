@@ -69,7 +69,7 @@ if(isset($_GET['id'])) {
 	?>
         <h3> Viewing Picture: <?php echo $result_row[5];?></h3>
         <br><br>
-		<img src="<?php echo $filepath?>"/>";<br>
+		<img src="<?php echo $filepath?>"/><br>
         <a href="<?php echo $filepath; ?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4]; ?>);">Download</a>
 <?php
 	}
@@ -210,22 +210,58 @@ if(isset($_GET['id'])) {
 <!--    </div>-->
 
 <!-- this shit broken -->
+<script type="text/javascript">
+function checkvalue(val)
+{
+    if(val==="add new")
+    {
+       document.getElementById('playlistTitleNew').style.display='block';
+       document.getElementById('createAndAddToPlaylist').style.display='block';
+       document.getElementById('addToPlaylist').style.display='none';
+    }
+    else
+    {
+       document.getElementById('playlistTitleNew').style.display='none'; 
+		document.getElementById('createAndAddToPlaylist').style.display='none';
+		document.getElementById('addToPlaylist').style.display='block';
+    }
+}
+</script>
 
-    <div class="form-group">
-      <form class="form-horizontal" method="post" action="add_to_playlist_process.php" enctype="multipart/form-data">
-        <label for="playlistTitle" class="col-lg-2 control-label">Select playlist to add to:</label>
-        <div class="col-lg-10">
-          <select class="form-control" name="playlistTitle">
-            <option>Sports</option>
-            <option>Comedy</option>
-            <option>Children</option>
-            <option>News</option>
-            <option>Pictures</option>
-            <option>Text</option>
-          </select>
-        </div>
-        <input type="submit" class="btn btn-primary" value="Add to playlist" name="addToPlaylist />
-      </div>
+	<?php
+		$playlistquery = "select * from playlists where playlistid not in (select playlistid from playlistmedia where username='$username' and mediaid=$mediaId);";
+		$playlistresult = mysql_query($playlistquery);
+	?>
+	<div class="form-group">
+		<form class="form-horizontal" method="post" action="add_to_playlist_process.php" enctype="multipart/form-data">
+			<label for="playlistTitle" class="control-label">Select playlist to add to:</label>
+			<div class="input-group col-lg-4">
+				<select class="form-control" onchange='checkvalue(this.value);' name="playlistTitle">
+					<?php
+					while ($singleplaylist = mysql_fetch_row($playlistresult))
+					{ 
+					$playlisttitle=$singleplaylist[1];
+					?>
+					<option value="<?php echo $playlisttitle; ?>"><?php echo $playlisttitle?></option>
+					<?php
+					}
+
+					?>
+					<option value="add new">Add to new playlist</option>
+				</select>
+				<input type="hidden" name="mediaid" value="<?php echo $mediaId; ?>" />
+				<span class="input-group-btn">
+					<input type="submit" class="btn btn-primary" value="Add" id="addToPlaylist" name="addToPlaylist" />
+				</span>
+			</div>
+			<div class="input-group col-lg-4">
+				<input type="text" class="form-control" name="playlistTitleNew" id="playlistTitleNew" style='display:none;'/>
+				<span class="input-group-btn">
+					<input type="submit" class="btn btn-primary" value="Add" id="createAndAddToPlaylist" name="createAndAddToPlaylist" style='display:none;'/>
+				</span>
+			</div>
+		</form>
+	</div>
 
 <!-- comments thread -->
 
