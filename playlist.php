@@ -2,13 +2,16 @@
 <?php
 session_start();
 include_once "function.php";
+	$playlistid=$_GET['id'];
+  $playlistquery = "select playlisttitle from playlists where playlistid='$playlistid';";
+  $playlist_result = mysql_query($playlistquery);
+  $playlist_result_row=mysql_fetch_row($playlist_result);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-    <title>Playlists - MeTube</title>
+    <title><?php echo $playlist_result_row[0];?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Playlists</title>
     <link rel="stylesheet" type="text/css" href="css/default.css" />
     <script type="text/javascript" src="js/jquery-latest.pack.js"></script>
     <script type="text/javascript">
@@ -78,10 +81,6 @@ include_once "function.php";
 <br>
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
 <?php
-	$playlistid=$_GET['id'];
-  $playlistquery = "select playlisttitle from playlists where playlistid='$playlistid';";
-  $playlist_result = mysql_query($playlistquery);
-  $playlist_result_row=mysql_fetch_row($playlist_result);
   echo $playlist_result_row[0];
 ?>
 </div>
@@ -113,6 +112,13 @@ include_once "function.php";
 			</td>
 			<td>
 				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+			</td>
+			<td>
+				<form class="form-horizontal" method="post" action="delete_playlist_media_process.php" enctype="multipart/form-data">
+					<input type="submit" class="btn btn-danger btn-xs" value="Remove Media" name="delete" />
+					<input type="hidden" name="playlistid" value="<?php echo $playlistid?>">
+					<input type="hidden" name="mediaid" value="<?php echo $mediaid?>">
+				</form>
 			</td>
 		</tr>
 <?php

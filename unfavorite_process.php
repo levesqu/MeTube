@@ -6,7 +6,7 @@ $username=$_SESSION['username'];
 $mediaid=$_POST['mediaid'];
 
 //insert into comments table
-$query = "delete from favorites where username='$username' and mediaid='$mediaid'";
+$query = "delete from favorites where username='$username' and mediaid=$mediaid";
 $queryresult = mysql_query($query)
 	or die("Remove from Favorites error in unfavorite_process.php " .mysql_error());
 

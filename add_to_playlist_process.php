@@ -48,7 +48,7 @@ if (isset($_POST['createPlaylist']))
 } 
 else
 { ?>
-<meta http-equiv="refresh" content="5;url=media.php?id=<?php echo $_POST['mediaid'];?>">
+<meta http-equiv="refresh" content="0;url=media.php?id=<?php echo $_POST['mediaid'];?>">
 <?php
 }
 ?>
