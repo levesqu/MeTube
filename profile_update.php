@@ -3,10 +3,11 @@ include "mysqlClass.inc.php";
 session_start();
 
     //$query = "tester";
+    $username=$_SESSION['username'];
 
     //instead of blah i need to give it real username
-    $queryAge = "select age from account where username like 'Schafer';";
-    $queryWorkPlace = "select workplace from account where username like 'Schafer';";
+    $queryAge = "select age from account where username='$username'";
+    $queryWorkPlace = "select workplace from account where username='$username'";
 
     $age = mysql_query($queryAge);
     $workplace = mysql_query($queryWorkPlace);
