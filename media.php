@@ -291,8 +291,9 @@ function checkvalue(val)
               <?php
               if($_SESSION['username'] != $commentUser){?>
 
-                  <form method="post" action="messageThread.php">
-                      <input type="submit" class="btn btn-link " value="<?php echo $commentUser ?>" name="sendMessageTo" />
+                  <form name="startmessage" method="post" action="messageThread.php">
+                  		<a href="javascript:document.startmessage.submit();"><?php echo $commentUser; ?>:</a>
+                      <input type="hidden" value="<?php echo $commentUser ?>" name="sendMessageTo" />
                   </form>
         <!--  <a href="./messageThread.php"> --><?php //echo $commentUser;?><!-- </a>:-->
                   <?php
