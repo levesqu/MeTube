@@ -67,15 +67,13 @@ $userresults=mysql_query($usersquery)
 
 <!--    text field and a button-->
 <form method="post" action="messageThread.php">
-
     <table class="table table-striped">
         <tr>
             <td  width="20%"><label for="sendMessageTo" class="col-lg-2 control-label">Send Message To:</label></td>
             <td width="80%"><input class="text" title="sendMessageTo" type="text" name="sendMessageTo"><br /></td>
-            <td><input type="submit" class="btn btn-primary " value="Send Message" name="readMessageSubject" /></td>
+            <td><input type="submit" class="btn btn-primary btn-sm" value="Send Message" name="readMessageSubject" /></td>
         </tr>
     </table>
-        <!--<input type="hidden" name="sendMessageTo" value=""/>-->
 </form>
 
 
