@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head> 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,23 +40,27 @@ if(isset($_POST['submit'])) {
 <?php require 'navigation.php'; ?>
 <!-- nav bar ends here -->
 <br>
-	<form method="post" action="<?php echo "login.php"; ?>">
 
-	<table width="100%">
-		<tr>
-			<td  width="20%"><label for="inputUsername" class="col-lg-2 control-label">Username:</label></td>
-			<td width="80%"><input class="text" title="username" type="text" name="username"><br /></td>
-		</tr>
-		<tr>
-			<td  width="20%"><label for="inputPassword" class="col-lg-2 control-label">Password</label></td>
-			<td width="80%"><input class="text" title="password" type="password" name="password"><br /></td>
-		</tr>
-		<tr>
-        
-			<td>&nbsp<input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp
-			<input name="reset" type="reset" class="btn btn-default" value="Reset"></td>
-		</tr>
-	</table>
+	<form class="form-horizontal addmargin" method="post" action="<?php echo "login.php"; ?>">
+
+<!--	<table width="100%">-->
+<!--		<tr class="input-group col-lg-4">-->
+<div class="input-group col-lg-3">
+			<label for="username" class="control-label">Username: </label> &nbsp;
+			<input class="form-control " title="username" type="text" name="username"><br />
+        </div>
+<!--		</tr>-->
+		<div class="input-group col-lg-3">
+			<label for="password" class=" control-label">Password: </label> &nbsp;
+			<input class="form-control" title="password" type="password" name="password"><br />
+            </div>
+<!--		</tr>-->
+<!--		<tr>-->
+        <br>
+			&nbsp; <input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp;
+			<input name="reset" type="reset" class="btn btn-default" value="Reset">
+<!--		</tr>-->
+<!--	</table>-->
 	</form>
 
 <?php
