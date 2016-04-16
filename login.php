@@ -45,18 +45,18 @@ if(isset($_POST['submit'])) {
 <!--	<table width="100%">-->
 <!--		<tr class="input-group col-lg-4">-->
 <div class="input-group col-lg-4">
-			<label for="username" class="col-lg-4 control-label">Username:</label> <br>
+			<label for="username" class="col-lg-4 control-label">Username: </label> &nbsp;
 			<input class="form-control col-lg-4" title="username" type="text" name="username"><br />
         </div>
 <!--		</tr>-->
 		<div class="input-group col-lg-4">
-			<label for="password" class="col-lg-4 control-label">Password:</label><br>
+			<label for="password" class="col-lg-4 control-label">Password: </label> &nbsp;
 			<input class="form-control col-lg-4" title="password" type="password" name="password"><br />
             </div>
 <!--		</tr>-->
 <!--		<tr>-->
         
-			&nbsp<input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp
+			&nbsp; <input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp;
 			<input name="reset" type="reset" class="btn btn-default" value="Reset">
 <!--		</tr>-->
 <!--	</table>-->
