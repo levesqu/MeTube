@@ -40,7 +40,8 @@ if(isset($_POST['submit'])) {
 <?php require 'navigation.php'; ?>
 <!-- nav bar ends here -->
 <br>
-	<form class="form-horizontal" method="post" action="<?php echo "login.php"; ?>">
+
+	<form class="form-horizontal addmargin" method="post" action="<?php echo "login.php"; ?>">
 
 <!--	<table width="100%">-->
 <!--		<tr class="input-group col-lg-4">-->
