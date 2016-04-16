@@ -42,22 +42,22 @@ if(isset($_POST['submit'])) {
 <br>
 	<form class="form-horizontal" method="post" action="<?php echo "login.php"; ?>">
 
-	<table width="100%">
-		<tr class="input-group col-lg-4">
+<!--	<table width="100%">-->
+<!--		<tr class="input-group col-lg-4">-->
 
-			<td  width="20%"><label for="username" class="col-lg-4 control-label">Username:</label></td>
-			<td width="80%"><input class="form-control col-lg-4" title="username" type="text" name="username"><br /></td>
-		</tr>
+			<label for="username" class="col-lg-4 control-label">Username:</label> <br>
+			<input class="form-control col-lg-4" title="username" type="text" name="username"><br />
+<!--		</tr>-->
 		<tr class="input-group col-lg-4">
-			<td  width="20%"><label for="password" class="col-lg-4 control-label">Password:</label></td>
-			<td width="80%"><input class="form-control col-lg-4" title="password" type="password" name="password"><br /></td>
-		</tr>
-		<tr>
+			<label for="password" class="col-lg-4 control-label">Password:</label><br>
+			<input class="form-control col-lg-4" title="password" type="password" name="password"><br />
+<!--		</tr>-->
+<!--		<tr>-->
         
-			<td>&nbsp<input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp
-			<input name="reset" type="reset" class="btn btn-default" value="Reset"></td>
-		</tr>
-	</table>
+			&nbsp<input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp
+			<input name="reset" type="reset" class="btn btn-default" value="Reset">
+<!--		</tr>-->
+<!--	</table>-->
 	</form>
 
 <?php
