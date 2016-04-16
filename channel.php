@@ -94,5 +94,9 @@ include_once "function.php";
 	}
 ?>
 	</table>
+	<form action="add_media_to_channel.php" method="post">
+		<button class="btn btn-primary pull-right" name="addChannel">Add Media To Channel</button>
+		<input type="hidden" name="channelid" value="<?php echo $channelid; ?>"/>
+	</form>
 </body>
 </html>

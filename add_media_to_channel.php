@@ -22,11 +22,11 @@ session_start();
   <form class="form-horizontal" method="post" action="add_channel_process.php" enctype="multipart/form-data" >
 
     <fieldset>
-      <legend>Add Channel</legend>
+      <legend>Add Media To Channel</legend>
       <div class="form-group">
         <label for="channelTitle" class="col-lg-2 control-label">Channel Title:</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" name="channelTitle" />
+          <input type="text" class="form-control" name="channelTitle" value="" disabled=""/>
         </div>
       </div>
       <div class="form-group">
