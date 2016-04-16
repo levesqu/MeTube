@@ -43,11 +43,12 @@ if(isset($_POST['submit'])) {
 	<form class="form-horizontal" method="post" action="<?php echo "login.php"; ?>">
 
 	<table width="100%">
-		<tr>
+		<tr class="input-group col-lg-4">
+
 			<td  width="20%"><label for="username" class="col-lg-4 control-label">Username:</label></td>
 			<td width="80%"><input class="form-control col-lg-4" title="username" type="text" name="username"><br /></td>
 		</tr>
-		<tr>
+		<tr class="input-group col-lg-4">
 			<td  width="20%"><label for="password" class="col-lg-2 control-label">Password</label></td>
 			<td width="80%"><input class="form-control col-lg-4" title="password" type="password" name="password"><br /></td>
 		</tr>
