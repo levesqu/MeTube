@@ -2,6 +2,7 @@
 <?php
 	session_start();
 	include_once "function.php";
+	$username = $_SESSION['username'];
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,6 +24,11 @@ function saveDownload(id)
  	);
 } 
 </script>
+<?php
+	$message_query = "select * from messages where messagereceiver='$username' and is_read=0;";
+	$message_results = mysql_query($message_query);
+	$message_count = mysql_num_rows($message_results);
+?>
     <!--the nav bar starts here -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -47,8 +53,8 @@ function saveDownload(id)
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-					<li><a href="./inbox.php">Messages</a></li>
-                    <li><a href="./profile_update.php">Update Profile</a></li>
+					<li><a href="./inbox.php">Messages <span class="badge"><?php echo $message_count; ?></span></a></li>
+                <li><a href="./profile_update.php">Update Profile</a></li>
 					<li><a href="./logout.php">Logout</a></li>
 
                 </ul>
@@ -87,7 +93,6 @@ function saveDownload(id)
 <br/><br/>
 <?php
 
-	$username = $_SESSION['username'];
 	$query = "SELECT * from media WHERE username='$username'"; 
 
 	$result = mysql_query( $query );
