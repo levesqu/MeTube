@@ -42,25 +42,19 @@ if(isset($_POST['submit'])) {
 <br>
 
 	<form class="form-horizontal addmargin" method="post" action="<?php echo "login.php"; ?>">
-
-<!--	<table width="100%">-->
-<!--		<tr class="input-group col-lg-4">-->
-<div class="input-group col-lg-3">
+        <div class="input-group col-lg-3">
 			<label for="username" class="control-label">Username: </label> &nbsp;
 			<input class="form-control " title="username" type="text" name="username"><br />
         </div>
-<!--		</tr>-->
+
 		<div class="input-group col-lg-3">
 			<label for="password" class=" control-label">Password: </label> &nbsp;
 			<input class="form-control" title="password" type="password" name="password"><br />
             </div>
-<!--		</tr>-->
-<!--		<tr>-->
+
         <br>
 			&nbsp; <input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp;
 			<input name="reset" type="reset" class="btn btn-default" value="Reset">
-<!--		</tr>-->
-<!--	</table>-->
 	</form>
 
 <?php
