@@ -40,7 +40,7 @@ if(isset($_POST['submit'])) {
 <?php require 'navigation.php'; ?>
 <!-- nav bar ends here -->
 <br>
-	<form method="post" action="<?php echo "login.php"; ?>">
+	<form class="form-horizontal" method="post" action="<?php echo "login.php"; ?>">
 
 	<table width="100%">
 		<tr>
