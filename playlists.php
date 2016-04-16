@@ -58,7 +58,7 @@ include_once "function.php";
 		die ("Could not query the playlists table in the database: <br />". mysql_error());
 	}
 ?>
-	<table class="table table-hover">
+	<table id="mytable" class="table table-hover">
 <?php
 	while ($result_row = mysql_fetch_row($result))
 	{ 

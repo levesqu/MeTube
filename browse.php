@@ -44,7 +44,8 @@ function saveDownload(id)
 </div><br>
 
 <p class="text-primary">Click Below to upload a file</p>
-<a href='./media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Upload Media</a>
+<!--<a href='./media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;">Upload Media</a> -->
+<a href="media_upload.php" class="btn btn-primary col-lg-2">Upload Media</a>
 
 <br>
 <div id='upload_result'>

@@ -31,10 +31,10 @@ include_once "function.php";
 
 <body>
 
-<p><?php echo $_SESSION['username'];?> Welcome To MeTube!</p>
+<h2><?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
 
-<h3 class="addmargin">Click one of the options below to browse media.</h3><br>
+<h4 class="addmargin">Click one of the options below to browse media.</h4><br>
 
 <div class="btn-group btn-group-justified">
     <a href="./categories.php" class="btn btn-default">Categories</a>
@@ -44,12 +44,50 @@ include_once "function.php";
     <a href="./browse.php" class="btn btn-default">My Media</a>
 </div><br>
 
-<br><br>
-<!--<button type="submit" class="btn btn-default">Add Channel</button> -->
-<p> Chris can you move this to the right and make it dark blue like create playlist...</p>
-<a href='./add_channel.php' style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;"> &nbsp; Add Channel</a>
-<p></p>
-<p> Here will have a list of channels.</p>
+<br>
+<div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
+	My Playlists
+</div>
+<br>
+<?php
+	$username=$_SESSION['username'];
+	$query = "select * from channels where username='$username';";
 
+	$result = mysql_query( $query );
+	if (!$result) {
+		die ("Could not query the playlists table in the database: <br />". mysql_error());
+	}
+?>
+	<table id="mytable" class="table table-hover">
+<?php
+	while ($result_row = mysql_fetch_row($result))
+	{ 
+		$channeltitle = $result_row[1];
+		$channelid=$result_row[0];
+?>
+
+		<tr class="success">
+			<td>
+				<a href="channel.php?id=<?php echo $channelid;?>" target="_blank"><?php echo $channeltitle;?></a> 
+			</td>
+			<td>
+				<form class="form-horizontal" method="post" action="delete_channel_process.php" enctype="multipart/form-data">
+					<input style="display: block; margin: auto;" type="submit" class="btn btn-danger btn-xs" value="Delete Channel" name="delete" />
+					<input type="hidden" name="channelid" value="<?php echo $channelid?>">
+				</form>
+			</td>
+		</tr>
+<?php
+	}
+?>
+		<tr>
+			<td />
+			<td>
+				<form action="add_channel.php" method="post">
+				<button class="btn btn-primary" name="addChannel" style="display: block; margin: auto;">Add Channel</button>
+				</form>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>

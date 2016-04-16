@@ -2,11 +2,15 @@
 <?php
 session_start();
 include_once "function.php";
+	$channelid=$_GET['id'];
+  $channelquery = "select channeltitle from channels where channelid='$channelid';";
+  $channel_result = mysql_query($channelquery);
+  $channel_result_row=mysql_fetch_row($channel_result);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-    <title>Favorites - MeTube</title>
+    <title><?php echo $channel_result_row[0];?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/default.css" />
     <script type="text/javascript" src="js/jquery-latest.pack.js"></script>
@@ -31,6 +35,7 @@ include_once "function.php";
 
 <h2><?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
+
 <h4 class="addmargin">Click one of the options below to browse media.</h4><br>
 
 <div class="btn-group btn-group-justified">
@@ -41,42 +46,48 @@ include_once "function.php";
     <a href="./browse.php" class="btn btn-default">My Media</a>
 </div><br>
 
+
 <br>
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
-	My Favorites
+<?php
+  echo $channel_result_row[0];
+?>
 </div>
 <br>
 <?php
 	$username=$_SESSION['username'];
-	$query = "select * from media join favorites on media.mediaid=favorites.mediaid where favorites.username='$username';";
+	$query = "select * from channelmedia join channels where channels.channelid = channelmedia.channelid and channels.channelid=$channelid and username='$username';";
 
 	$result = mysql_query( $query );
 	if (!$result) {
-		die ("Could not query the media table in the database: <br />". mysql_error());
+		die ("Could not query the channels table in the database: <br />". mysql_error());
 	}
 ?>
 	<table class="table table-hover">
 <?php
 	while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path, mediaTitle, mediaDescription, mediaTags, mediaCategory
 	{ 
-		$mediaid = $result_row[3];
-		$filename = $result_row[0];
-		$filepath = $result_row[4];
+	  $mediaid=$result_row[2];
+	  $media_query="select * from media where mediaid=$mediaid;";
+    $media_result = mysql_query($media_query);
+    $media_result_row = mysql_fetch_row($media_result);
+		$filename = $media_result_row[0];
+		$filepath = $media_result_row[4];
 ?>
 
 		<tr class="success">
-			<td />
 			<td>
-				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
+				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a> 
 			</td>
 			<td>
 				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
 			</td>
 			<td>
-					<form class="form-horizontal" method="post" action="unfavorite_process.php" enctype="multipart/form-data">
-						<input type="submit" class="btn btn-danger btn-xs" value="Remove Favorite" name="unfavoriteMediaFromList" />
-						<input type="hidden" name="mediaid" value="<?php echo $mediaid?>">
-					</form>
+				<form class="form-horizontal" method="post" action="delete_channel_media_process.php" enctype="multipart/form-data">
+					<input type="submit" class="btn btn-danger btn-xs" value="Remove Media" name="delete" />
+					<input type="hidden" name="channelid" value="<?php echo $channelid?>">
+					<input type="hidden" name="mediaid" value="<?php echo $mediaid?>">
+				</form>
 			</td>
 		</tr>
 <?php

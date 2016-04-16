@@ -31,15 +31,15 @@ session_start();
     <fieldset>
       <legend>Add Channel</legend>
       <div class="form-group">
-        <label for="mediaTitle" class="col-lg-2 control-label">Channel Title:</label>
+        <label for="channelTitle" class="col-lg-2 control-label">Channel Title:</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" name="mediaTitle" />
+          <input type="text" class="form-control" name="channelTitle" />
         </div>
       </div>
       <div class="form-group">
-        <label for="mediaDescription" class="col-lg-2 control-label">Channel Description:</label>
+        <label for="channelDescription" class="col-lg-2 control-label">Channel Description:</label>
         <div class="col-lg-10">
-          <textarea class="form-control" rows=3 name="mediaDescription"></textarea>
+          <textarea class="form-control" name="channelDescription" rows=3 name="ChannelDescription"></textarea>
         </div>
 <!--      </div>
       <div class="form-group">
@@ -74,6 +74,7 @@ session_start();
           <p></p> 
     <label class="col-lg-2 control-label" style="width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"> Select Media to Add to Channel:</label>
     <p></p> 
+
   <table class="table table-hover">
     <?php
       while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
@@ -82,14 +83,13 @@ session_start();
         $filename = $result_row[0];
         $filepath = $result_row[4];
     ?>
-
            <tr class="success">
         <td />
            <td>
-             <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a> 
+             <a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a> 
            </td>
            <td>
-             <input name="file" type="checkbox" size="50" />
+             <input name="mediaid[]" value="<?php echo $mediaid; ?>"type="checkbox"/>
            </td>
       </tr>
           <?php
@@ -97,13 +97,6 @@ session_start();
     ?>
 <br>
   </table>
-
-
-
-
-
-
-
 
 
         <div class="col-lg-10">

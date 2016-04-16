@@ -7,7 +7,7 @@ $mediaid=$_POST['mediaid'];
 $playlistid=$_POST['playlistid'];
 
 //insert into comments table
-$query = "delete from playlistmedia where playlistid=$playlistid and mediaid=$mediaid";
+$query = "delete from playlistmedia where playlistid=$playlistid and mediaid=$mediaid;";
 $queryresult = mysql_query($query)
 	or die("Remove from Playlistmedia error in delete_playlist_media_process.php " .mysql_error());
 
