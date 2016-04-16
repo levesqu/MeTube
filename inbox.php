@@ -52,7 +52,7 @@ $userresults=mysql_query($usersquery)
             <td><?php echo $other_user?>: &#09;
 
                 <form method="post" action="messageThread.php">
-                <input type="submit" class="btn btn-link " value="<?php echo $messageSubject ?>" name="readMessageSubject" />
+                    <input type="submit" class="btn btn-link " value="<?php echo $messageSubject ?>" name="readMessageSubject" />
                     <input type="hidden" name="sendMessageTo" value="<?php echo $other_user?>"/>
                 </form>
         </tr>
@@ -66,7 +66,17 @@ $userresults=mysql_query($usersquery)
 
 
 <!--    text field and a button-->
-    <a href="" class="btn btn-primary" >New Message</a>
+<form method="post" action="messageThread.php">
+
+    <table class="table table-striped">
+        <tr>
+            <td  width="20%"><label for="sendMessageTo" class="col-lg-2 control-label">Send Message To:</label></td>
+            <td width="80%"><input class="text" title="sendMessageTo" type="text" name="sendMessageTo"><br /></td>
+            <input type="submit" class="btn btn-primary " value="Send Message>" name="readMessageSubject" />
+        </tr>
+    </table>
+        <!--<input type="hidden" name="sendMessageTo" value=""/>-->
+</form>
 
 
 </div>
