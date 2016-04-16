@@ -1,8 +1,12 @@
 <?php
-	$username = $_SESSION['username'];
-	$message_query = "select * from messages where messagereceiver='$username' and is_read=0;";
-	$message_results = mysql_query($message_query);
-	$message_count = mysql_num_rows($message_results);
+	if (isset($_SESSION['username']))
+	{
+		$username = $_SESSION['username'];
+		$message_query = "select * from messages where messagereceiver='$username' and is_read=0;";
+		$message_results = mysql_query($message_query);
+		$message_count = mysql_num_rows($message_results);
+		$logged_in = 1;
+	}
 ?>
 
 <nav class="navbar navbar-default">
@@ -28,9 +32,15 @@
 				<button type="submit" class="btn btn-default">Submit</button>
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="./inbox.php">Messages <span class="badge"><?php echo $message_count; ?></span></a></li>
+				<li><a href="./inbox.php">Messages 
+					<?php if (isset($logged_in)) {?><span class="badge"><?php echo $message_count; ?></span><?php }?>
+					</a></li>
 				<li><a href="./profile_update.php">Update Profile</a></li>
-				<li><a href="./logout.php">Logout</a></li>
+				<?php if (isset($logged_in)) { ?>
+					<li><a href="logout.php">Logout</a></li>
+				<?php } else { ?>
+					<li><a href="index.php">Login</a></li>
+				<?php } ?>
 			</ul>
 		</div>
 	</div>
