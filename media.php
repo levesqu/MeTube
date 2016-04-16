@@ -186,13 +186,13 @@ function checkvalue(val)
 {
     if(val==="add new")
     {
-       document.getElementById('playlistTitleNew').style.display='block';
-       document.getElementById('createAndAddToPlaylist').style.display='block';
-       document.getElementById('addToPlaylist').style.display='none';
+      document.getElementById('playlistTitleNew').style.display='block';
+      document.getElementById('createAndAddToPlaylist').style.display='block';
+      document.getElementById('addToPlaylist').style.display='none';
     }
     else
     {
-       document.getElementById('playlistTitleNew').style.display='none'; 
+      document.getElementById('playlistTitleNew').style.display='none'; 
 		document.getElementById('createAndAddToPlaylist').style.display='none';
 		document.getElementById('addToPlaylist').style.display='block';
     }

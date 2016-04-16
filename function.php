@@ -12,7 +12,7 @@ function user_exist_check ($username, $password){
 		$row = mysql_fetch_assoc($result);
 		if($row == 0){
 			$query = "insert into account(username,password) values ('$username','$password')";
-			echo "insert query:" . $query;
+			//echo "insert query:" . $query;
 			$insert = mysql_query( $query );
 			if($insert)
 				return 1;
@@ -30,7 +30,7 @@ function user_pass_check($username, $password)
 {
 	
 	$query = "select * from account where username='$username'";
-	echo  $query;
+	//echo  $query;
 	$result = mysql_query( $query );
 		
 	if (!$result)

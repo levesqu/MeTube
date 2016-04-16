@@ -21,13 +21,10 @@ include_once "function.php";
 
 
 <?php
-$username = $_SESSION['username'];;
-$messagequery="select * from (select * from messages where messagereceiver='$username' order by messageid DESC)t group by messagesender";
-$messages = mysql_query($messagequery);
-if (!$messages)
-{
-    die("Could not query the messages table in the database: <br />".mysql_error());
-}
+$username = $_SESSION['username'];
+$usersquery="select * from messages where messagereceiver='nathan' group by messagesender;";
+$userresults=mysql_query($usersquery)
+	or die("Could not query the messages table <br>" . mysql_error());
 ?>
 <br><br>
 
@@ -36,17 +33,27 @@ if (!$messages)
 <legend>Messages</legend>
 <table class="table table-striped">
     <?php
-    while ($singleMessage = mysql_fetch_row($messages))
+    while ($single_user = mysql_fetch_row($userresults))
     {
-        $messageSender = $singleMessage[3];
+    	$other_user=$single_user[3];
+		$messagequery="select * from (select * from messages where (messagereceiver='$username'" . 
+		"and messagesender='$other_user') or (messagereceiver='$other_user' and messagesender='$username'))".
+		"t order by messageid desc;";
+		$messages = mysql_query($messagequery);
+		if (!$messages)
+		{
+			 die("Could not query the messages table in the database: <br />".mysql_error());
+		}
+
+		$singleMessage = mysql_fetch_row($messages);
         $messageSubject = $singleMessage[1];
         ?>
         <tr>
-            <td><?php echo $messageSender?>: &#09;
+            <td><?php echo $other_user?>: &#09;
 
                 <form method="post" action="messageThread.php">
                 <input type="submit" class="btn btn-link " value="<?php echo $messageSubject ?>" name="readMessageSubject" />
-                    <input type="hidden" name="sendMessageTo" value="<?php echo $messageSender?>"/>
+                    <input type="hidden" name="sendMessageTo" value="<?php echo $other_user?>"/>
                 </form>
         </tr>
         <?php
