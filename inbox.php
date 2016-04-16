@@ -71,7 +71,7 @@ $userresults=mysql_query($usersquery)
         <tr>
             <td  width="20%"><label for="sendMessageTo" class="col-lg-8 control-label">Send Message To:</label></td>
             <td width="80%"><input  class="form-control col-lg-4" title="sendMessageTo" type="text" name="sendMessageTo" placeholder="Username"><br /></td>
-            <td><input type="submit" class="btn btn-primary btn-sm" value="Send Message" name="readMessageSubject" /></td>
+            <td><input type="submit" class="btn btn-primary " value="Send Message" name="readMessageSubject" /></td>
         </tr>
     </table>
 </form>
