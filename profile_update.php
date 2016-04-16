@@ -6,7 +6,7 @@ session_start();
     $username=$_SESSION['username'];
 
     $queryProfile = "select * from account where username ='$username'";
-    $profile = mysql($queryProfile);
+    $profile = mysql_query($queryProfile);
 
     $profileInfo=mysql_fetch_row($profile);
 
