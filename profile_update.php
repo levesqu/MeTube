@@ -1,5 +1,6 @@
 <?php
-include "mysqlClass.inc.php";
+include_once "mysqlClass.inc.php";
+
 session_start();
 
     //$query = "tester";
