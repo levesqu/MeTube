@@ -26,6 +26,20 @@ include_once "function.php";
 $sendMessageTo=$_POST['sendMessageTo'];
 $messagesender=$_SESSION['username'];
 
+if (isset($_POST['recursive']))
+{
+	$sendTo=$_POST['sendMessageTo'];
+	$messagecontent=$_POST['messageContent'];
+	$messageSubject=$_POST['messageSubject'];
+	$messageSend=$_POST['messageSender'];
+
+
+	//insert into comments table
+	$insert = "insert into messages(messageid, messagesubject, messagecontent, messagesender,messagereceiver, is_read)".
+		 "values(NULL,'$messageSubject','$messagecontent','$messageSend','$sendTo', FAlSE)";
+	$queryresult = mysql_query($insert)
+		or die("Insert into Messages error in sendMessage_process.php " .mysql_error());
+}
 
 
     echo "<h4>Messages with: &nbsp; $sendMessageTo </h4> ";
@@ -75,7 +89,7 @@ $messagesender=$_SESSION['username'];
     <table class="table table-striped">
         <tr>
             <td>
-                <form class="form-horizontal" method="post" action="sendMessage_process.php">
+                <form class="form-horizontal" method="post" action="">
                     <label class="control-label">Send message to <?php echo $sendMessageTo?>:</label>
                     <br>
                     <label for="messageSubject" class="control-label">Subject: &nbsp;</label>
@@ -84,9 +98,9 @@ $messagesender=$_SESSION['username'];
                     <label for="messageContent" class="control-label">Message:</label>
                     <textarea class="form-control" rows="3" name="messageContent"></textarea>
                     <br>
-                    <input type="submit" class="btn btn-primary" value="Send Message"/>
-                    <input type="hidden" name="messageSender" value="<?php echo $messagesender?>"/>
-                    <input type="hidden" name="sendMessageTo" value="<?php echo $sendMessageTo?>"/>
+                    <input type="submit" name="recursive"class="btn btn-primary" value="Send Message"/>
+                    <input type="hidden" name="sendMessageTo" value="<?php echo $sendMessageTo;?>"/>
+                    <input type="hidden" name="messageSender" value="<?php echo $messagesender;?>"/>
                 </form>
             </td>
         </tr>
