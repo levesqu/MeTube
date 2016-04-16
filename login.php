@@ -44,12 +44,12 @@ if(isset($_POST['submit'])) {
 
 	<table width="100%">
 		<tr>
-			<td  width="20%"><label for="username" class="col-lg-2 control-label">Username:</label></td>
+			<td  width="20%"><label for="username" class="col-lg-4 control-label">Username:</label></td>
 			<td width="80%"><input class="form-control col-lg-4" title="username" type="text" name="username"><br /></td>
 		</tr>
 		<tr>
 			<td  width="20%"><label for="password" class="col-lg-2 control-label">Password</label></td>
-			<td width="80%"><input class="form-control col-lg-2" title="password" type="password" name="password"><br /></td>
+			<td width="80%"><input class="form-control col-lg-4" title="password" type="password" name="password"><br /></td>
 		</tr>
 		<tr>
         
