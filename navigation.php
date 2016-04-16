@@ -1,4 +1,8 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+include_once "function.php";
 	if (isset($_SESSION['username']))
 	{
 		$username = $_SESSION['username'];
