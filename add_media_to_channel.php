@@ -13,47 +13,36 @@ session_start();
     <?php require 'navigation.php'; ?>
     <!-- nav bar ends here -->
 
+<?php
+	$channelid=$_POST['channelid'];
+	$query = "select * from channels where channelid=$channelid;";
+	$result = mysql_query($query);
+	$result_row = mysql_fetch_row($result);
+	$channelTitle=$result_row[1];
+	$channelDescription=$result_row[2];
+?>
 
 </head>
 
 <body>
 
 <div class="form-group">
-  <form class="form-horizontal" method="post" action="add_channel_process.php" enctype="multipart/form-data" >
-
+  <form class="form-horizontal" method="post" action="add_media_to_channel_process.php" enctype="multipart/form-data" >
+	<input type="hidden" name="channelid" value="<?php echo $channelid; ?>" />
     <fieldset>
       <legend>Add Media To Channel</legend>
       <div class="form-group">
         <label for="channelTitle" class="col-lg-2 control-label">Channel Title:</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" name="channelTitle" value="" disabled=""/>
+          <input type="text" class="form-control" name="channelTitle" value="<?php echo $channelTitle; ?>" disabled=""/>
         </div>
       </div>
       <div class="form-group">
         <label for="channelDescription" class="col-lg-2 control-label">Channel Description:</label>
         <div class="col-lg-10">
-          <textarea class="form-control" name="channelDescription" rows=3 name="ChannelDescription"></textarea>
+          <textarea class="form-control" name="channelDescription" rows=3 name="ChannelDescription" disabled=""><?php echo $channelDescription; ?></textarea>
         </div>
-<!--      </div>
-      <div class="form-group">
-        <label for="mediaTags" class="col-lg-2 control-label">Media Tags:</label>
-        <div class="col-lg-10">
-          <textarea class="form-control" name="mediaTags"></textarea>
-        </div> 
-      </div>
-      <div class="form-group">
-        <label for="mediaCategories" class="col-lg-2 control-label">Select Category:</label>
-        <div class="col-lg-10">
-          <select class="form-control" name="mediaCategory">
-            <option>Sports</option>
-            <option>Comedy</option>
-            <option>Children</option>
-            <option>News</option>
-            <option>Pictures</option>
-            <option>Text</option>
-          </select>
-        </div>
-      </div> -->
+
       <div class="form-group">
           <?php
             $username = $_SESSION['username'];
