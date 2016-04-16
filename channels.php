@@ -84,7 +84,7 @@ include_once "function.php";
 			<td />
 			<td>
 				<form action="add_channel.php" method="post">
-				<button class="btn btn-primary" name="addChannel" style="display: block; margin: auto;">Add Channel</button>
+				<button class="btn btn-primary pull-right" name="addChannel">Add Channel</button>
 				</form>
 			</td>
 		</tr>

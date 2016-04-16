@@ -200,7 +200,7 @@ function checkvalue(val)
 </script>
 
 	<?php
-		$playlistquery = "select * from playlists where playlistid not in (select playlistid from playlistmedia where username='$username' and mediaid=$mediaId);";
+		$playlistquery = "select * from playlists where username = '$username' and playlistid not in (select playlistid from playlistmedia where username='$username' and mediaid=$mediaId);";
 		$playlistresult = mysql_query($playlistquery);
 	?>
 	<div class="form-group">
