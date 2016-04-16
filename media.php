@@ -283,6 +283,7 @@ function checkvalue(val)
 			<?php
 				while ($singleComment = mysql_fetch_row($comments))
 				{
+					$commentId = $singleComment[0];
 					$commentUser = $singleComment[2];
 					$commentBody = $singleComment[3];
 			?>
@@ -290,20 +291,26 @@ function checkvalue(val)
 				<td><label class="control-label">
               <?php
               if($_SESSION['username'] != $commentUser){?>
-
-                  <form name="startmessage" method="post" action="messageThread.php">
-                  		<a href="javascript:document.startmessage.submit();"><?php echo $commentUser; ?>:</a>
-                      <input type="hidden" value="<?php echo $commentUser ?>" name="sendMessageTo" />
+                  <form id="startmessage<?php echo $commentId; ?>" method="post" action="messageThread.php">
+                  		<a href="javascript:document.getElementById('startmessage<?php echo $commentId; ?>').submit();"><?php echo $commentUser; ?>:</a>
+                      <input type="hidden" value="<?php echo $commentUser; ?>" name="sendMessageTo" />
                   </form>
-        <!--  <a href="./messageThread.php"> --><?php //echo $commentUser;?><!-- </a>:-->
                   <?php
               }else{
-                  echo $commentUser;
-                  echo ':';
+              ?>
+
+					<form id="deletecomment<?php echo $commentId; ?>" method="post" action="delete_comment_process.php">
+					<?php echo $commentUser; 
+							echo ':';?>
+						<a href="javascript:document.getElementById('deletecomment<?php echo $commentId; ?>').submit();"><small>Delete</small></a>
+						<input type="hidden" value="<?php echo $commentId; ?>" name="commentId" />
+						<input type="hidden" value="<?php echo $mediaId; ?>" name="mediaId" />
+					</form>
+                  <?php
               }
               ?>
           </label>
-
+               		
 				<br><p><?php echo $commentBody?></p>
 				</td>
 			</tr>
