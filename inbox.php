@@ -22,7 +22,7 @@ include_once "function.php";
 
 <?php
 $username = $_SESSION['username'];
-$usersquery="select * from messages where messagereceiver='nathan' group by messagesender;";
+$usersquery="select * from messages where messagereceiver='$username' group by messagesender;";
 $userresults=mysql_query($usersquery)
 	or die("Could not query the messages table <br>" . mysql_error());
 ?>
