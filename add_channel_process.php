@@ -3,7 +3,6 @@ session_start();
 include_once "function.php";
 
 $username=$_SESSION['username'];
-$mediaIdList=$_POST['mediaid'];
 $channeltitle=$_POST['channelTitle'];
 $channeldescription=$_POST['channelDescription'];
 
@@ -18,12 +17,16 @@ $channel_result = mysql_query($channel_query);
 $channel_row = mysql_fetch_row($channel_result);
 $channelid = $channel_row[0];
 
+if (isset($_POST['mediaid']))
+{
+$mediaIdList=$_POST['mediaid'];
 foreach ($mediaIdList as $mediaid)
 {
 	$media_insert = "insert into channelmedia(mapid, channelid, mediaid)".
 						"values(NULL, $channelid, $mediaid)";
 	$media = mysql_query($media_insert)
 		or die("Insert into Channelmedia error in add_channel_process.php " . mysql_error());
+}
 }
 ?>
 
