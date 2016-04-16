@@ -1,5 +1,7 @@
 <?php
 
+include_once "function.php";
+
 session_start();
 
     //$query = "tester";
