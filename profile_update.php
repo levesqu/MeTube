@@ -1,5 +1,4 @@
 <?php
-include_once "mysqlClass.inc.php";
 
 session_start();
 
