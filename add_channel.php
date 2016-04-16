@@ -64,7 +64,7 @@ session_start();
       <div class="form-group">
           <?php
             $username = $_SESSION['username'];
-            $query = "SELECT * from media WHERE username='$username'"; 
+            $query = "SELECT * from media WHERE username='$username' and mediaid NOT IN (select media.mediaid from media join channelmedia on media.mediaid=channelmedia.mediaid)"; 
             $result = mysql_query( $query );
 
             if (!$result){
