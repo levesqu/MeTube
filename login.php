@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head> 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,13 +44,15 @@ if(isset($_POST['submit'])) {
 
 <!--	<table width="100%">-->
 <!--		<tr class="input-group col-lg-4">-->
-
+<div class="input-group col-lg-4">
 			<label for="username" class="col-lg-4 control-label">Username:</label> <br>
 			<input class="form-control col-lg-4" title="username" type="text" name="username"><br />
+        </div>
 <!--		</tr>-->
-		<tr class="input-group col-lg-4">
+		<div class="input-group col-lg-4">
 			<label for="password" class="col-lg-4 control-label">Password:</label><br>
 			<input class="form-control col-lg-4" title="password" type="password" name="password"><br />
+            </div>
 <!--		</tr>-->
 <!--		<tr>-->
         
