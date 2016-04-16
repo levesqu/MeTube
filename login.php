@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) {
 			}		
 		}
 }
- 
+
 ?>
 
 <body>
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])) {
             </div>
 
         <br>
-			&nbsp; <input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp;
+			<input name="submit" type="submit" class="btn btn-primary" value="Login">&nbsp;
 			<input name="reset" type="reset" class="btn btn-default" value="Reset">
 	</form>
 
