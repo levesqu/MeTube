@@ -36,31 +36,30 @@ session_start();
 <form class="form-horizontal" method="post"  action="profile_update_process.php" enctype="multipart/form-data" >
     <fieldset>
         <legend>Update Profile</legend>
-        <!-- in here there was a second <form> tag and the top form tag at media upload procress in it not sure if that's what was meant to be but I changed it-->
 	<table width="100%">
         <div class="form-group">
-			<label for="inputUsername" class="col-lg-2 control-label">Update Username:</label>
+			<label for="inputUsername" class="col-lg-2 control-label">Username:</label>
             <div class="col-lg-10">
-		    	<input class="form-control" id="inputUsername" type="text" name="username" value="<?php echo $username;?>">
+		    	<input class="form-control" id="inputUsername" type="text" name="username" value="<?php echo $username;?>"  disabled="">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Update Password:</label>
+            <label for="inputPassword" class="col-lg-2 control-label">Password:</label>
             <div class="col-lg-10">
                 <input class="form-control" id="inputPassword" type="password" name="password" value="<?php echo $password;?>")>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="inputAge" class="col-lg-2 control-label">Update Age:</label>
+            <label for="inputAge" class="col-lg-2 control-label">Age:</label>
             <div class="col-lg-10">
                 <input class="form-control" id="inputAge" type="text" name="age" value="<?php echo $age;?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="inputWorkplace" class="col-lg-2 control-label">Update Place of Work:</label>
+            <label for="inputWorkplace" class="col-lg-2 control-label">Place of Work:</label>
             <div class="col-lg-10">
                 <input class="form-control" id="inputWorkplace" type="text" name="workplace" value="<?php echo $workplace;?>">
             </div>
