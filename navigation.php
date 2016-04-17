@@ -29,11 +29,11 @@ if (isset($logged_in)) { ?>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="browse.php">Home page <span class="sr-only">(current)</span></a></li>
 			</ul>
-			<form class="navbar-form navbar-left" role="search">
+			<form class="navbar-form navbar-left" role="search" action="searchMedia.php">
 				<div class="form-group">
 					<input type="text" name="searchWords" class="form-control" placeholder="Search">
 				</div>
-				<button type="submit" class="btn btn-default" action="searchMedia.php" >Submit</button>
+				<button type="submit" class="btn btn-default" >Submit</button>
 			</form>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="inbox.php">Messages 
