@@ -33,15 +33,13 @@ $index =0;
             die ("Could not query the media table in the database: <br />". mysql_error());
         }
         ?>
-
             <!-- table filled by what we've serarched for -->
-
                 <?php
                 while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
                 {
                     $mediaid = $result_row[3];
 
-                    if(!in_array(%$mediaid, $foundMediaIds)){
+                    if(!in_array($mediaid, $foundMediaIds);){
                         $foundMediaIds[$index] = $mediaid;
                         $index++;
                         $filename = $result_row[0];
