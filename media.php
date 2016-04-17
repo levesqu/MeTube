@@ -159,7 +159,7 @@ if(isset($_GET['id'])) {
 		else if (type=="F")
 		{ document.getElementById('button form').action="favorite_process.php";}
 		else if (type=="unS")
-		{ document.getElementById('button form').action="unsubscritbe_process.php";}
+		{ document.getElementById('button form').action="unsubscribe_process.php";}
 		else if (type=="S")
 		{ document.getElementById('button form').action="subscribe_process.php";}
 	}
