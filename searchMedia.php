@@ -17,38 +17,35 @@ include_once "function.php";
 </head>
 
 <body>
-
-<?php
-$search = $_POST['searchWords'];
-
-$query = "SELECT * from media WHERE mediaTags='$search'";
-
-$result = mysql_query( $query );
-if (!$result){
-    die ("Could not query the media table in the database: <br />". mysql_error());
-}
-?>
 <div class="addmargin">
+<table class="table table-hover">
+<?php
+$searchWords = explode(' ', $_POST["searchWords"]);
+// loop on this array to query  each time
 
-    <!-- table filled by what we've serarched for -->
-        <table class="table table-hover">
-            <?php
+$foundMediaIds=[];
+$index =0;
+    foreach($searchWords as $word){
+        $query = "SELECT * from media WHERE mediaTags LIKE '%$word%'";
 
-            if(mysql_num_rows($result)==0){
-                ?>
-                <tr class="primary">
-                    <td> No search results to display</td>
-                <tr>
-                    <?php
-            }
-            else{
+        $result = mysql_query( $query );
+        if (!$result){
+            die ("Could not query the media table in the database: <br />". mysql_error());
+        }
+        ?>
+            <!-- table filled by what we've serarched for -->
+                <?php
                 while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
                 {
                     $mediaid = $result_row[3];
-                    $filename = $result_row[0];
-                    $filepath = $result_row[4];
-                    ?>
 
+                    if(!in_array($mediaid, $foundMediaIds)){
+                        $foundMediaIds[$index] = $mediaid;
+                        $index++;
+                        $filename = $result_row[0];
+                        $filepath = $result_row[4];
+
+                    ?>
                     <tr class="success">
                         <td>
                             <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a>
@@ -58,11 +55,12 @@ if (!$result){
                         </td>
                     </tr>
                     <?php
+                    }
                 }
-
-            }?>
-
-            <br>
+    }?>
+        <tr class="primary">
+            <td> No more search results to display.</td>
+        </tr>
     </table>
 
 
