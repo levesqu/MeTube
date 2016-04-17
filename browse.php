@@ -33,15 +33,7 @@ function saveDownload(id)
 
 <h2> <?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
-<h4 class="addmargin">Click one of the options below to browse media.</h4><br>
-
-<div class="btn-group btn-group-justified">
-	<a href="./categories.php" class="btn btn-default">Categories</a>
-	<a href="./favorites.php" class="btn btn-default">Favorites</a>
-	<a href="./channels.php" class="btn btn-default">Channels</a>
-	<a href="./playlists.php" class="btn btn-default">Playlists</a>
-    <a href="./browse.php" class="btn btn-default">My Media</a>
-</div><br>
+<?php require 'browse_media.php'; ?>
 
 <p class="text-primary">Click Below to upload a file</p>
 <!--<a href='./media_upload.php'  style="background-color:#95a5a6; color:#FFFFFF; padding-left:50px; padding-right: 50px; padding-bottom: 10px; padding-top: 10px;">Upload Media</a> -->
