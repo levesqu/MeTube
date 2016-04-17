@@ -19,9 +19,9 @@ include_once "function.php";
 <body>
 
 <?php
-$searchWords = $_POST['searchWords'];
+$search = $_POST['searchWords'];
 
-$query = "SELECT * from media WHERE mediaTags='$searchWords'";
+$query = "SELECT * from media WHERE mediaTags='$search'";
 
 $result = mysql_query( $query );
 if (!$result){

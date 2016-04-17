@@ -29,7 +29,7 @@ if (isset($logged_in)) { ?>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="browse.php">Home page <span class="sr-only">(current)</span></a></li>
 			</ul>
-			<form class="navbar-form navbar-left" role="search" action="searchMedia.php">
+			<form class="navbar-form navbar-left" method="post" role="search" action="searchMedia.php">
 				<div class="form-group">
 					<input type="text" name="searchWords" class="form-control" placeholder="Search">
 				</div>
