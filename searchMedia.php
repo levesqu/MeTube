@@ -25,7 +25,7 @@ $searchWords = explode(' ', $_POST["searchWords"]);
 $foundMediaIds=[];
 $index =0;
     foreach($searchWords as $word){
-        $query = "SELECT * from media WHERE mediaTags LIKE %'$word'%";
+        $query = "SELECT * from media WHERE mediaTags LIKE '%$word%'";
 
         $result = mysql_query( $query );
         if (!$result){
