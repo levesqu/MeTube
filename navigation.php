@@ -43,7 +43,7 @@ if (isset($logged_in)) { ?>
 				<?php if ($message_count!=0) { ?>
 					<span class="badge"><?php echo $message_count; ?></span>
 				<?php } ?>
-				<li><a href="profile_update.php">Update Profile</a></li>
+				<li><a href="profile_update.php">My Profile</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
