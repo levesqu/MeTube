@@ -39,7 +39,7 @@ $index =0;
                 {
                     $mediaid = $result_row[3];
 
-                    if(!in_array($mediaid, $foundMediaIds);){
+                    if(!in_array($mediaid, $foundMediaIds)){
                         $foundMediaIds[$index] = $mediaid;
                         $index++;
                         $filename = $result_row[0];
