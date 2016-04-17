@@ -19,35 +19,33 @@ include_once "function.php";
 <body>
 
 <?php
-$search = $_POST['searchWords'];
+$searchWords = explode(' ', $_POST["searchWords"]);
+// loop on this array to query  each time
 
-$query = "SELECT * from media WHERE mediaTags='$search'";
+$foundMediaIds=[];
+$index =0;
+    foreach($searchWords as $word){
+        $query = "SELECT * from media WHERE mediaTags LIKE %'$word'%";
 
-$result = mysql_query( $query );
-if (!$result){
-    die ("Could not query the media table in the database: <br />". mysql_error());
-}
-?>
+        $result = mysql_query( $query );
+        if (!$result){
+            die ("Could not query the media table in the database: <br />". mysql_error());
+        }
+        ?>
 <div class="addmargin">
 
-    <!-- table filled by what we've serarched for -->
-        <table class="table table-hover">
-            <?php
-
-            if(mysql_num_rows($result)==0){
-                ?>
-                <tr class="primary">
-                    <td> No search results to display</td>
-                <tr>
-                    <?php
-            }
-            else{
+            <!-- table filled by what we've serarched for -->
+            <table class="table table-hover">
+                <?php
                 while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
                 {
                     $mediaid = $result_row[3];
+                    $foundMediaIds[$index] = $mediaid;
+                    $index++;
                     $filename = $result_row[0];
                     $filepath = $result_row[4];
                     ?>
+
 
                     <tr class="success">
                         <td>
@@ -59,9 +57,10 @@ if (!$result){
                     </tr>
                     <?php
                 }
-
-            }?>
-
+    }?>
+        <tr class="primary">
+            <td> No search results to display</td>
+        <tr>
             <br>
     </table>
 
