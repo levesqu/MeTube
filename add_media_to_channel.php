@@ -82,7 +82,7 @@ session_start();
 
 
         <div class="col-lg-10">
-          <input value="Create Channel" class="btn btn-primary" name="submit" type="submit" />
+          <input value="Add Media To Channel" class="btn btn-primary" name="submit" type="submit" />
         </div>
 
       </div>
