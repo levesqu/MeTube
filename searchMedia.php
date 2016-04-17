@@ -40,12 +40,14 @@ $index =0;
                 while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
                 {
                     $mediaid = $result_row[3];
-                    $foundMediaIds[$index] = $mediaid;
-                    $index++;
-                    $filename = $result_row[0];
-                    $filepath = $result_row[4];
-                ?>
 
+                    if(!in_array(%$mediaid, $foundMediaIds)){
+                        $foundMediaIds[$index] = $mediaid;
+                        $index++;
+                        $filename = $result_row[0];
+                        $filepath = $result_row[4];
+
+                    ?>
                     <tr class="success">
                         <td>
                             <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a>
@@ -54,11 +56,12 @@ $index =0;
                             <a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
                         </td>
                     </tr>
-                <?php
+                    <?php
+                    }
                 }
     }?>
         <tr class="primary">
-            <td> No search results to display</td>
+            <td> No more search results to display.</td>
         </tr>
     </table>
 
