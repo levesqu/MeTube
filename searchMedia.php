@@ -17,7 +17,8 @@ include_once "function.php";
 </head>
 
 <body>
-
+<div class="addmargin">
+<table class="table table-hover">
 <?php
 $searchWords = explode(' ', $_POST["searchWords"]);
 // loop on this array to query  each time
@@ -32,10 +33,9 @@ $index =0;
             die ("Could not query the media table in the database: <br />". mysql_error());
         }
         ?>
-<div class="addmargin">
 
             <!-- table filled by what we've serarched for -->
-            <table class="table table-hover">
+
                 <?php
                 while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
                 {
@@ -44,8 +44,7 @@ $index =0;
                     $index++;
                     $filename = $result_row[0];
                     $filepath = $result_row[4];
-                    ?>
-
+                ?>
 
                     <tr class="success">
                         <td>
@@ -55,13 +54,12 @@ $index =0;
                             <a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
                         </td>
                     </tr>
-                    <?php
+                <?php
                 }
     }?>
         <tr class="primary">
             <td> No search results to display</td>
-        <tr>
-            <br>
+        </tr>
     </table>
 
 
