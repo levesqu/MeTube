@@ -43,7 +43,7 @@ include_once "function.php";
 </script>
 
 
-<form method="POST" action="messageThread.php" id="profile">
+<form method="POST" action="messageThread.php" id="sendMessage">
         <input type="hidden" name="username" value="<?php echo $username;?>"/>
 </form>
 
