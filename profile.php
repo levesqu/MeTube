@@ -98,11 +98,6 @@ else {
     <h4>About:</h4>
     <p> <?php echo $aboutme ?>  </p>
     <?php
-        if($_SESSION['username'] != $username and isset($_SESSION['username'])){
-            ?>
-            <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
-            <?php
-        }
 
 }
 ?>
