@@ -113,7 +113,7 @@ function update_profile_info($u_name, $u_pass, $u_age, $u_workplace, $u_aboutme,
         $query = "update account set lastname='$u_lastname' WHERE username='$u_name'";
         $queryresult = mysql_query($query);
     }
-
+ return 1;
 }
 	
 ?>
