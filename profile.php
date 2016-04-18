@@ -52,9 +52,10 @@ if($_SESSION['username'] == $username){
 //    show my profile buttons
 ?>
     <div class="btn-group btn-group-justified">
-    <a href="./channels.php" class="btn btn-default">My Channels</a>
-    <a href="./profile_update.php" class="btn btn-default">Update Profile</a>
-</div><br><br>
+        <a href="./channels.php" class="btn btn-default">My Channels</a>
+        <a href="./my_media.php" class="btn btn-default">My Media</a>
+        <a href="./profile_update.php" class="btn btn-default">Update Profile</a>
+    </div><br><br>
 
  <?php
 }
@@ -74,11 +75,15 @@ else{
      <?php  echo $lastname; ?></h3>
     <h4>About:</h4>
     <p> <?php echo $aboutme ?>  </p>
-
-    <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
+<?php
+    if($_SESSION['username'] != $username){
+        ?>
+        <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
+    <?php
+    }
+?>
 
 </div>
-
 
 </body>
 </html>
