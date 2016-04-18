@@ -55,10 +55,10 @@ else{
 ?>
 <div class="addmargin">
 
-<h3><?php echo $username ?></h3>
+<h2><?php echo $username ?></h2>
 
-    <h3><?php echo $firstname ?></h3>
-    <h3><?php echo $lastname ?></h3>
+    <h3><?php echo $firstname
+        echo $lastname ?></h3>
     <h4>About:</h4>
     <p> <?php echo $aboutme ?>  </p>
 
