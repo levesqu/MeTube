@@ -42,14 +42,19 @@ include_once "function.php";
 ?>
 
 <body>
-<?php if ($logged_in) { ?>
+<?php if (isset($logged_in)) { ?>
 <h2><?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
 <?php require 'browse_media.php'; ?>
 
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
-	My <?php } ?>Channels
+	My Channels
 </div>
+<?php } else { ?>
+<div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
+	Channels
+</div>
+<?php } ?>
 <br>
 <?php
 	$query = "select * from channels where username='$username';";
