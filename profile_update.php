@@ -11,7 +11,7 @@ session_start();
 
     if(isset($_POST['submit'])) {
         if( $_POST['password1'] != $_POST['password2']) {
-            $register_error = "Passwords don't match. Try again?";
+            $register_error = "Updated Passwords don't match! Please Try Again.";
         }
         else {
             $check = update_profile_info($username, $_POST['password1'], $_POST['age'], mysql_real_escape_string($_POST['workplace']), mysql_real_escape_string($_POST['aboutme']), mysql_real_escape_string($_POST['firstName']), mysql_real_escape_string($_POST['lastName']) );
@@ -20,9 +20,7 @@ session_start();
                 $_SESSION['username']=$_POST['username'];
                 header('Location: profile.php');
             }
-            else if($check == 2){
-                $register_error = "Username already exists. Please user a different username.";
-            }
+
         }
 }
 

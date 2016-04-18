@@ -22,7 +22,7 @@ include_once "function.php";
 
 if(isset($_POST['submit'])) {
 	if( $_POST['password1'] != $_POST['password2']) {
-		$register_error = "Passwords don't match. Try again?";
+		$register_error = "Passwords don't match. Please Try again.";
 	}
 	else {
 		$check = user_exist_check($_POST['username'], $_POST['password1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])) {
 			header('Location: browse.php');
 		}
 		else if($check == 2){
-			$register_error = "Username already exists. Please user a different username.";
+			$register_error = "Username already exists. Please select a different username.";
 		}
 	}
 }
