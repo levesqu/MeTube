@@ -46,7 +46,7 @@ include_once "function.php";
 <form method="POST" action="messageThread.php" id="sendMessage">
         <input type="hidden" name="sendMessageTo" value="<?php echo $username;?>"/>
 </form>
-
+<div class="addmargin">
 <?php
 if($_SESSION['username'] == $username){
 //    show my profile buttons
@@ -72,7 +72,7 @@ else{
 }
 
 ?>
-<div class="addmargin">
+
 
 <h2><?php echo $username ?></h2>
 
