@@ -76,7 +76,7 @@ else{
     <h4>About:</h4>
     <p> <?php echo $aboutme ?>  </p>
 <?php
-    if($_SESSION['username'] != $username){
+    if($_SESSION['username'] != $username and isset(S_SESSION['username'])){
         ?>
         <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
     <?php
