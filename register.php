@@ -24,7 +24,7 @@ if(isset($_POST['submit'])) {
 		$register_error = "Passwords don't match. Try again?";
 	}
 	else {
-		$check = user_exist_check($_POST['username'], $_POST['passowrd1']);	
+		$check = user_exist_check($_POST['username'], $_POST['passowrd1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
 		if($check == 1){
 			//echo "Register succeeds";
 			$_SESSION['username']=$_POST['username'];
@@ -43,8 +43,15 @@ if(isset($_POST['submit'])) {
 	<label for="inputPassword" class="col-lg-2 control-label">Create Password: </label>
 		<input  type="password" class="col-lg-2 control-label" name="passowrd1"> <br><br>
 	<label for="inputRepeatPassword" class="col-lg-2 control-label">Repeat password: </label>
-		<input type="password" class="col-lg-2 control-label"name="passowrd2"> <br><br>  
-	&nbsp<input name="submit" type="submit" class="btn btn-primary"value="Submit">
+		<input type="password" class="col-lg-2 control-label"name="passowrd2"> <br><br>
+    <label for="inputFirstName" class="col-lg-2 control-label">First Name: </label>
+        <input type="text" class="col-lg-2 control-label"name="firstName"> <br><br>
+    <label for="inputLastName" class="col-lg-2 control-label">Last Name: </label>
+        <input type="text" class="col-lg-2 control-label"name="lastName"> <br><br>
+    <label for="inputAge" class="col-lg-2 control-label">Age: </label>
+        <input type="text" class="col-lg-2 control-label"name="age"> <br><br>
+
+    &nbsp<input name="submit" type="submit" class="btn btn-primary"value="Submit">
 </form>
 
 <?php

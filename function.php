@@ -2,7 +2,7 @@
 include "mysqlClass.inc.php";
 
 
-function user_exist_check ($username, $password){
+function user_exist_check ($username, $password, $firstname, $lastname, $age){
 	$query = "select * from account where username='$username'";
 	$result = mysql_query( $query );
 	if (!$result){
@@ -11,7 +11,7 @@ function user_exist_check ($username, $password){
 	else {
 		$row = mysql_fetch_assoc($result);
 		if($row == 0){
-			$query = "insert into account(username,password) values ('$username','$password')";
+			$query = "insert into account(username,password,age,firstname,lastname) values ('$username','$password','$age', $firstname,'$lastname')";
 			//echo "insert query:" . $query;
 			$insert = mysql_query( $query );
 			if($insert)
@@ -80,7 +80,7 @@ function upload_error($result)
 	}
 }
 
-function update_profile_info($u_name, $u_pass, $u_age, $u_workplace)
+function update_profile_info($u_name, $u_pass, $u_age, $u_workplace, $u_aboutme, $u_firstname, $u_lastname)
 {
 	//You can write your own functions here.
 
@@ -101,6 +101,19 @@ function update_profile_info($u_name, $u_pass, $u_age, $u_workplace)
 		$query = "update account set password='$u_pass' WHERE username='$u_name'";
 		$queryresult = mysql_query($query);
 	}
+	if($u_aboutme != "") {
+		$query = "update account set aboutme='$u_aboutme' WHERE username='$u_name'";
+		$queryresult = mysql_query($query);
+	}
+    if($u_firstname != "") {
+        $query = "update account set firstname='$u_firstname' WHERE username='$u_name'";
+        $queryresult = mysql_query($query);
+    }
+    if($u_lastname != "") {
+        $query = "update account set lastname='$u_lastname' WHERE username='$u_name'";
+        $queryresult = mysql_query($query);
+    }
+
 }
 	
 ?>

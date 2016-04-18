@@ -16,6 +16,10 @@ session_start();
     $password = $profileInfo[1];
     $age = $profileInfo[2];
     $workplace = $profileInfo[3];
+    $aboutme = $profileInfo[4];
+    $firstname = $profileInfo[5];
+    $lastname = $profileInfo[6];
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -52,6 +56,20 @@ session_start();
         </div>
 
         <div class="form-group">
+            <label for="inputFirstName" class="col-lg-2 control-label">First Name:</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputFirstName" type="text" name="firstName" value="<?php echo $firstname;?>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputLastName" class="col-lg-2 control-label">Last Name:</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputLastName" type="text" name="lastName" value="<?php echo $lastname;?>">
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="inputAge" class="col-lg-2 control-label">Age:</label>
             <div class="col-lg-10">
                 <input class="form-control" id="inputAge" type="text" name="age" value="<?php echo $age;?>">
@@ -62,6 +80,13 @@ session_start();
             <label for="inputWorkplace" class="col-lg-2 control-label">Place of Work:</label>
             <div class="col-lg-10">
                 <input class="form-control" id="inputWorkplace" type="text" name="workplace" value="<?php echo $workplace;?>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="aboutme" class="col-lg-2 control-label">About Me:</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="aboutme" type="text" name="aboutme" value="<?php echo $aboutme;?>">
             </div>
         </div>
 
