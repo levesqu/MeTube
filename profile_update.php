@@ -126,6 +126,13 @@ session_start();
  
     </fieldset>
  </form>
+
+
+    <?php
+    if(isset($register_error))
+    {  echo "<div id='passwd_result'> register_error:".$register_error."</div>";}
+    ?>
+
 </div>
 </body>
 </html>
