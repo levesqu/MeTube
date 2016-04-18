@@ -140,11 +140,12 @@ if(isset($_GET['id'])) {
 			$favoritequery="select * from favorites where mediaid=$mediaId and username='$username';";
 			$numrows=mysql_query($favoritequery);
 			$is_favorite=mysql_num_rows($numrows);
-			$channelquery="select channeltitle, channels.channelid from channelmedia join channels where channels.channelid = channelmedia.channelid and mediaid=$mediaId;";
+			$channelquery="select channeltitle, channels.channelid, username from channelmedia join channels where channels.channelid = channelmedia.channelid and mediaid=$mediaId;";
 			$channel=mysql_query($channelquery);
 			$singlechannel=mysql_fetch_row($channel);
 			$channeltitle=$singlechannel[0];
 			$channelid=$singlechannel[1];
+			$channelowner=$singlechannel[2];
 			if (isset($channelid)) {
 				$subquery="select * from subs where channelid=$channelid and username='$username';";
 				$subscription=mysql_query($subquery);
@@ -178,7 +179,7 @@ if(isset($_GET['id'])) {
              <input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
          <?php
          }
-         if (isset($channelid))
+         if (isset($channelid) and $username!=$channelowner)
          {
 		      if ($is_subbed)
 				{ ?>

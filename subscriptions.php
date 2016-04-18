@@ -6,7 +6,7 @@ include_once "function.php";
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-    <title>Channels - MeTube</title>
+    <title>Subscriptions - MeTube</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Browse Channels</title>
     <link rel="stylesheet" type="text/css" href="css/default.css" />
