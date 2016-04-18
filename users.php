@@ -2,7 +2,6 @@
 <?php
 	session_start();
 	include_once "function.php";
-	$username = $_SESSION['username'];
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -29,22 +28,29 @@
 	}
 ?>
     <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">All Users</div>
-	<table class="table table-hover">
+	<table style="table-layout:fixed;" class="table table-hover">
 		<?php
+		$count=0;
+		$maxcolumns=4;
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
 			{ 
 				$other_user=$result_row[0];
-		?>
-		
+			if ($count%$maxcolumns==0) { ?>
+        	 <tr class="success">
+        	 <?php
+        	 }
+         	$count=($count+1)%$maxcolumns;
+        	 ?>
 		       <form method="post" id="usernameform<?php echo $other_user; ?>" action="profile.php">
 				<input type="hidden" name="username" value="<?php echo $other_user; ?>" />
 	         </form>
-        	 <tr class="success">
-		       <td>
+		       <td style="text-align:center">
 		         <a style="cursor:pointer; cursor:hand;" onclick="javascript:document.getElementById('usernameform<?php echo $other_user; ?>').submit();"><?php echo $other_user;?></a> 
 		       </td>
+		   <?php if ($count%$maxcolumns==0) { ?>
 			</tr>
         	<?php
+        		}
 			}
 		?>
 <br>
