@@ -302,9 +302,9 @@ function checkvalue(val)
 				<td><label class="control-label">
               <?php
               if($_SESSION['username'] != $commentUser){?>
-                  <form id="startmessage<?php echo $commentId; ?>" method="post" action="messageThread.php">
-                  		<a href="javascript:document.getElementById('startmessage<?php echo $commentId; ?>').submit();"><?php echo $commentUser; ?>:</a>
-                      <input type="hidden" value="<?php echo $commentUser; ?>" name="sendMessageTo" />
+                  <form id="showProfile<?php echo $commentId; ?>" method="post" action="profile.php">
+                  		<a href="javascript:document.getElementById('showProfile<?php echo $commentId; ?>').submit();"><?php echo $commentUser; ?>:</a>
+                      <input type="hidden" value="<?php echo $commentUser; ?>" name="username" />
                   </form>
                   <?php
               }else{
