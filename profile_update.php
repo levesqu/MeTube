@@ -7,8 +7,6 @@ session_start();
     //$query = "tester";
     $username=$_SESSION['username'];
 
-
-
     if(isset($_POST['submit'])) {
         if( $_POST['password1'] != $_POST['password2']) {
             $register_error = "Passwords don't match. Try again?";
@@ -17,13 +15,13 @@ session_start();
             $check = update_profile_info($username, $_POST['password1'], $_POST['age'], mysql_real_escape_string($_POST['workplace']), mysql_real_escape_string($_POST['aboutme']), mysql_real_escape_string($_POST['firstName']), mysql_real_escape_string($_POST['lastName']) );
             if($check == 1){
                 //echo "Register succeeds";
-                $_SESSION['username']=$_POST['username'];
-                header('Location: profile.php');
+         //       $_SESSION['username']=$_POST['username'];
+            //    header('Location: profile.php');
             }
-        else if($check == 2){
-            $register_error = "Username already exists. Please user a different username.";
+            else if($check == 2){
+                $register_error = "Username already exists. Please user a different username.";
+            }
         }
-    }
 }
 
     $queryProfile = "select * from account where username ='$username'";
@@ -33,6 +31,7 @@ session_start();
 
 
     $password = $profileInfo[1];
+
     $age = $profileInfo[2];
     $workplace = $profileInfo[3];
     $aboutme = $profileInfo[4];
@@ -71,9 +70,9 @@ session_start();
         </div>
 
         <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password:</label>
+            <label for="inputPassword1" class="col-lg-2 control-label">Password:</label>
             <div class="col-lg-10">
-                <input class="form-control" id="inputPassword" type="password" name="password1" value="<?php echo $password;?>")>
+                <input class="form-control" id="inputPassword1" type="password" name="password1" value="<?php echo $password;?>")>
             </div>
         </div>
 
