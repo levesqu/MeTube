@@ -15,7 +15,7 @@ include_once "function.php";
 if (isset($logged_in)) { ?>
 <!--    form for profile page link-->
     <form method="POST" action="profile.php" id="profile">
-    <input type="hidden" name="username" value="<?php echo $username;?>" id="username"/>
+    <input type="hidden" name="username" value="<?php echo $username;?>"/>
     </form>
 
 <nav class="navbar navbar-default">
@@ -48,12 +48,18 @@ if (isset($logged_in)) { ?>
 				<?php if ($message_count!=0) { ?>
 					<span class="badge"><?php echo $message_count; ?></span>
 				<?php } ?>
-				<li><a href="" onclick="document.getElementById("profile").submit()">Profile</a> </li>
+				<li><a href="" onclick="submitForm()">Profile</a> </li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
+
+    <script type="text/javascript">
+        function submitForm()  {
+            document.getElementById("profile").submit();
+        }
+    </script>
 
 <?php } else { ?>
 
