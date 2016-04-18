@@ -24,4 +24,4 @@ update_profile_info($username, $_POST['password'], $_POST['age'], mysql_real_esc
 	//You can process the error code of the $result here.
 ?>
 
-<meta http-equiv="refresh" content="0;url=browse.php?result=<?php echo $result;?>">
+<meta http-equiv="refresh" content="0;url=my_media.php?result=<?php echo $result;?>">
