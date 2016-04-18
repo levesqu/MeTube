@@ -17,7 +17,7 @@ $username=$_SESSION['username'];
 
 
 
-update_profile_info($username, $_POST['password'], $_POST['age'], $_POST['workplace'], $_POST['aboutme'], $_POST['firstName'], $_POST['lastName'] );
+update_profile_info($username, $_POST['password'], $_POST['age'], mysql_real_escape_string($_POST['workplace']), mysql_real_escape_string($_POST['aboutme']), mysql_real_escape_string($_POST['firstName']), mysql_real_escape_string($_POST['lastName']) );
 
 
 	
