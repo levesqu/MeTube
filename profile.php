@@ -48,39 +48,63 @@ include_once "function.php";
 </form>
 <div class="addmargin">
 <?php
-if($_SESSION['username'] == $username){
-//    show my profile buttons
-?>
-    <div class="btn-group btn-group-justified">
-        <a href="./channels.php" class="btn btn-default">My Channels</a>
-        <a href="./my_media.php" class="btn btn-default">My Media</a>
-        <a href="./profile_update.php" class="btn btn-default">Update Profile</a>
-    </div><br><br>
+if(isset($_SESSION['username'])) {
 
- <?php
-}
-else{
-    // show generic buttons
-    ?>
+    if ($_SESSION['username'] == $username) {
+        //    show my profile buttons
+        ?>
+        <div class="btn-group btn-group-justified">
+            <a href="./channels.php" class="btn btn-default">My Channels</a>
+            <a href="./my_media.php" class="btn btn-default">My Media</a>
+            <a href="./profile_update.php" class="btn btn-default">Update Profile</a>
+        </div><br><br>
+
+        <?php
+    } else {
+        // show generic buttons
+        ?>
         <a href="./channels.php" class="btn btn-default"> Channels</a>
 
-    <?php
-}
-?>
+        <?php
+    }
+    ?>
 
-<h2><?php echo $username ?></h2>
+    <h2><?php echo $username ?></h2>
+
+    <h3><?php echo $firstname; ?>
+        &nbsp;
+        <?php echo $lastname; ?></h3>
+    <h4>About:</h4>
+    <p> <?php echo $aboutme ?>  </p>
+    <?php
+    if ($_SESSION['username'] != $username and isset($_SESSION['username'])) {
+        ?>
+        <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
+        <?php
+    }
+
+}
+else {
+
+?>
+    <!-- if not logged in -->
+    <a href="./channels.php" class="btn btn-default"> Channels</a>
+
+    <h2><?php echo $username ?></h2>
 
     <h3><?php echo $firstname;?>
         &nbsp;
-     <?php  echo $lastname; ?></h3>
+        <?php  echo $lastname; ?></h3>
     <h4>About:</h4>
     <p> <?php echo $aboutme ?>  </p>
-<?php
-    if($_SESSION['username'] != $username and isset($_SESSION['username'])){
-        ?>
-        <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
     <?php
-    }
+        if($_SESSION['username'] != $username and isset($_SESSION['username'])){
+            ?>
+            <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
+            <?php
+        }
+
+}
 ?>
 
 </div>
