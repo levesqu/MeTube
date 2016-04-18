@@ -29,8 +29,8 @@ $messagesender=$_SESSION['username'];
 if (isset($_POST['recursive']))
 {
 	$sendTo=$_POST['sendMessageTo'];
-	$messagecontent=$_POST['messageContent'];
-	$messageSubject=$_POST['messageSubject'];
+	$messagecontent=mysql_real_escape_string($_POST['messageContent']);
+	$messageSubject=mysql_real_escape_string($_POST['messageSubject']);
 	$messageSend=$_POST['messageSender'];
 
 
