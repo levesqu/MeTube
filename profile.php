@@ -59,7 +59,8 @@ else{
 
     <h3><?php echo $firstname ?></h3>
     <h3><?php echo $lastname ?></h3>
-    <p> <?php echo $aboutme ?> </p>
+    <h4>About:</h4>
+    <p> <?php echo $aboutme ?>  </p>
 
 
 
