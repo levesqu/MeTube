@@ -7,6 +7,25 @@ session_start();
     //$query = "tester";
     $username=$_SESSION['username'];
 
+
+
+    if(isset($_POST['submit'])) {
+        if( $_POST['password1'] != $_POST['password2']) {
+            $register_error = "Passwords don't match. Try again?";
+        }
+        else {
+            $check = update_profile_info($username, $_POST['password'], $_POST['age'], mysql_real_escape_string($_POST['workplace']), mysql_real_escape_string($_POST['aboutme']), mysql_real_escape_string($_POST['firstName']), mysql_real_escape_string($_POST['lastName']) );
+            if($check == 1){
+                //echo "Register succeeds";
+                $_SESSION['username']=$_POST['username'];
+                header('Location: profile.php');
+            }
+        else if($check == 2){
+            $register_error = "Username already exists. Please user a different username.";
+        }
+    }
+}
+
     $queryProfile = "select * from account where username ='$username'";
     $profile = mysql_query($queryProfile);
 
@@ -19,6 +38,9 @@ session_start();
     $aboutme = $profileInfo[4];
     $firstname = $profileInfo[5];
     $lastname = $profileInfo[6];
+
+
+
 
 
 ?>
@@ -37,7 +59,7 @@ session_start();
 
 <body>
 <div class="form-group">
-<form class="form-horizontal" method="post"  action="profile_update_process.php" enctype="multipart/form-data" >
+<form class="form-horizontal" method="post"  action="profile.php" enctype="multipart/form-data" >
     <fieldset>
         <legend>Update Profile</legend>
 	<table width="100%">
@@ -52,6 +74,13 @@ session_start();
             <label for="inputPassword" class="col-lg-2 control-label">Password:</label>
             <div class="col-lg-10">
                 <input class="form-control" id="inputPassword" type="password" name="password" value="<?php echo $password;?>")>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword2" class="col-lg-2 control-label">Password:</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputPassword2" type="password" name="password2" value="<?php echo $password1;?>")>
             </div>
         </div>
 

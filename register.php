@@ -21,11 +21,11 @@ include_once "function.php";
 <?php
 
 if(isset($_POST['submit'])) {
-	if( $_POST['passowrd1'] != $_POST['passowrd2']) {
+	if( $_POST['password1'] != $_POST['password2']) {
 		$register_error = "Passwords don't match. Try again?";
 	}
 	else {
-		$check = user_exist_check($_POST['username'], $_POST['passowrd1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
+		$check = user_exist_check($_POST['username'], $_POST['password1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
 		if($check == 1){
 			//echo "Register succeeds";
 			$_SESSION['username']=$_POST['username'];
@@ -42,9 +42,9 @@ if(isset($_POST['submit'])) {
 	<label for="inputUsername" class="col-lg-2 control-label">Username:</label>
 		<input type="text" class="col-lg-2 control-label" name="username"> <br><br>
 	<label for="inputPassword" class="col-lg-2 control-label">Create Password: </label>
-		<input  type="password" class="col-lg-2 control-label" name="passowrd1"> <br><br>
+		<input  type="password" class="col-lg-2 control-label" name="password1"> <br><br>
 	<label for="inputRepeatPassword" class="col-lg-2 control-label">Repeat password: </label>
-		<input type="password" class="col-lg-2 control-label"name="passowrd2"> <br><br>
+		<input type="password" class="col-lg-2 control-label"name="password2"> <br><br>
     <label for="inputFirstName" class="col-lg-2 control-label">First Name: </label>
         <input type="text" class="col-lg-2 control-label"name="firstName"> <br><br>
     <label for="inputLastName" class="col-lg-2 control-label">Last Name: </label>
