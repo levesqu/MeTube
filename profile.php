@@ -88,7 +88,7 @@ else {
 
 ?>
     <!-- if not logged in -->
-    <a href="./channels.php" class="btn btn-default"> Channels</a>
+    <a href="./generic_channel.php" class="btn btn-default"> Channels</a>
 
     <h2><?php echo $username ?></h2>
 
