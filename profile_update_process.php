@@ -24,4 +24,4 @@ update_profile_info($username, $_POST['password'], $_POST['age'], $_POST['workpl
 	//You can process the error code of the $result here.
 ?>
 
-<meta http-equiv="refresh" content="10;url=browse.php?result=<?php echo $result;?>">
+<meta http-equiv="refresh" content="0;url=browse.php?result=<?php echo $result;?>">
