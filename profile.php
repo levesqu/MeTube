@@ -53,7 +53,7 @@ include_once "function.php";
 </script>
 
 <form method="POST" action="channels.php" id="goToChannels">
-    <input type="hidden" name="goToChannels" value="<?php echo $username;?>"/>
+    <input type="hidden" name="username" value="<?php echo $username;?>"/>
 </form>
 
 
