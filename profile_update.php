@@ -14,7 +14,7 @@ session_start();
             $register_error = "Passwords don't match. Try again?";
         }
         else {
-            $check = update_profile_info($username, $_POST['password'], $_POST['age'], mysql_real_escape_string($_POST['workplace']), mysql_real_escape_string($_POST['aboutme']), mysql_real_escape_string($_POST['firstName']), mysql_real_escape_string($_POST['lastName']) );
+            $check = update_profile_info($username, $_POST['password1'], $_POST['age'], mysql_real_escape_string($_POST['workplace']), mysql_real_escape_string($_POST['aboutme']), mysql_real_escape_string($_POST['firstName']), mysql_real_escape_string($_POST['lastName']) );
             if($check == 1){
                 //echo "Register succeeds";
                 $_SESSION['username']=$_POST['username'];
