@@ -137,25 +137,65 @@ if(isset($_GET['id'])) {
 
      <div class="btn-group btn-group-justified">
 			<?php
-			$favoritequery="select * from favorites where mediaid=$mediaId and username='$username'";
+			$favoritequery="select * from favorites where mediaid=$mediaId and username='$username';";
 			$numrows=mysql_query($favoritequery);
 			$is_favorite=mysql_num_rows($numrows);
+			$channelquery="select channeltitle, channels.channelid, username from channelmedia join channels where channels.channelid = channelmedia.channelid and mediaid=$mediaId;";
+			$channel=mysql_query($channelquery);
+			$singlechannel=mysql_fetch_row($channel);
+			$channeltitle=$singlechannel[0];
+			$channelid=$singlechannel[1];
+			$channelowner=$singlechannel[2];
+			if (isset($channelid)) {
+				$subquery="select * from subs where channelid=$channelid and username='$username';";
+				$subscription=mysql_query($subquery);
+				$is_subbed=mysql_num_rows($subscription);
+			}
+			 ?>
+<script type="text/javascript">
+	function changeAction(type)
+	{
+		if (type=="unF")
+		{ document.getElementById('button form').action="unfavorite_process.php";}
+		else if (type=="F")
+		{ document.getElementById('button form').action="favorite_process.php";}
+		else if (type=="unS")
+		{ document.getElementById('button form').action="unsubscribe_process.php";}
+		else if (type=="S")
+		{ document.getElementById('button form').action="subscribe_process.php";}
+	}
+</script>
+			<form method="post" id="button form" action="" enctype="multipart/form-data">
+			<?php
 			if ($is_favorite)
-			{ ?>
-			<form  method="post" action="unfavorite_process.php" enctype="multipart/form-data">
-				<input type="submit" class="btn btn-danger" value="Remove Favorite" name="unfavoriteMedia" />
+			{
+			?>
+				<input onclick="changeAction('unF')" type="submit" class="btn btn-info" value="Unfavorite" name="unfavoriteMedia" />
 				<input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
-			</form>
 			<?php
 			} else {
 			?>
-         <form  method="post" action="favorite_process.php" enctype="multipart/form-data">
-             <input type="submit" class="btn btn-default" value="Favorite" name="favoriteMedia" />
+             <input onclick="changeAction('F')" type="submit" class="btn btn-default" value="Favorite" name="favoriteMedia" />
              <input type="hidden" name="mediaid" value="<?php echo $mediaId?>">
-         </form>
          <?php
-         } ?>
-         </div>
+         }
+         if (isset($channelid) and $username!=$channelowner)
+         {
+		      if ($is_subbed)
+				{ ?>
+					<input onclick="changeAction('unS')" type="submit" class="btn btn-info" value="Unsubscribe" name="unsubscribe" />
+					<input type="hidden" name="channelid" value="<?php echo $channelid?>">
+				<?php
+				} else {
+				?>
+		          <input onclick="changeAction('S')" type="submit" class="btn btn-default" value="Subscribe" name="subscribe" />
+		          <input type="hidden" name="channelid" value="<?php echo $channelid?>">
+
+		      <?php
+		      } 
+	      } ?>
+	      </form>
+		      </div>
 
 <!--         <div class="btn-group">-->
 <!--             <a href="" class="btn btn-default">Default</a>-->
