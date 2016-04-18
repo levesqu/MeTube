@@ -83,9 +83,7 @@ else{
     }
 ?>
 
-
 </div>
-
 
 </body>
 </html>
