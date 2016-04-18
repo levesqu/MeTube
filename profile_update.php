@@ -128,7 +128,7 @@ session_start();
 
     <?php
     if(isset($register_error))
-    {  echo "<div class='text-danger' id='passwd_result'> Profile Update Error: ".$register_error."</div>";}
+    {  echo "<div class='text-danger' id='passwd_result'><strong> Profile Update Error: ".$register_error."</strong></div>";}
     ?>
 
 </div>

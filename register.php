@@ -57,7 +57,7 @@ if(isset($_POST['submit'])) {
 
 <?php
   if(isset($register_error))
-   {  echo "<div class='text-danger' id='passwd_result'> register_error:".$register_error."</div>";}
+   {  echo "<div class='text-danger' id='passwd_result'> <strong>register_error:".$register_error."</strong></div>";}
 ?>
 
 </body>
