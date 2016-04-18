@@ -183,12 +183,12 @@ if(isset($_GET['id'])) {
          {
 		      if ($is_subbed)
 				{ ?>
-					<input onclick="changeAction('unS')" type="submit" class="btn btn-info" value="Unsubscribe" name="unsubscribe" />
+					<input onclick="changeAction('unS')" type="submit" class="btn btn-info" value="Unsubscribe from <?php echo $channeltitle; ?>" name="unsubscribe" />
 					<input type="hidden" name="channelid" value="<?php echo $channelid?>">
 				<?php
 				} else {
 				?>
-		          <input onclick="changeAction('S')" type="submit" class="btn btn-default" value="Subscribe" name="subscribe" />
+		          <input onclick="changeAction('S')" type="submit" class="btn btn-default" value="Subscribe to <?php echo $channeltitle; ?>" name="subscribe" />
 		          <input type="hidden" name="channelid" value="<?php echo $channelid?>">
 
 		      <?php
