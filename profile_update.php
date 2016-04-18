@@ -73,7 +73,7 @@ session_start();
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Password:</label>
             <div class="col-lg-10">
-                <input class="form-control" id="inputPassword" type="password" name="password" value="<?php echo $password;?>")>
+                <input class="form-control" id="inputPassword" type="password" name="password1" value="<?php echo $password;?>")>
             </div>
         </div>
 
