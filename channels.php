@@ -77,14 +77,17 @@ include_once "function.php";
 				<a href="channel.php?id=<?php echo $channelid;?>" target="_blank"><?php echo $channeltitle;?></a> 
 			</td>
 			<td>
+				<?php if (isset($logged_in)) { ?>
 				<form class="form-horizontal" method="post" action="delete_channel_process.php" enctype="multipart/form-data">
 					<input style="display: block; margin: auto;" type="submit" class="btn btn-danger btn-xs" value="Delete Channel" name="delete" />
 					<input type="hidden" name="channelid" value="<?php echo $channelid?>">
 				</form>
+				<?php } ?>
 			</td>
 		</tr>
 <?php
 	}
+	if (isset($logged_in)) {
 ?>
 		<tr>
 			<td />
@@ -94,6 +97,7 @@ include_once "function.php";
 				</form>
 			</td>
 		</tr>
+		<?php } ?>
 	</table>
 </body>
 </html>
