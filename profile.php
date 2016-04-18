@@ -44,7 +44,7 @@ include_once "function.php";
 
 
 <form method="POST" action="messageThread.php" id="sendMessage">
-        <input type="hidden" name="username" value="<?php echo $username;?>"/>
+        <input type="hidden" name="sendMessageTo" value="<?php echo $username;?>"/>
 </form>
 
 <?php
