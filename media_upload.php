@@ -11,7 +11,17 @@ session_start();
     <!--the nav bar starts here -->
     <?php require 'navigation.php'; ?>
     <!-- nav bar ends here -->
+    
+<?php
+	$username=$_SESSION['username'];
+	$query = "select * from channels where username='$username';";
 
+	$result = mysql_query( $query );
+	if (!$result) {
+		die ("Could not query the playlists table in the database: <br />". mysql_error());
+	}
+
+?>
 
 </head>
 
@@ -45,11 +55,27 @@ session_start();
         <div class="col-lg-10">
           <select class="form-control" name="mediaCategory">
             <option>Sports</option>
-            <option>Comedy</option>
+            <option>Funny</option>
             <option>Children</option>
             <option>News</option>
-            <option>Pictures</option>
-            <option>Text</option>
+            <option>Animation</option>
+            <option>Music</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="channels" class="col-lg-2 control-label">Select channel to upload to:</label>
+        <div class="col-lg-10">
+          <select class="form-control" name="channels">
+          <option value="none">None</option>
+          <?php	
+            while ($result_row = mysql_fetch_row($result))
+	          {        
+		          $channeltitle = $result_row[1];
+		          $channelid=$result_row[0];
+          ?>
+            <option value="<?php echo $channelid; ?>"><?php echo $channeltitle; ?></option>
+            <?php } ?>
           </select>
         </div>
       </div>

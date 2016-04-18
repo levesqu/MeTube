@@ -7,6 +7,22 @@ session_start();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <title>Media Upload</title>
+
+    <!--the nav bar starts here -->
+    <?php require 'navigation.php'; ?>
+    <!-- nav bar ends here -->
+    
+<?php
+	$username=$_SESSION['username'];
+	$query = "select * from channels where username='$username';";
+
+	$result = mysql_query( $query );
+	if (!$result) {
+		die ("Could not query the playlists table in the database: <br />". mysql_error());
+	}
+
+?>
+
 </head>
 
 <body>
@@ -19,31 +35,47 @@ session_start();
       <div class="form-group">
         <label for="mediaTitle" class="col-lg-2 control-label">Media Title:</label>
         <div class="col-lg-10">
-          <input type="text" id="mediaTitle" />
+          <input type="text" class="form-control" name="mediaTitle" />
         </div>
       </div>
       <div class="form-group">
         <label for="mediaDescription" class="col-lg-2 control-label">Media Description:</label>
         <div class="col-lg-10">
-          <input type="textarea" id="mediaDescription" />
+          <textarea class="form-control" rows=3 name="mediaDescription"></textarea>
         </div>
       </div>
       <div class="form-group">
         <label for="mediaTags" class="col-lg-2 control-label">Media Tags:</label>
         <div class="col-lg-10">
-          <input type="textarea" id="mediaTags" />
+          <textarea class="form-control" name="mediaTags"></textarea>
         </div>
       </div>
       <div class="form-group">
         <label for="mediaCategories" class="col-lg-2 control-label">Select Category:</label>
         <div class="col-lg-10">
-          <select class="form-control" id="mediaCategory">
+          <select class="form-control" name="mediaCategory">
             <option>Sports</option>
             <option>Comedy</option>
             <option>Children</option>
             <option>News</option>
             <option>Pictures</option>
             <option>Text</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="channels" class="col-lg-2 control-label">Select channel to upload to:</label>
+        <div class="col-lg-10">
+          <select class="form-control" name="channels">
+          <option value="none">None</option>
+          <?php	
+            while ($result_row = mysql_fetch_row($result))
+	          {        
+		          $channeltitle = $result_row[1];
+		          $channelid=$result_row[0];
+          ?>
+            <option value="<?php echo $channelid; ?>"><?php echo $channeltitle; ?></option>
+            <?php } ?>
           </select>
         </div>
       </div>
