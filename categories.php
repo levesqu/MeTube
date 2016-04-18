@@ -40,13 +40,14 @@ include_once "function.php";
     </div>
     <br>
 		<div class="btn-group-vertical">
+
 			<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
 				<input type="submit" class="btn btn-primary" value="Sports" name="categoryType" />
-				<input type="submit" class="btn btn-primary" value="Comedy" name="categoryType" />
+				<input type="submit" class="btn btn-primary" value="Funny" name="categoryType" />
 				<input type="submit" class="btn btn-primary" value="Children" name="categoryType" />
 				<input type="submit" class="btn btn-primary" value="News" name="categoryType" />
-				<input type="submit" class="btn btn-primary" value="Pictures" name="categoryType" />
-				<input type="submit" class="btn btn-primary" value="Text" name="categoryType" />
+				<input type="submit" class="btn btn-primary" value="Animation" name="categoryType" />
+				<input type="submit" class="btn btn-primary" value="Music" name="categoryType" />
 			</form>
 		</div>
 		<br>

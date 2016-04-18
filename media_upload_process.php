@@ -58,8 +58,17 @@ if(!file_exists($dirfile))
 			}
 		}
 	}
-	
-	//You can process the error code of the $result here.
+	$channelid=$_POST['channels'];
+	if ($channelid!="none")
+	{
+	$mediaquery="select mediaid from media where username='$username' order by mediaid desc;";
+	$media_result=mysql_query($mediaquery);
+	$media_result_row=mysql_fetch_row($media_result);
+	$mediaid=$media_result_row[0];
+	echo $channelid;
+	$channelquery="insert into channelmedia(mapid,channelid,mediaid) values(NULL,$channelid,$mediaid);";
+	$channelresult=mysql_query($channelquery);
+	}
 ?>
 
-<meta http-equiv="refresh" content="0;url=my_media.php?result=<?php echo $result;?>">
+<meta http-equiv="refresh" content="10;url=my_media.php?result=<?php echo $result;?>">
