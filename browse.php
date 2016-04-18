@@ -26,6 +26,16 @@
 	if (!$result){
 	   die ("Could not query the media table in the database: <br />". mysql_error());
 	}
+
+if(isset($_SESSION['username'])){
+
+?>
+    <p class="text-primary">Click Below to upload a file</p>
+    <a href="media_upload.php" class="btn btn-primary col-lg-2">Upload Media</a>
+<?php
+}
+
+
 ?>
     <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">All Media</div>
 	<table style="table-layout:fixed;" class="table table-hover">
