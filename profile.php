@@ -45,7 +45,7 @@ include_once "function.php";
 
 <form method="POST" action="messageThread.php" id="profile">
         <input type="hidden" name="username" value="<?php echo $username;?>"/>
-    </form>
+</form>
 
 <?php
 if($_SESSION['username'] == $username){
@@ -61,10 +61,10 @@ if($_SESSION['username'] == $username){
 else{
     // show generic buttons
     ?>
-    <div class="btn-group btn-group-justified">
-        <div style="cursor:pointer; cursor:hand;" ><a onclick="submitForm()" class="btn btn-default">Send Message</a></div>
-        <a href="./channels.php" class="btn btn-default"> Channels</a>
-    </div><br><br>
+    <div style="cursor:pointer; cursor:hand;" ><a onclick="submitForm()" class="btn btn-default">Send Message</a></div>
+    <br>
+    <a href="./channels.php" class="btn btn-default"> Channels</a>
+   <br>
     <?php
 }
 
