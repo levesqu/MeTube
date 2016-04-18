@@ -32,6 +32,8 @@ if(isset($_SESSION['username'])){
 ?>
     <p class="text-primary">Click Below to upload a file</p>
     <a href="media_upload.php" class="btn btn-primary col-lg-2">Upload Media</a>
+
+    <br/>
 <?php
 }
 
