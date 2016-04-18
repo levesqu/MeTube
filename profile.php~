@@ -48,6 +48,8 @@ include_once "function.php";
 </form>
 <div class="addmargin">
 <?php
+echo $_SESSION['username'];
+echo $username;
 if($_SESSION['username'] == $username){
 //    show my profile buttons
 ?>
