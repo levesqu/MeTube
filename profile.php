@@ -62,11 +62,11 @@ else{
     // show generic buttons
     ?>
 
-    <div style="cursor:pointer; cursor:hand;" class="btn-group btn-group-justified">
-        <a onclick="submitForm()" class="btn btn-default">Send Message</a>
+        <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
+    <br>
         <a href="./channels.php" class="btn btn-default"> Channels</a>
-       <br>
-    </div>
+
+
 
     <?php
 }
