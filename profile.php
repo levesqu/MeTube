@@ -61,10 +61,14 @@ if($_SESSION['username'] == $username){
 else{
     // show generic buttons
     ?>
-    <div style="cursor:pointer; cursor:hand;" ><a onclick="submitForm()" class="btn btn-default">Send Message</a></div>
-    <br>
-    <a href="./channels.php" class="btn btn-default"> Channels</a>
-   <br>
+
+    <div class="btn-group btn-group-justified">
+        <div style="cursor:pointer; cursor:hand;" ><a onclick="submitForm()" class="btn btn-default">Send Message</a></div>
+        <br>
+        <a href="./channels.php" class="btn btn-default"> Channels</a>
+       <br>
+    </div>
+
     <?php
 }
 
