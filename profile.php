@@ -41,13 +41,27 @@ if($_SESSION['username'] == $username){
     <a href="./channels.php" class="btn btn-default">My Channels</a>
     <a href="./profile_update.php" class="btn btn-default">Update Profile</a>
 </div><br><br>
+
+    <script type="text/javascript">
+        function submitForm()  {
+            document.getElementById("sendMessage").submit();
+        }
+    </script>
+
+
+    <form method="POST" action="messageThread.php" id="profile">
+        <input type="hidden" name="username" value="<?php echo $username;?>"/>
+    </form>
+
+
  <?php
 }
 else{
     // show generic buttons
     ?>
     <div class="btn-group btn-group-justified">
-        <a href="./channels.php" class="btn btn-default">Channels</a>
+        <div style="cursor:pointer; cursor:hand;" ><a onclick="submitForm()" class="btn btn-default">Channels</a></div>
+        <a href="./channels.php" class="btn btn-default">Send Message</a>
     </div><br><br>
     <?php
 }
@@ -62,11 +76,6 @@ else{
      <?php  echo $lastname; ?></h3>
     <h4>About:</h4>
     <p> <?php echo $aboutme ?>  </p>
-
-
-
-
-
 
 </div>
 
