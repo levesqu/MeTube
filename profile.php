@@ -53,7 +53,7 @@ if($_SESSION['username'] == $username){
 ?>
     <div class="btn-group btn-group-justified">
         <a href="./channels.php" class="btn btn-default">My Channels</a>
-        <a href="./channels.php" class="btn btn-default">My Channels</a>
+        <a href="./my_media.php" class="btn btn-default">My Media</a>
         <a href="./profile_update.php" class="btn btn-default">Update Profile</a>
     </div><br><br>
 
