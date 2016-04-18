@@ -43,15 +43,15 @@ if (isset($logged_in)) { ?>
 				<?php if ($message_count!=0) { ?>
 					<span class="badge"><?php echo $message_count; ?></span>
 				<?php } ?>
-				<li><form method="POST" action="profile.php">
-                        <input type="hidden" name="username" value="<?php echo $username;?>" id="username"/>
-                        <a href="profile.php">Profile</a> </form></li>
+				<li><a href="profile.php">Profile</a> </li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
-
+<form method="POST" action="profile.php">
+    <input type="hidden" name="username" value="<?php echo $username;?>" id="username"/>
+    </form>
 <?php } else { ?>
 
 <nav class="navbar navbar-default">
