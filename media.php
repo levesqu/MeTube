@@ -131,7 +131,9 @@ if(isset($_GET['id'])) {
  }
 
 	$mediaId = $_GET['id'];
-	$username = $_SESSION['username'];
+	if (isset($SESSION['username']))
+	{
+	  $username = $_SESSION['username'];
      ?>
 <!-- favorite button -->
 
@@ -220,7 +222,6 @@ if(isset($_GET['id'])) {
 <!--        </div>-->
 <!--    </div>-->
 
-<!-- this shit broken -->
 <script type="text/javascript">
 function checkvalue(val)
 {
@@ -277,6 +278,7 @@ function checkvalue(val)
 <!-- comments thread -->
 
     <?php
+    }
     echo "<h4>Description: &nbsp;</h4> ";
     echo "<p>$mediadescription</p>";
   // Comments start-->
@@ -301,7 +303,7 @@ function checkvalue(val)
 			<tr>
 				<td><label class="control-label">
               <?php
-              if($_SESSION['username'] != $commentUser){?>
+              if(!isset($username) or $username != $commentUser){?>
                   <form id="showProfile<?php echo $commentId; ?>" method="post" action="profile.php">
                   		<a href="javascript:document.getElementById('showProfile<?php echo $commentId; ?>').submit();"><?php echo $commentUser; ?>:</a>
                       <input type="hidden" value="<?php echo $commentUser; ?>" name="username" />
@@ -327,6 +329,7 @@ function checkvalue(val)
 			</tr>
 			<?php
 				}
+				if (isset($username)) {
 			?>
 			<tr>
 				<td>
@@ -345,6 +348,7 @@ function checkvalue(val)
    <!-- comments end here -->
 </div>
 <?php
+  }
 }
 else
 {
