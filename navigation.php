@@ -13,6 +13,11 @@ include_once "function.php";
 	}
 
 if (isset($logged_in)) { ?>
+<!--    form for profile page link-->
+    <form method="POST" action="profile.php" id="profile">
+    <input type="hidden" name="username" value="<?php echo $username;?>" id="username"/>
+    </form>
+
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -49,9 +54,7 @@ if (isset($logged_in)) { ?>
 		</div>
 	</div>
 </nav>
-<form method="POST" action="profile.php" id="profile">
-    <input type="hidden" name="username" value="<?php echo $username;?>" id="username"/>
-</form>
+
 <?php } else { ?>
 
 <nav class="navbar navbar-default">
