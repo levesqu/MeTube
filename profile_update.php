@@ -7,6 +7,23 @@ session_start();
     //$query = "tester";
     $username=$_SESSION['username'];
 
+
+
+    if(isset($_POST['submit'])) {
+        if( $_POST['password1'] != $_POST['password2']) {
+            $register_error = "Updated Passwords don't match! Please Try Again.";
+        }
+        else {
+            $check = update_profile_info($username, $_POST['password1'], $_POST['age'], mysql_real_escape_string($_POST['workplace']), mysql_real_escape_string($_POST['aboutme']), mysql_real_escape_string($_POST['firstName']), mysql_real_escape_string($_POST['lastName']) );
+            if($check == 1){
+                //echo "Register succeeds";
+                $_SESSION['username']=$_POST['username'];
+                header('Location: profile.php');
+            }
+
+        }
+}
+
     $queryProfile = "select * from account where username ='$username'";
     $profile = mysql_query($queryProfile);
 
@@ -19,6 +36,9 @@ session_start();
     $aboutme = $profileInfo[4];
     $firstname = $profileInfo[5];
     $lastname = $profileInfo[6];
+
+
+
 
 
 ?>
@@ -37,7 +57,7 @@ session_start();
 
 <body>
 <div class="form-group">
-<form class="form-horizontal" method="post"  action="profile_update_process.php" enctype="multipart/form-data" >
+<form class="form-horizontal" method="post"  action="profile_update.php" enctype="multipart/form-data" >
     <fieldset>
         <legend>Update Profile</legend>
 	<table width="100%">
@@ -49,9 +69,16 @@ session_start();
         </div>
 
         <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password:</label>
+            <label for="inputPassword1" class="col-lg-2 control-label">Password:</label>
             <div class="col-lg-10">
-                <input class="form-control" id="inputPassword" type="password" name="password" value="<?php echo $password;?>")>
+                <input class="form-control" id="inputPassword1" type="password" name="password1" value="<?php echo $password;?>")>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword2" class="col-lg-2 control-label">Password:</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputPassword2" type="password" name="password2" value="<?php echo $password;?>")>
             </div>
         </div>
 
@@ -97,6 +124,13 @@ session_start();
  
     </fieldset>
  </form>
+
+
+    <?php
+    if(isset($register_error))
+    {  echo "<div class='text-danger' id='passwd_result'><strong> Profile Update Error: ".$register_error."</strong></div>";}
+    ?>
+
 </div>
 </body>
 </html>
