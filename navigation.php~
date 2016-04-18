@@ -48,7 +48,7 @@ if (isset($logged_in)) { ?>
 				<?php if ($message_count!=0) { ?>
 					<span class="badge"><?php echo $message_count; ?></span>
 				<?php } ?>
-				<li style="cursor:pointer; cursor:hand;"><a onclick="submitProfileForm()">Profile</a> </li>
+				<li style="cursor:pointer; cursor:hand;"><a onclick="submitPROFILEForm()">Profile</a> </li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
@@ -56,7 +56,7 @@ if (isset($logged_in)) { ?>
 </nav>
 
     <script type="text/javascript">
-        function submitProfileForm()  {
+        function submitPROFILEForm()  {
             document.getElementById("profile").submit();
         }
     </script>

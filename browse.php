@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-<title>All Users - MeTube</title>
+<title>All Media - MeTube</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <script type="text/javascript" src="js/jquery-latest.pack.js"></script>
@@ -27,7 +27,7 @@
 	   die ("Could not query the media table in the database: <br />". mysql_error());
 	}
 ?>
-    <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">All Users</div>
+    <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">All Media</div>
 	<table style="table-layout:fixed;" class="table table-hover">
 		<?php
 		$count=0;

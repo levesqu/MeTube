@@ -1,5 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<link rel="stylesheet" type="text/css" href="css/default.css" />
 <body>
+
+<!--the nav bar starts here -->
+<?php require 'navigation.php'; ?>
+<!-- nav bar ends here -->
+
+
 
 <?php
 session_start();
@@ -11,9 +24,9 @@ if(isset($_POST['submit'])) {
 		$register_error = "Passwords don't match. Try again?";
 	}
 	else {
-		$check = user_exist_check($_POST['username'], $_POST['passowrd1']);	
+		$check = user_exist_check($_POST['username'], $_POST['passowrd1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
 		if($check == 1){
-			//echo "Rigister succeeds";
+			//echo "Register succeeds";
 			$_SESSION['username']=$_POST['username'];
 			header('Location: browse.php');
 		}
@@ -25,10 +38,20 @@ if(isset($_POST['submit'])) {
 
 ?>
 <form action="register.php" method="post">
-	Username: <input type="text" name="username"> <br>
-	Create Password: <input  type="password" name="passowrd1"> <br>
-	Repeat password: <input type="password" name="passowrd2"> <br>
-	<input name="submit" type="submit" value="Submit">
+	<label for="inputUsername" class="col-lg-2 control-label">Username:</label>
+		<input type="text" class="col-lg-2 control-label" name="username"> <br><br>
+	<label for="inputPassword" class="col-lg-2 control-label">Create Password: </label>
+		<input  type="password" class="col-lg-2 control-label" name="passowrd1"> <br><br>
+	<label for="inputRepeatPassword" class="col-lg-2 control-label">Repeat password: </label>
+		<input type="password" class="col-lg-2 control-label"name="passowrd2"> <br><br>
+    <label for="inputFirstName" class="col-lg-2 control-label">First Name: </label>
+        <input type="text" class="col-lg-2 control-label"name="firstName"> <br><br>
+    <label for="inputLastName" class="col-lg-2 control-label">Last Name: </label>
+        <input type="text" class="col-lg-2 control-label"name="lastName"> <br><br>
+    <label for="inputAge" class="col-lg-2 control-label">Age: </label>
+        <input type="text" class="col-lg-2 control-label"name="age"> <br><br>
+
+    &nbsp<input name="submit" type="submit" class="btn btn-primary"value="Submit">
 </form>
 
 <?php

@@ -8,16 +8,17 @@
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <body>
 
-<!--the nav bar starts here -->
-<?php require 'navigation.php'; ?>
-<!-- nav bar ends here -->
-
-
 
 <?php
 session_start();
 
 include_once "function.php";
+
+?>
+<!--the nav bar starts here -->
+<?php require 'navigation.php'; ?>
+<!-- nav bar ends here -->
+<?php
 
 if(isset($_POST['submit'])) {
 	if( $_POST['passowrd1'] != $_POST['passowrd2']) {
