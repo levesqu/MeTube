@@ -45,7 +45,7 @@ if (isset($logged_in)) { ?>
 				<?php } ?>
 				<li><form method="POST" action="profile.php">
                         <input type="hidden" name="username" value="<?php echo $username;?>" id="username"/>
-                        <a href="">Update Profile</a></li>
+                        <a href="profile.php">Profile</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
