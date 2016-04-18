@@ -20,7 +20,7 @@ include_once "function.php";
 
 
 <?php
-    $username=$_POST['username'];
+    $username = $_POST['username'];
 
     $queryProfile = "select * from account where username ='$username'";
     $profile = mysql_query($queryProfile);
