@@ -65,9 +65,7 @@ else{
 
     <?php
 }
-
 ?>
-
 
 <h2><?php echo $username ?></h2>
 
