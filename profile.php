@@ -33,7 +33,21 @@ include_once "function.php";
     $firstname = $profileInfo[5];
     $lastname = $profileInfo[6];
 
+?>
 
+
+<script type="text/javascript">
+    function submitForm()  {
+        document.getElementById("sendMessage").submit();
+    }
+</script>
+
+
+<form method="POST" action="messageThread.php" id="profile">
+        <input type="hidden" name="username" value="<?php echo $username;?>"/>
+    </form>
+
+<?php
 if($_SESSION['username'] == $username){
 //    show my profile buttons
 ?>
@@ -42,26 +56,14 @@ if($_SESSION['username'] == $username){
     <a href="./profile_update.php" class="btn btn-default">Update Profile</a>
 </div><br><br>
 
-    <script type="text/javascript">
-        function submitForm()  {
-            document.getElementById("sendMessage").submit();
-        }
-    </script>
-
-
-    <form method="POST" action="messageThread.php" id="profile">
-        <input type="hidden" name="username" value="<?php echo $username;?>"/>
-    </form>
-
-
  <?php
 }
 else{
     // show generic buttons
     ?>
     <div class="btn-group btn-group-justified">
-        <div style="cursor:pointer; cursor:hand;" ><a onclick="submitForm()" class="btn btn-default">Channels</a></div>
-        <a href="./channels.php" class="btn btn-default">Send Message</a>
+        <div style="cursor:pointer; cursor:hand;" ><a onclick="submitForm()" class="btn btn-default">Send Message</a></div>
+        <a href="./channels.php" class="btn btn-default"> Channels</a>
     </div><br><br>
     <?php
 }
