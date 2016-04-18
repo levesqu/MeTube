@@ -37,15 +37,27 @@ include_once "function.php";
 
 
 <script type="text/javascript">
-    function submitForm()  {
+    function submitMessageForm()  {
         document.getElementById("sendMessage").submit();
     }
 </script>
 
-
 <form method="POST" action="messageThread.php" id="sendMessage">
-        <input type="hidden" name="sendMessageTo" value="<?php echo $username;?>"/>
+    <input type="hidden" name="sendMessageTo" value="<?php echo $username;?>"/>
 </form>
+
+<script type="text/javascript">
+    function submitUsernameForProfileForm()  {
+        document.getElementById("goToChannels").submit();
+    }
+</script>
+
+<form method="POST" action="channels.php" id="goToChannels">
+    <input type="hidden" name="goToChannels" value="<?php echo $username;?>"/>
+</form>
+
+
+
 <div class="addmargin">
 <?php
 if(isset($_SESSION['username'])) {
@@ -63,7 +75,7 @@ if(isset($_SESSION['username'])) {
     } else {
         // show generic buttons
         ?>
-        <a href="./channels.php" class="btn btn-default"> Channels</a>
+        <a style="cursor:pointer; cursor:hand;"onclick="submitUsernameForProfileForm()"class="btn btn-default"> Channels</a>
 
         <?php
     }
@@ -79,7 +91,7 @@ if(isset($_SESSION['username'])) {
     <?php
     if ($_SESSION['username'] != $username and isset($_SESSION['username'])) {
         ?>
-        <a style="cursor:pointer; cursor:hand;" onclick="submitForm()" class="btn btn-default">Send Message</a>
+        <a style="cursor:pointer; cursor:hand;" onclick="submitMessageForm()" class="btn btn-default">Send Message</a>
         <?php
     }
 
@@ -88,7 +100,7 @@ else {
 
 ?>
     <!-- if not logged in -->
-    <a href="./generic_channel.php" class="btn btn-default"> Channels</a>
+    <a style="cursor:pointer; cursor:hand;"onclick="submitUsernameForProfileForm()"class="btn btn-default"> Channels</a>
 
     <h2><?php echo $username ?></h2>
 
