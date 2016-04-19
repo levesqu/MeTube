@@ -27,7 +27,7 @@ $sendMessageTo=$_POST['sendMessageTo'];
 $messagesender=$_SESSION['username'];
 
 if($messagesender == $sendMessageTo){
-    echo "<div class='danger'>Error: can not send message to yourself<br> PLease go back and try again</div>";
+    echo "<div class='text-danger'>Error: can not send message to yourself<br> PLease go back and try again</div>";
 
 }
 else{
