@@ -9,11 +9,11 @@ include_once "function.php";
 *******************************************************/
 
 
-$username=mysql_real_escape_string($_SESSION['username']);
-$mediatitle=mysql_real_escape_string($_POST['mediaTitle']);
+$username=$_SESSION['username'];
+$mediatitle= mysql_real_escape_string($_POST['mediaTitle']);
 $mediadescription= mysql_real_escape_string($_POST['mediaDescription']);
-$mediatags=mysql_real_escape_string($_POST['mediaTags']);
-$mediacategory= mysql_real_escape_string($_POST['mediaCategory']);
+$mediatags= mysql_real_escape_string($_POST['mediaTags']);
+$mediacategory= $_POST['mediaCategory'];
 
 //Create Directory if doesn't exist
 if(!file_exists('uploads/')){
