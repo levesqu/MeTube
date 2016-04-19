@@ -125,7 +125,7 @@ if ($logged_in) { ?>
       <input type="hidden" name="channelid" value="<?php echo $channelid?>">
      </form>
     <?php
-    } else {
+    } else if ($logged_in) {
     ?>
     <form action="subscribe_process.php" method="post">
       <input type="submit" class="btn btn-default" value="Subscribe" name="subscribeFromChannel" />
