@@ -32,12 +32,28 @@ include_once "function.php";
 </head>
 
 <body>
-<?php if (isset($_SESSION['username'])) { 
-    $logged_in=true; ?>
+<?php
+  if (isset($_SESSION['username'])) {
+    $logged_in=true;
+    if (isset($_POST['username']))
+    {
+      $username=$_POST['username'];
+      $user_me=$_SESSION['username'];
+      $my_page=false;
+    } else {
+      $username=$_SESSION['username'];
+      $my_page=true;
+    }
+  } else {
+    $logged_in=false;
+    $username=$_POST['username'];
+    $my_page=false;
+  }
+if ($logged_in) { ?>
 <h2><?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
 <?php require 'browse_media.php'; } 
-else { $logged_in=false; } ?>
+?>
 
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
 <?php
@@ -75,7 +91,7 @@ else { $logged_in=false; } ?>
 				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
 			</td>
 			<td>
-			<?php if ($logged_in) { ?>
+			<?php if ($my_page) { ?>
 				<form class="form-horizontal" method="post" action="delete_channel_media_process.php" enctype="multipart/form-data">
 					<input type="submit" class="btn btn-danger btn-xs" value="Remove Media" name="delete" />
 					<input type="hidden" name="channelid" value="<?php echo $channelid?>">
@@ -88,7 +104,7 @@ else { $logged_in=false; } ?>
 	}
 ?>
 	</table>
-	<?php if ($logged_in) { ?>
+	<?php if ($my_page) { ?>
 	<form action="add_media_to_channel.php" method="post">
 		<button class="btn btn-primary pull-right" name="addChannel">Add Media To Channel</button>
 		<input type="hidden" name="channelid" value="<?php echo $channelid; ?>"/>

@@ -131,7 +131,7 @@ if(isset($_GET['id'])) {
  }
 
 	$mediaId = $_GET['id'];
-	if (isset($SESSION['username']))
+	if (isset($_SESSION['username']))
 	{
 	  $username = $_SESSION['username'];
      ?>

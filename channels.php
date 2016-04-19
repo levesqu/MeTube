@@ -30,30 +30,37 @@ include_once "function.php";
 </head>
 
 <?php
-  if (isset($_SESSION['username']))
-  {
-    $username=$_SESSION['username'];
+  if (isset($_SESSION['username'])) {
     $logged_in=true;
-  }
-  else
-  {
+    if (isset($_POST['username']))
+    {
+      $username=$_POST['username'];
+      $user_me=$_SESSION['username'];
+      $my_page=false;
+    } else {
+      $username=$_SESSION['username'];
+      $my_page=true;
+    }
+  } else {
+    $logged_in=false;
     $username=$_POST['username'];
+    $my_page=false;
   }
 ?>
 
 <body>
-<?php if (isset($logged_in)) { ?>
+<?php if ($logged_in) { ?>
 <h2><?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
-<?php require 'browse_media.php'; ?>
+<?php require 'browse_media.php'; } 
+  if ($my_page) {
+?>
 
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
 	My Channels
 </div>
 <?php } else { ?>
-<div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
-	Channels
-</div>
+<div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"><?php echo $username; ?>'s Channels</div>
 <?php } ?>
 <br>
 <?php
@@ -72,12 +79,21 @@ include_once "function.php";
 		$channelid=$result_row[0];
 ?>
 
+<script type="text/javascript">
+    function submitUsernameForChannelForm(number)  {
+        document.getElementById("goToChannel"+number).submit();
+    }
+</script>
+
 		<tr class="success">
 			<td>
-				<a href="channel.php?id=<?php echo $channelid;?>" target="_blank"><?php echo $channeltitle;?></a> 
+				<form method="post" action="channel.php?id=<?php echo $channelid; ?>" id="goToChannel<?php echo $channelid; ?>">
+					<input type="hidden" name="username" value="<?php echo $username; ?>">
+				</form>
+				<a style="cursor:pointer; cursor:hand;" onclick="submitUsernameForChannelForm(<?php echo $channelid; ?>)"> <?php echo $channeltitle;?></a> 
 			</td>
 			<td>
-				<?php if (isset($logged_in)) { ?>
+				<?php if ($my_page) { ?>
 				<form class="form-horizontal" method="post" action="delete_channel_process.php" enctype="multipart/form-data">
 					<input style="display: block; margin: auto;" type="submit" class="btn btn-danger btn-xs" value="Delete Channel" name="delete" />
 					<input type="hidden" name="channelid" value="<?php echo $channelid?>">
@@ -87,7 +103,7 @@ include_once "function.php";
 		</tr>
 <?php
 	}
-	if (isset($logged_in)) {
+	if ($my_page) {
 ?>
 		<tr>
 			<td />
