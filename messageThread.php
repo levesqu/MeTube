@@ -23,7 +23,7 @@ include_once "function.php";
 <!-- message thread starts here -->
 
 <?php
-$sendMessageTo=$_POST['sendMessageTo'];
+$sendMessageTo=ucfirst($_POST['sendMessageTo']);
 $messagesender=$_SESSION['username'];
 
 if($messagesender == $sendMessageTo){
