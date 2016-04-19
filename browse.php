@@ -20,7 +20,7 @@
 
 <?php
 
-	$query = "SELECT filename,mediaid from media"; 
+	$query = "SELECT filename,mediaid,mediaTitle from media";
 
 	$result = mysql_query( $query );
 	if (!$result){
@@ -48,7 +48,7 @@ if(isset($_SESSION['username'])){
 			{ 
 				$filename=$result_row[0];
 				$mediaid=$result_row[1];
-                $title = $result_row[5];
+                $title = $result_row[2];
 			if ($count%$maxcolumns==0) { ?>
         	 <tr class="success">
         	 <?php
