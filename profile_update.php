@@ -83,7 +83,7 @@ session_start();
         </div>
 
         <div class="form-group">
-            <label for="inputPassword2" class="col-lg-2 control-label">Password:</label>
+            <label for="inputPassword2" class="col-lg-2 control-label">Repeat Password:</label>
             <div class="col-lg-10">
                 <input class="form-control" id="inputPassword2" type="password" name="password2" value="<?php echo $password;?>")>
             </div>
