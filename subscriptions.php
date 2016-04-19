@@ -57,6 +57,7 @@ include_once "function.php";
 		$channelresult=mysql_query($channelquery);
 		$channelrow=mysql_fetch_row($channelresult);
 		$channeltitle=$channelrow[1];
+      $other_user=$channelrow[3];
 ?>
 
 <script type="text/javascript">
@@ -66,7 +67,7 @@ include_once "function.php";
 </script>
 
 <form action="channel.php?id=<?php echo $channelid; ?>" method="post" id="subscriberUsernameForm<?php echo $channelid; ?>">
-  <input type="hidden" name="username" value="<?php echo $username; ?>" />
+  <input type="hidden" name="username" value="<?php echo $other_user; ?>" />
 </form>
 
 		<tr class="success">
