@@ -52,7 +52,7 @@ if(isset($_POST['submit'])) {
     <label for="inputAge" class="col-lg-2 control-label">Age: </label>
         <input type="text" class="col-lg-2 control-label"name="age"> <br><br>
 
-    &nbsp<input name="submit" type="submit" class="btn btn-primary"value="Submit">
+    <input name="submit" type="submit" class="btn btn-primary"value="Submit">
 </form>
 
 <?php
