@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
 		$register_error = "Passwords don't match. Please Try again.";
 	}
 	else {
-		$check = user_exist_check($_POST['username'], $_POST['password1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
+		$check = user_exist_check(ucfirst($_POST['username']), $_POST['password1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
 		if($check == 1){
 			//echo "Register succeeds";
 			$_SESSION['username']=$_POST['username'];
