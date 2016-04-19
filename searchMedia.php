@@ -20,7 +20,7 @@ include_once "function.php";
 <div class="addmargin">
 <table class="table table-hover">
 <?php
-$searchWords = explode(' ', $_POST["searchWords"]);
+$searchWords = explode(' ', mysql_escape_string($_POST["searchWords"]));
 // loop on this array to query  each time
 
 $foundMediaIds=[];
@@ -44,11 +44,12 @@ $index =0;
                         $index++;
                         $filename = $result_row[0];
                         $filepath = $result_row[4];
+                        $title = $result_row[5];
 
                     ?>
                     <tr class="success">
                         <td>
-                            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $filename;?></a>
+                            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank">&nbsp;<?php echo $title;?></a>
                         </td>
                         <td>
                             <a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
