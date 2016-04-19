@@ -121,7 +121,7 @@ if (!$result){
     die ("Could not query the media table in the database: <br />". mysql_error());
 }
 ?>
-    <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"> My Media</div>
+    <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;"><?php echo $username;?>'s  Media</div>
     <table class="table table-hover">
         <?php
         while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
@@ -146,12 +146,6 @@ if (!$result){
         ?>
         <br>
     </table>
-
-
-
-
-?>
-
 </div>
 
 </body>
