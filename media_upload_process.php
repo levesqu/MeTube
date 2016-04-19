@@ -71,4 +71,4 @@ if(!file_exists($dirfile))
 	}
 ?>
 
-<meta http-equiv="refresh" content="10;url=my_media.php?result=<?php echo $result;?>">
+<meta http-equiv="refresh" content="0;url=my_media.php?result=<?php echo $result;?>">
