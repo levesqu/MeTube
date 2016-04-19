@@ -29,20 +29,8 @@ include_once "function.php";
 
 </head>
 
-<?php
-  if (isset($_SESSION['username']))
-  {
-    $username=$_SESSION['username'];
-    $logged_in=true;
-  }
-  else
-  {
-    $username=$_POST['username'];
-  }
-?>
-
 <body>
-<?php if (isset($logged_in)) { ?>
+
 <h2><?php echo $_SESSION['username'];?> Welcome To MeTube!</h2>
 
 <?php require 'browse_media.php'; ?>
@@ -50,13 +38,9 @@ include_once "function.php";
 <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
 	My Channels
 </div>
-<?php } else { ?>
-<div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">
-	Channels
-</div>
-<?php } ?>
 <br>
 <?php
+	$username=$_SESSION['username'];
 	$query = "select * from channels where username='$username';";
 
 	$result = mysql_query( $query );
@@ -77,17 +61,14 @@ include_once "function.php";
 				<a href="channel.php?id=<?php echo $channelid;?>" target="_blank"><?php echo $channeltitle;?></a> 
 			</td>
 			<td>
-				<?php if (isset($logged_in)) { ?>
 				<form class="form-horizontal" method="post" action="delete_channel_process.php" enctype="multipart/form-data">
 					<input style="display: block; margin: auto;" type="submit" class="btn btn-danger btn-xs" value="Delete Channel" name="delete" />
 					<input type="hidden" name="channelid" value="<?php echo $channelid?>">
 				</form>
-				<?php } ?>
 			</td>
 		</tr>
 <?php
 	}
-	if (isset($logged_in)) {
 ?>
 		<tr>
 			<td />
@@ -97,7 +78,6 @@ include_once "function.php";
 				</form>
 			</td>
 		</tr>
-		<?php } ?>
 	</table>
 </body>
 </html>

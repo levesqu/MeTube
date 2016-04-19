@@ -87,7 +87,6 @@ include_once "function.php";
 		</tr>
 <?php
 	}
-	if (isset($logged_in)) {
 ?>
 		<tr>
 			<td />
@@ -97,7 +96,6 @@ include_once "function.php";
 				</form>
 			</td>
 		</tr>
-		<?php } ?>
 	</table>
 </body>
 </html>
