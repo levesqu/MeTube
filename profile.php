@@ -83,9 +83,9 @@ if(isset($_SESSION['username'])) {
 
     <h2><?php echo $username ?></h2>
 
-    <h3><?php echo $firstname; ?>
-        &nbsp;
-        <?php echo $lastname; ?></h3>
+    <h3><?php echo $firstname; 
+    		echo " ";
+    		echo $lastname; ?></h3>
     <h4>About:</h4>
     <p> <?php echo $aboutme ?>  </p>
     <?php
