@@ -18,8 +18,15 @@
 
 <body>
 
-<?php
+<?php if (isset($_SESSION['username'])) {
+echo "<h2>";
+echo $_SESSION['username'];
+echo " Welcome to MeTube!</h2>";
+require 'browse_media.php';
+}
+?>
 
+<?php
 	$query = "SELECT filename,mediaid,mediaTitle from media";
 
 	$result = mysql_query( $query );
