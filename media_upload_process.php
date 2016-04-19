@@ -10,10 +10,10 @@ include_once "function.php";
 
 
 $username=$_SESSION['username'];
-$mediatitle=$_POST['mediaTitle'];
-$mediadescription=$_POST['mediaDescription'];
-$mediatags=$_POST['mediaTags'];
-$mediacategory=$_POST['mediaCategory'];
+$mediatitle= mysql_real_escape_string($_POST['mediaTitle']);
+$mediadescription= mysql_real_escape_string($_POST['mediaDescription']);
+$mediatags= mysql_real_escape_string($_POST['mediaTags']);
+$mediacategory= $_POST['mediaCategory'];
 
 //Create Directory if doesn't exist
 if(!file_exists('uploads/')){
@@ -46,8 +46,9 @@ if(!file_exists($dirfile))
 				{
 					//insert into media table
 					$insert = "insert into media(mediaid, filename,username,type, path,mediaTitle, mediaDescription, mediaTags, mediaCategory)".
-							  "values(NULL,'". urlencode($_FILES["file"]["name"])."','$username','".$_FILES["file"]["type"]."', 'mysql_real_escape_string($upfile)', 'mysql_real_escape_string($mediatitle)','mysql_real_escape_string($mediadescription)','mysql_real_escape_string($mediatags)','mysql_real_escape_string($mediacategory)')";
-							  
+
+							  "values(NULL,'". urlencode($_FILES["file"]["name"])."','$username','".$_FILES["file"]["type"]."', '$upfile', '$mediatitle','$mediadescription','$mediatags','$mediacategory')";
+
 					$queryresult = mysql_query($insert)
 						  or die("Insert into Media error in media_upload_process.php " .mysql_error());
 					$result="0";

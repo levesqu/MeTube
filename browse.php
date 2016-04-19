@@ -20,7 +20,7 @@
 
 <?php
 
-	$query = "SELECT filename,mediaid from media"; 
+	$query = "SELECT filename,mediaid,mediaTitle from media";
 
 	$result = mysql_query( $query );
 	if (!$result){
@@ -37,7 +37,6 @@ if(isset($_SESSION['username'])){
 <?php
 }
 
-
 ?>
     <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">All Media</div>
 	<table style="table-layout:fixed;" class="table table-hover">
@@ -48,6 +47,7 @@ if(isset($_SESSION['username'])){
 			{ 
 				$filename=$result_row[0];
 				$mediaid=$result_row[1];
+                $title = $result_row[2];
 			if ($count%$maxcolumns==0) { ?>
         	 <tr class="success">
         	 <?php
@@ -57,7 +57,7 @@ if(isset($_SESSION['username'])){
 		       <form method="post" id="mediaform<?php echo $mediaid; ?>" action="media.php?id=<?php echo $mediaid; ?>">
 	         </form>
 		       <td style="text-align:center">
-		         <a style="cursor:pointer; cursor:hand;" onclick="javascript:document.getElementById('mediaform<?php echo $mediaid; ?>').submit();"><?php echo $filename;?></a> 
+		         <a style="cursor:pointer; cursor:hand;" onclick="javascript:document.getElementById('mediaform<?php echo $mediaid; ?>').submit();"><?php echo $title;?></a>
 		       </td>
 		   <?php if ($count%$maxcolumns==0) { ?>
 			</tr>

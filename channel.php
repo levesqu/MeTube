@@ -75,17 +75,18 @@ if ($logged_in) { ?>
 <?php
 	while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path, mediaTitle, mediaDescription, mediaTags, mediaCategory
 	{ 
-	  $mediaid=$result_row[2];
-	  $media_query="select * from media where mediaid=$mediaid;";
-    $media_result = mysql_query($media_query);
-    $media_result_row = mysql_fetch_row($media_result);
+	    $mediaid=$result_row[2];
+	    $media_query="select * from media where mediaid=$mediaid;";
+        $media_result = mysql_query($media_query);
+        $media_result_row = mysql_fetch_row($media_result);
 		$filename = $media_result_row[0];
 		$filepath = $media_result_row[4];
+		$title = $media_result_row[5];
 ?>
 
 		<tr class="success">
 			<td>
-				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a> 
+				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $title;?></a>
 			</td>
 			<td>
 				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
