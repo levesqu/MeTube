@@ -60,7 +60,7 @@ if(!file_exists($dirfile))
 					$result="7"; //upload file failed
 			}
 		}
-	}echo $result;
+	}
 	$channelid=$_POST['channels'];
 	if ($channelid!="none")
 	{
