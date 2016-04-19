@@ -199,29 +199,6 @@ if(isset($_GET['id'])) {
 	      </form>
 		      </div>
 
-<!--         <div class="btn-group">-->
-<!--             <a href="" class="btn btn-default">Default</a>-->
-<!--             <a href="" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>-->
-<!--             <ul class="dropdown-menu">-->
-<!--                 <li><a href="">Action</a></li>-->
-<!--                 <li><a href="">Another action</a></li>-->
-<!--                 <li><a href="">Something else here</a></li>-->
-<!--             </ul>-->
-<!--         </div>-->
-
-<!--    <div class="btn-group">-->
-<!--        <div class="btn-group">-->
-<!--            <a href="" class="btn btn-default dropdown-toggle" data-toggle="dropdown">-->
-<!--                Add To playlist <span class="caret"></span>-->
-<!--            </a>-->
-<!--            <ul class="dropdown-menu">-->
-<!--                <li><a href="#">Playlist 1</a></li>-->
-<!--                <li><a href="#">Playlist 2</a></li>-->
-<!--                <li><a href="#">Playlist 2</a></li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-
 <script type="text/javascript">
 function checkvalue(val)
 {

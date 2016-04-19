@@ -60,8 +60,8 @@ include_once "function.php";
 ?>
 
 <script type="text/javascript">
-  function submitUsernameFromSubscription(id) {
-    document.getElementById("subscriberUsernameForm"+id).submit();
+  function submitUsernameFromSubscription() {
+    document.getElementById("subscriberUsernameForm").submit();
   }
 </script>
 

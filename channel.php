@@ -103,6 +103,13 @@ if ($logged_in) { ?>
 		</tr>
 <?php
 	}
+	if (isset($user_me)) {
+  $subquery="select * from subs where channelid=$channelid and username='$user_me';";
+  } else {
+  $subquery="select * from subs where channelid=$channelid and username='$username';";
+  }
+  $subscription=mysql_query($subquery);
+  $is_subbed=mysql_num_rows($subscription);
 ?>
 	</table>
 	<?php if ($my_page) { ?>
@@ -110,6 +117,22 @@ if ($logged_in) { ?>
 		<button class="btn btn-primary pull-right" name="addChannel">Add Media To Channel</button>
 		<input type="hidden" name="channelid" value="<?php echo $channelid; ?>"/>
 	</form>
-	<?php } ?>
+	<?php } else {
+    if ($is_subbed)
+    { ?>
+    <form action="unsubscribe_process.php" method="post">
+      <input type="submit" class="btn btn-info" value="Unsubscribe" name="unsubscribeFromChannel" />
+      <input type="hidden" name="channelid" value="<?php echo $channelid?>">
+     </form>
+    <?php
+    } else {
+    ?>
+    <form action="subscribe_process.php" method="post">
+      <input type="submit" class="btn btn-default" value="Subscribe" name="subscribeFromChannel" />
+      <input type="hidden" name="channelid" value="<?php echo $channelid?>">
+    </form>
+    <?php
+    }
+    } ?>
 </body>
 </html>

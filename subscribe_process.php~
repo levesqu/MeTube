@@ -21,7 +21,7 @@ $queryresult = mysql_query($insert)
 
 
 if (isset($_POST['subscribeFromChannel'])) { ?>
-<meta http-equiv="refresh" content="0;url=subscriptions.php">
+<meta http-equiv="refresh" content="0;url=channel.php?id=<?php echo $channelid;?>">
 <?php } else { ?>
 <meta http-equiv="refresh" content="0;url=media.php?id=<?php echo $mediaid;?>">
 <?php } ?>
