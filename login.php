@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) {
 				$login_error = "Incorrect password. Please try again.";
 			}
 			else if($check==0){
-				$_SESSION['username']=$_POST['username']; //Set the $_SESSION['username']
+				$_SESSION['username']=ucfirst($_POST['username']); //Set the $_SESSION['username']
 				header('Location: browse.php');
 			}		
 		}
