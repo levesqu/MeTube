@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
 		$register_error = "Passwords don't match. Please Try again.";
 	}
 	else {
-		$check = user_exist_check($_POST['username'], $_POST['password1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
+		$check = user_exist_check(ucfirst($_POST['username']), $_POST['password1'], $_POST['firstName'], $_POST['lastName'], $_POST['age']);
 		if($check == 1){
 			//echo "Register succeeds";
 			$_SESSION['username']=$_POST['username'];
@@ -52,7 +52,7 @@ if(isset($_POST['submit'])) {
     <label for="inputAge" class="col-lg-2 control-label">Age: </label>
         <input type="text" class="col-lg-2 control-label"name="age"> <br><br>
 
-    &nbsp<input name="submit" type="submit" class="btn btn-primary"value="Submit">
+    <input name="submit" type="submit" class="btn btn-primary"value="Submit">
 </form>
 
 <?php

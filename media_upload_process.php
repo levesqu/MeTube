@@ -29,6 +29,7 @@ if(!file_exists($dirfile))
 	else
 	{
 		$upfile = $dirfile.urlencode($_FILES["file"]["name"]);
+		echo $upfile;
 	  
 	  if(file_exists($upfile))
 	  {
@@ -45,7 +46,9 @@ if(!file_exists($dirfile))
 				{
 					//insert into media table
 					$insert = "insert into media(mediaid, filename,username,type, path,mediaTitle, mediaDescription, mediaTags, mediaCategory)".
+
 							  "values(NULL,'". urlencode($_FILES["file"]["name"])."','$username','".$_FILES["file"]["type"]."', '$upfile', '$mediatitle','$mediadescription','$mediatags','$mediacategory')";
+
 					$queryresult = mysql_query($insert)
 						  or die("Insert into Media error in media_upload_process.php " .mysql_error());
 					$result="0";
@@ -65,7 +68,6 @@ if(!file_exists($dirfile))
 	$media_result=mysql_query($mediaquery);
 	$media_result_row=mysql_fetch_row($media_result);
 	$mediaid=$media_result_row[0];
-	echo $channelid;
 	$channelquery="insert into channelmedia(mapid,channelid,mediaid) values(NULL,$channelid,$mediaid);";
 	$channelresult=mysql_query($channelquery);
 	}

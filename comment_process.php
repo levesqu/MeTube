@@ -11,7 +11,7 @@ include_once "function.php";
 
 $username=$_SESSION['username'];
 $mediaid=$_POST['mediaid'];
-$comment=$_POST['userComment'];
+$comment=mysql_real_escape_string($_POST['userComment']);
 
 
 //insert into comments table

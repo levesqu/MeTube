@@ -88,9 +88,11 @@ else { $logged_in=false; } ?>
 	}
 ?>
 	</table>
+	<?php if ($logged_in) { ?>
 	<form action="add_media_to_channel.php" method="post">
 		<button class="btn btn-primary pull-right" name="addChannel">Add Media To Channel</button>
 		<input type="hidden" name="channelid" value="<?php echo $channelid; ?>"/>
 	</form>
+	<?php } ?>
 </body>
 </html>
