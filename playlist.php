@@ -62,11 +62,12 @@ include_once "function.php";
     $media_result_row = mysql_fetch_row($media_result);
 		$filename = $media_result_row[0];
 		$filepath = $media_result_row[4];
+		$title = $media_result_row[5];
 ?>
 
 		<tr class="success">
 			<td>
-				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a> 
+				<a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $title;?></a>
 			</td>
 			<td>
 				<a href="<?php echo $filepath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>

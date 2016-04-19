@@ -48,13 +48,14 @@ if(isset($_SESSION['username'])){
 			{ 
 				$filename=$result_row[0];
 				$mediaid=$result_row[1];
+                $title = $result_row[5];
 			if ($count%$maxcolumns==0) { ?>
         	 <tr class="success">
         	 <?php
         	 }
          	$count=($count+1)%$maxcolumns;
         	 ?>
-		       <form method="post" id="mediaform<?php echo $mediaid; ?>" action="media.php?id=<?php echo $mediaid; ?>">
+		       <form method="post" id="mediaform<?php echo $mediaid; ?>" action="media.php?id=<?php echo $title; ?>">
 	         </form>
 		       <td style="text-align:center">
 		         <a style="cursor:pointer; cursor:hand;" onclick="javascript:document.getElementById('mediaform<?php echo $mediaid; ?>').submit();"><?php echo $filename;?></a> 
