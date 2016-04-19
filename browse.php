@@ -37,7 +37,6 @@ if(isset($_SESSION['username'])){
 <?php
 }
 
-
 ?>
     <div style="background:#95a5a6;color:#FFFFFF; width:100%; margin:auto; text-align:center; padding-top: 10px; padding-bottom: 10px;">All Media</div>
 	<table style="table-layout:fixed;" class="table table-hover">
@@ -55,10 +54,10 @@ if(isset($_SESSION['username'])){
         	 }
          	$count=($count+1)%$maxcolumns;
         	 ?>
-		       <form method="post" id="mediaform<?php echo $mediaid; ?>" action="media.php?id=<?php echo $title; ?>">
+		       <form method="post" id="mediaform<?php echo $mediaid; ?>" action="media.php?id=<?php echo $mediaid; ?>">
 	         </form>
 		       <td style="text-align:center">
-		         <a style="cursor:pointer; cursor:hand;" onclick="javascript:document.getElementById('mediaform<?php echo $mediaid; ?>').submit();"><?php echo $filename;?></a> 
+		         <a style="cursor:pointer; cursor:hand;" onclick="javascript:document.getElementById('mediaform<?php echo $mediaid; ?>').submit();"><?php echo $title;?></a>
 		       </td>
 		   <?php if ($count%$maxcolumns==0) { ?>
 			</tr>
