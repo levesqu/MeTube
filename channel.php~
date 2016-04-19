@@ -35,7 +35,7 @@ include_once "function.php";
 <?php
   if (isset($_SESSION['username'])) {
     $logged_in=true;
-    if (isset($_POST['username']))
+    if (isset($_POST['username']) and ($_POST['username']==$_SESSION['username']))
     {
       $username=$_POST['username'];
       $user_me=$_SESSION['username'];
