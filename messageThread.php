@@ -26,6 +26,11 @@ include_once "function.php";
 $sendMessageTo=$_POST['sendMessageTo'];
 $messagesender=$_SESSION['username'];
 
+if($messagesender == $sendMessageTo){
+    echo "<div class='danger'>Error: can not send message to youself</div>";
+
+}
+
 if (isset($_POST['recursive']))
 {
 	$sendTo=$_POST['sendMessageTo'];
