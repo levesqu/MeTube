@@ -23,7 +23,7 @@ if(isset($_POST['submit'])) {
 				$login_error = "User ".$_POST['username']." not found.";
 			}
 			elseif($check==2) {
-				$login_error = "Incorrect password. Please ";
+				$login_error = "Incorrect password. Please try again";
 			}
 			else if($check==0){
 				$_SESSION['username']=ucfirst($_POST['username']); //Set the $_SESSION['username']
